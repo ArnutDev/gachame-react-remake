@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "Radish Brown",
+    "Image": "https://rangers.lerico.net/res/u1534e-brown/u1534e-brown-thum.png",
+    "UnitCode": "u1534e-brown"
+  },
+  {
+    "Name": "Farmer Sally",
+    "Image": "https://rangers.lerico.net/res/u1532e-sally/u1532e-sally-thum.png",
+    "UnitCode": "u1532e-sally"
+  },
+  {
+    "Name": "Field Moon",
+    "Image": "https://rangers.lerico.net/res/u1530e-moon/u1530e-moon-thum.png",
+    "UnitCode": "u1530e-moon"
+  }
+]
