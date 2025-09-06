@@ -29,19 +29,19 @@ export default async function normalGacha(randomStart, randomEnd, amount, eachRa
                 result = getAllRandom(amount, eachRate, rateRange);
             }
             if (!result) { //not special
-                rangersJson = await loadJSON('/assets/json-data/rangers-common/8u-info.json');
+                rangersJson = await loadJSON('../assets/json-data/rangers/rate-normal/8u-info.json');
                 specials[i] = false
             } else if (amount > 2) { // special but not rate-up
-                rangersJson = await loadJSON('/assets/json-data/rangers-special/8u-info-special.json');
+                rangersJson = await loadJSON('../assets/json-data/rangers/8u-info-special.json');
                 specials[i] = true;
             } else { //special and rate-up
-                const specialJson = await loadJSON('/assets/json-data/rangers-special/8u-info-special.json');
+                const specialJson = await loadJSON('../assets/json-data/rangers/8u-info-special.json');
                 rangersJson.push(specialJson[rangerIndex1]);
                 rangersJson.push(specialJson[rangerIndex2]);
                 specials[i] = true;
             }
         } else if (chance <= 8) {
-            rangersJson = await loadJSON('/assets/json-data/rangers-common/7u-info.json');
+            rangersJson = await loadJSON('../assets/json-data/rangers/rate-normal/7u-info.json');
             specials[i] = false
         } else if (chance <= 30) {
             const rateRange = 22.00;
@@ -52,19 +52,19 @@ export default async function normalGacha(randomStart, randomEnd, amount, eachRa
                 result = getAllRandom(amount, eachRate, rateRange);
             }
             if (!result) { //not special
-                rangersJson = await loadJSON('/assets/json-data/rangers-common/8c-info.json');
+                rangersJson = await loadJSON('../assets/json-data/rangers/rate-normal/8c-info.json');
                 specials[i] = false
             } else if (amount > 2) { // special but not rate-up
-                rangersJson = await loadJSON('/assets/json-data/rangers-special/8c-info-special.json');
+                rangersJson = await loadJSON('../assets/json-data/rangers/8c-info-special.json');
                 specials[i] = true;
             } else { //special and rate-up
-                const specialJson = await loadJSON('/assets/json-data/rangers-special/8c-info-special.json');
+                const specialJson = await loadJSON('../assets/json-data/rangers/8c-info-special.json');
                 rangersJson.push(specialJson[rangerIndex1]);
                 rangersJson.push(specialJson[rangerIndex2]);
                 specials[i] = true;
             }
         } else {
-            rangersJson = await loadJSON('/assets/json-data/rangers-common/7c-info.json');
+            rangersJson = await loadJSON('../assets/json-data/rangers/rate-normal/7c-info.json');
             specials[i] = false
         }
         const randomIndex = getRandomPickRanger(0, rangersJson.length - 1);

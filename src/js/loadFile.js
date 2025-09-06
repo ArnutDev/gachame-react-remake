@@ -1,5 +1,15 @@
+import {
+    readFile
+} from "fs/promises";
+import path from "path";
+
 export async function loadJSON(filePath) {
-    const res = await fetch(filePath);
-    if (!res.ok) throw new Error("Failed to load " + filePath);
-    return res.json();
+    try {
+        const fullPath = path.resolve(filePath); // แปลงเป็น absolute path
+        const data = await readFile(fullPath, "utf-8");
+        return JSON.parse(data);
+    } catch (error) {
+        console.error("Error loading JSON:", error);
+        throw error;
+    }
 }

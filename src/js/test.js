@@ -1,6 +1,4 @@
-import {
-    normalGacha
-} from "./randomRangers.js";
+import normalGacha from './randomRangers.js';
 
 //use for test random results
 const randomStart = 0; // standard 0 or test 8u=3-3, 8c=30-30
