@@ -14,19 +14,21 @@ import {
 // let u3 = 0;
 // let u4 = 0;
 
-export default async function normalGacha(randomStart, randomEnd, amount, eachRate, rangerIndex1, rangerIndex2) {
+export default async function normalGacha(amount, eachRate, rangerIndex1, rangerIndex2) {
     let rangers = [];
     let specials = [];
+    const randomStart = 0;
+    const randomEnd = 100;
     for (let i = 0; i < 7; i++) {
         const chance = getGrade(randomStart, randomEnd);
         let rangersJson = [];
         if (chance <= 3) {
             const rateRange = 3.00;
             let result
-            if (randomStart == randomEnd) { //for test
-                result = true;
-            } else {
+            if (randomStart !== randomEnd) {
                 result = getAllRandom(amount, eachRate, rateRange);
+            } else { //for test
+                result = true;
             }
             if (!result) { //not special
                 rangersJson = await loadJSON('../assets/json-data/rangers/rate-normal/8u-info.json');
@@ -46,10 +48,10 @@ export default async function normalGacha(randomStart, randomEnd, amount, eachRa
         } else if (chance <= 30) {
             const rateRange = 22.00;
             let result = getAllRandom(amount, eachRate, rateRange);
-            if (randomStart == randomEnd) { //for test
-                result = true;
-            } else {
+            if (randomStart !== randomEnd) {
                 result = getAllRandom(amount, eachRate, rateRange);
+            } else { //for test
+                result = true;
             }
             if (!result) { //not special
                 rangersJson = await loadJSON('../assets/json-data/rangers/rate-normal/8c-info.json');
@@ -73,7 +75,6 @@ export default async function normalGacha(randomStart, randomEnd, amount, eachRa
         // // console.log(rangerDisplay.Name)
     }
     return [rangers, specials];
-    //ทำต่อตรงนี้ ไป รีแฟคเตอร์ reactก่อน
     //ไฮไลท์อันที่ special ให้เป็นหน้าที่ของ UI 
     //ทำระบบนับ ruby, สถิติ และระบบ การันตี
     // // update totall amount
