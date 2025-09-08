@@ -1,7 +1,4 @@
 import {
-    loadJSON
-} from "./loadFile.js";
-import {
     getGrade,
     getAllRandom,
     getRandomPickRanger
@@ -14,7 +11,7 @@ import {
 // let u3 = 0;
 // let u4 = 0;
 
-export default async function normalGacha(amount, eachRate, rangerIndex1, rangerIndex2) {
+export default async function normalGacha(allRangers, amount, eachRateUltra, eachRateCommon, rangerIndex1, rangerIndex2, unRateUp1, unRateUp2) {
     let rangers = [];
     let specials = [];
     const randomStart = 0;
@@ -26,47 +23,61 @@ export default async function normalGacha(amount, eachRate, rangerIndex1, ranger
             const rateRange = 3.00;
             let result
             if (randomStart !== randomEnd) {
-                result = getAllRandom(amount, eachRate, rateRange);
+                result = getAllRandom(amount, eachRateUltra, rateRange);
             } else { //for test
                 result = true;
             }
-            if (!result) { //not special
-                rangersJson = await loadJSON('../assets/json-data/rangers/rate-normal/8u-info.json');
+            if (!result && amount > 2) { //not special
+                rangersJson = allRangers[2] //8u normal
                 specials[i] = false
-            } else if (amount > 2) { // special but not rate-up
-                rangersJson = await loadJSON('../assets/json-data/rangers/8u-info-special.json');
+            } else if (result && amount > 2) { // special but not rate-up
+                rangersJson = allRangers[5]; //8u
+                // specials[i] = true; //?? มันมี8ปกติผสมด้วยจะ specialไม่ได้
+            } else if (!result && amount == 2) { // special but not rate-up ??here more
+                rangersJson = allRangers[2] //8u normal
+                const specialJson = allRangers[5]; //8u
+                //add unrate-up
+                rangersJson.push(specialJson[unRateUp1]); //ใช้ได้แค่โคลาโบ
+                rangersJson.push(specialJson[unRateUp2]);
                 specials[i] = true;
             } else { //special and rate-up
-                const specialJson = await loadJSON('../assets/json-data/rangers/8u-info-special.json');
+                const specialJson = allRangers[5]; //8u
                 rangersJson.push(specialJson[rangerIndex1]);
                 rangersJson.push(specialJson[rangerIndex2]);
                 specials[i] = true;
             }
         } else if (chance <= 8) {
-            rangersJson = await loadJSON('../assets/json-data/rangers/rate-normal/7u-info.json');
+            rangersJson = allRangers[0]; //7u
             specials[i] = false
         } else if (chance <= 30) {
             const rateRange = 22.00;
-            let result = getAllRandom(amount, eachRate, rateRange);
+            let result;
             if (randomStart !== randomEnd) {
-                result = getAllRandom(amount, eachRate, rateRange);
+                result = getAllRandom(amount, eachRateCommon, rateRange);
             } else { //for test
                 result = true;
             }
-            if (!result) { //not special
-                rangersJson = await loadJSON('../assets/json-data/rangers/rate-normal/8c-info.json');
+            if (!result && amount > 2) { //not special
+                rangersJson = allRangers[3] //8u normal
                 specials[i] = false
-            } else if (amount > 2) { // special but not rate-up
-                rangersJson = await loadJSON('../assets/json-data/rangers/8c-info-special.json');
+            } else if (result && amount > 2) { // special but not rate-up
+                rangersJson = allRangers[4]; //8c
                 specials[i] = true;
+            } else if (!result && amount == 2) { // special but not rate-up ??here more
+                rangersJson = allRangers[4] //8c normal
+                const specialJson = allRangers[4]; //8u
+                //add unrate-up
+                rangersJson.push(specialJson[unRateUp1]); //ใช้ได้แค่โคลาโบ
+                rangersJson.push(specialJson[unRateUp2]);
+                // specials[i] = true; //?? มันมี8ปกติผสมด้วยจะ specialไม่ได้
             } else { //special and rate-up
-                const specialJson = await loadJSON('../assets/json-data/rangers/8c-info-special.json');
+                const specialJson = allRangers[4]; // 8c
                 rangersJson.push(specialJson[rangerIndex1]);
                 rangersJson.push(specialJson[rangerIndex2]);
                 specials[i] = true;
             }
         } else {
-            rangersJson = await loadJSON('../assets/json-data/rangers/rate-normal/7c-info.json');
+            rangersJson = allRangers[1]; //7c
             specials[i] = false
         }
         const randomIndex = getRandomPickRanger(0, rangersJson.length - 1);

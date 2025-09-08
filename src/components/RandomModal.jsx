@@ -1,4 +1,5 @@
-export default function RandomModal({ slots, totalRandoms, onClose, onRandomAgain }) {
+export default function RandomModal({ slots,specials, totalRandoms, onClose, onRandomAgain }) {
+  console.log(slots)
   return (
     <div className="modal d-block" tabIndex="-1" style={{ backgroundColor: "rgba(0,0,0,0.5)" }}>
       <div className="modal-dialog modal-dialog-centered modal-lg">
@@ -9,17 +10,30 @@ export default function RandomModal({ slots, totalRandoms, onClose, onRandomAgai
           </div>
           <div className="modal-body">
             <div className="row g-2 justify-content-center text-center">
-              {slots.map((slot, idx) => (
-                <div key={idx} className="col-auto">
-                  <img 
-                    src={slot.image} 
-                    alt={slot.name} 
-                    className="img-fluid mb-1" 
-                    style={{ width: "60px", height: "60px", objectFit: "cover" }}
-                  />
-                  <p className="mb-0">{slot.name}</p>
-                </div>
-              ))}
+              {slots.map((slot, idx) => {
+  const isSpecial = specials[idx]; // ใช้ idx ตรวจว่า special หรือไม่
+
+  return (
+    <div
+      key={idx}
+      className="col-3 p-1"
+      style={{
+        textAlign: "center",
+        border: isSpecial ? "2px solid green" : "none",
+        borderRadius: "4px",
+        padding: "4px",
+      }}
+    >
+      <img
+        src={slot.Image}
+        alt={slot.Name}
+        className="img-fluid mb-1"
+        style={{ width: "80px", height: "100px", objectFit: "scale-down" }}
+      />
+      <p className="mb-0">{slot.Name}</p>
+    </div>
+  );
+})}
             </div>
           </div>
           <div className="modal-footer d-flex justify-content-between align-items-center">
