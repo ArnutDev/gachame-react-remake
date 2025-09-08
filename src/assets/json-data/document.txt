@@ -1,5 +1,8 @@
 *Change
 
+delete all of "XXX-special.json" by UnitCode or ItemCode on Github(gachame) before anything
+add new rangers and gears in "XXX-special.json"
+
 index.html
     -none
 

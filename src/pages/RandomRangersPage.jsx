@@ -2,6 +2,7 @@ import { useState } from "react";
 import RangerCard from "../components/RangerCard";
 import RandomModal from "../components/RandomModal";
 import RangerFooter from "../components/RangerFooter";
+
 // import { doRandom, calculateSpecial } from "./utils";
 
 export default function RandomRangersPage({  slotCount = 3 }) {
@@ -17,7 +18,7 @@ export default function RandomRangersPage({  slotCount = 3 }) {
       image: "https://example.com/images/ranger-red.png",
       info: "xxx"
     },
-    randomConfig: {      // สำหรับ logic สุ่ม
+    gachaConfig: {      // สำหรับ logic สุ่ม
       amount: 4,
       eachRate: 0.12,
       rangerIndex1: 0,
@@ -30,7 +31,7 @@ export default function RandomRangersPage({  slotCount = 3 }) {
       image: "https://example.com/images/ranger-red.png",
       info: "xxx"
     },
-    randomConfig: {      // สำหรับ logic สุ่ม
+    gachaConfig: {      // สำหรับ logic สุ่ม
       amount: 4,
       eachRate: 0.12,
       rangerIndex1: 0,
@@ -43,18 +44,31 @@ export default function RandomRangersPage({  slotCount = 3 }) {
       image: "https://example.com/images/ranger-red.png",
       info: "xxx"
     },
-    randomConfig: {      // สำหรับ logic สุ่ม
+    gachaConfig: {      // สำหรับ logic สุ่ม
       amount: 4,
       eachRate: 0.12,
       rangerIndex1: 0,
       rangerIndex2: 1
     }
   }
-        
+     ,
+  {
+    cardInfo: {          // สำหรับ <RangerCard>
+      title: "box3",
+      image: "https://example.com/images/ranger-red.png",
+      info: "xxx"
+    },
+    gachaConfig: {      // สำหรับ logic สุ่ม
+      amount: 4,
+      eachRate: 0.12,
+      rangerIndex1: 0,
+      rangerIndex2: 1
+    }
+  }   
         
     ]
-  const handleRandom = (item) => {
-    // const slots = doRandom(item, slotCount);
+  const handleRandom = (gachaConfig) => {
+    // const slots = normalGacha(gachaConfig.amount,gachaConfig.eachRate, gachaConfig.rangerIndex1,gachaConfig.rangerIndex2);
 
     //del this
     const slots = data;
@@ -66,7 +80,7 @@ export default function RandomRangersPage({  slotCount = 3 }) {
     //
 
     // setSpecialCount(prev => prev + calculateSpecial(slots));
-    setCurrentCard(item);
+    setCurrentCard(gachaConfig);
     setModalOpen(true);
   };
 
@@ -77,19 +91,20 @@ export default function RandomRangersPage({  slotCount = 3 }) {
   };
 
   return (
-    <div>
-      <h2>Ranger Page</h2>
-      <div className="row">
-    {data.map((item, idx) => (
-      <div key={idx} className="col-12 col-md-4 mb-3">
-        <RangerCard 
-          cardInfo={item.cardInfo} 
-          onRandom={() => handleRandom(item)} 
-        />
+    <div className="d-flex flex-column min-vh-100">
+      <div className="flex-grow-1">
+        <h2 className="my-3 text-center text-light">Gacha Rangers For October</h2>
+        <div className="row flex-fill">
+          {data.map((item, idx) => (
+            <div key={idx} className="col-md-4 my-3">
+              <RangerCard 
+                cardInfo={item.cardInfo} 
+                onRandom={() => handleRandom(item.gachaConfig)} 
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-
       {modalOpen && (
         <RandomModal
           slots={currentSlots}
@@ -98,8 +113,7 @@ export default function RandomRangersPage({  slotCount = 3 }) {
           onRandomAgain={handleRandomAgain}
         />
       )}
-
       <RangerFooter specialCount={specialCount} />
-    </div>
-  );
+      
+ </div> );
 }

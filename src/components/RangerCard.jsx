@@ -1,6 +1,6 @@
 export default function RangerCard({ cardInfo, onRandom }) { 
   return (
-    <div className="card text-center p-2 bg-light">
+    <div className="card text-center p-2 bg-light mx-3">
       <img 
         src={cardInfo.image} 
         alt={cardInfo.title} 
