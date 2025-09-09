@@ -1,12 +1,13 @@
 [
+
   {
-    "Name": "Skilled Farmer Sally",
-    "Image": "https://gachame.github.io/images/rangers/u1532u-sally-thum.png",
-    "UnitCode": "u1532u-sally"
+    "Name": "mock up 2 ultra",
+    "Image": "https://gachame.github.io/images/rangers/u1534e-brown-thum.png",
+    "UnitCode": "u1532e-sally"
   },
   {
-    "Name": "Green Onion Field Moon",
-    "Image": "https://gachame.github.io/images/rangers/u1530u-moon-thum.png",
-    "UnitCode": "u1530u-moon"
+    "Name": "mock up 3 ultra",
+    "Image": "https://gachame.github.io/images/rangers/u1534e-brown-thum.png",
+    "UnitCode": "u1530e-moon"
   }
 ]

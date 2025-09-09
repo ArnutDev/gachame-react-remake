@@ -21,61 +21,99 @@ export default function RandomRangersPage() {
         image: "https://example.com/images/ranger-red.png",
         info: "xxx"
       },
-      gachaConfig: {      // สำหรับ logic สุ่ม
-        amount: 4,
-        eachRateUltra: 0.12,
-        eachRateCommon: 0.88,
+      gachaConfig: {
+        month: "even",
+        rateUp: false,       
+        amountUltra: 2,
+        amountCommon: 3,
+        eachRateUltra: -1,
+        eachRateCommon: -1,
         rangerIndex1: -1,
         rangerIndex2: -1,
         unRateUp1:-1,
         unRateUp2:-1
+        // month: "odd",
+        // rateUp: false,       
+        // amountUltra: 4,
+        // amountCommon: 4,
+        // eachRateUltra: 0.12,
+        // eachRateCommon: 0.88,
+        // rangerIndex1: -1,
+        // rangerIndex2: -1,
+        // unRateUp1:-1,
+        // unRateUp2:-1
       }
     },
     {
-      cardInfo: {          // สำหรับ <RangerCard>
+      cardInfo: {          
         title: "box2",
         image: "https://example.com/images/ranger-red.png",
         info: "xxx"
       },
-      gachaConfig: {      // สำหรับ logic สุ่ม
-        amount: 2,
-        eachRateUltra: 0.18,
-        eachRateCommon: 1.32,
+      gachaConfig: {
+        month: "even",
+        rateUp: true,      
+        amountUltra: 2,
+        amountCommon: 2,
+        eachRateUltra: 0.22,
+        eachRateCommon: 1.50,
         rangerIndex1: 0,
         rangerIndex2: 1,
         unRateUp1:2,
-        unRateUp2:3
+        unRateUp2:-1
+        // month: "odd",
+        // rateUp: true,      
+        // amountUltra: 2,
+        // amountCommon: 2,
+        // eachRateUltra: 0.18,
+        // eachRateCommon: 1.32,
+        // rangerIndex1: 0,//?? ultra and common
+        // rangerIndex2: 1,//?? ultra and common
+        // unRateUp1:2,
+        // unRateUp2:3 
       }
     },
     {
-      cardInfo: {          // สำหรับ <RangerCard>
+      cardInfo: {          
         title: "box3",
         image: "https://example.com/images/ranger-red.png",
         info: "xxx"
       },
-      gachaConfig: {      // สำหรับ logic สุ่ม
-        amount: 2,
-        eachRateUltra: 0.18,
-        eachRateCommon: 1.32,
-        rangerIndex1: 2,
-        rangerIndex2: 3,
+      gachaConfig: { 
+        month: "even",
+        rateUp: true,     
+        amountUltra: 2,
+        amountCommon: 2,
+        eachRateUltra: 0.22,
+        eachRateCommon: 1.50,
+        rangerIndex1: 0,//?? ultra and common
+        rangerIndex2: 1,//?? ultra and common
         unRateUp1:1,
-        unRateUp2:2
+        unRateUp2:-1 
+        // month: "odd",
+        // rateUp: true,     
+        // amountUltra: 2,
+        // amountCommon: 2,
+        // eachRateUltra: 0.18,
+        // eachRateCommon: 1.32,
+        // rangerIndex1: 2,
+        // rangerIndex2: 3,
+        // unRateUp1:0,
+        // unRateUp2:1 
       }
     }
   ]
   const rangersPaths = [
-    '/src/assets/json-data/rangers/rate-normal/7u-info.json',
-    '/src/assets/json-data/rangers/rate-normal/7c-info.json',
-    '/src/assets/json-data/rangers/rate-normal/8u-info.json',
-    '/src/assets/json-data/rangers/rate-normal/8c-info.json',
-    '/src/assets/json-data/rangers/8c-info-special.json',
-    '/src/assets/json-data/rangers/8u-info-special.json'
+    '/src/assets/json-data/rangers/rate-normal/7u-info.json',//0
+    '/src/assets/json-data/rangers/rate-normal/7c-info.json',//1
+    '/src/assets/json-data/rangers/rate-normal/8u-info.json',//2
+    '/src/assets/json-data/rangers/rate-normal/8c-info.json',//3
+    '/src/assets/json-data/rangers/8c-info-special.json',//4
+    '/src/assets/json-data/rangers/8u-info-special.json'//5
   ];
   // console.log(rangersPaths)
   useEffect(() => {
     async function loadAllFiles() {
-      // โหลดทุกไฟล์พร้อมกัน
       const promises = rangersPaths.map(path => fetch(path).then(res => res.json()));
       const dataArray = await Promise.all(promises);
       setAllRangers(dataArray);
@@ -83,12 +121,9 @@ export default function RandomRangersPage() {
 
     loadAllFiles();
   }, []);
-  const handleRandom = async (gachaConfig) => {
-    const [slots,specials] = await normalGacha(allRangers,gachaConfig.amount,gachaConfig.eachRateUltra,gachaConfig.eachRateCommon, gachaConfig.rangerIndex1,gachaConfig.rangerIndex2,gachaConfig.unRateUp1,gachaConfig.unRateUp2);
 
-    //del this
-    // const slots = data;
-    //
+  const handleRandom = async (gachaConfig) => {
+    const [slots,specials] = await normalGacha(allRangers,gachaConfig);
     setCurrentSpecials(specials);
     setCurrentSlots(slots);
     setTotalRandoms(prev => prev + 1);

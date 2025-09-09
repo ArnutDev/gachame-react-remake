@@ -1,12 +1,12 @@
 export function getGrade(min, max) {
     const result = parseFloat((Math.random() * (max - min) + min).toFixed(2));
-    console.log('chance by getGrade', result)
+    // console.log('chance by getGrade', result)
     return result;
 }
 
 export function getValue(min, max) {
     const result = parseFloat((Math.random() * (max - min) + min).toFixed(2));
-    console.log('chance by getValue', result)
+    // console.log('chance by getValue', result)
     return result;
 }
 
@@ -48,7 +48,7 @@ export function generateRandomRange(min, max, eachRate, amount) {
         arr[0] = pair1[0];
         arr[1] = pair1[1];
         countArr++;
-        console.log('countArr', countArr, 'amount', amount)
+        // console.log('countArr', countArr, 'amount', amount)
     }
     if (countArr < amount) {
         //  random value of arr[2], arr[3]
@@ -56,7 +56,7 @@ export function generateRandomRange(min, max, eachRate, amount) {
         arr[2] = pair2[0];
         arr[3] = pair2[1];
         countArr++;
-        console.log('countArr', countArr, 'amount', amount)
+        // console.log('countArr', countArr, 'amount', amount)
     }
     if (countArr < amount) {
         //  random value of arr[4], arr[5]
@@ -64,7 +64,7 @@ export function generateRandomRange(min, max, eachRate, amount) {
         arr[4] = pair3[0];
         arr[5] = pair3[1];
         countArr++;
-        console.log('countArr', countArr, 'amount', amount)
+        // console.log('countArr', countArr, 'amount', amount)
     }
     if (countArr < amount) {
         //  random value of arr[6], arr[7]
@@ -72,23 +72,23 @@ export function generateRandomRange(min, max, eachRate, amount) {
         arr[6] = pair4[0];
         arr[7] = pair4[1];
         countArr++;
-        console.log('countArr', countArr, 'amount', amount)
+        // console.log('countArr', countArr, 'amount', amount)
     }
     for (let i = 0; i < arr.length; i += 2) {
         for (let j = i + 2; j < arr.length; j += 2) {
             //check for each range not overlap and have space not over eachRate
             if ((arr[i] >= arr[j] && arr[i] <= arr[j + 1]) || (arr[j] >= arr[i] && arr[j] <= arr[i + 1]) || (arr[i + 1] - arr[i] > eachRate) || (arr[j + 1] - arr[j] > eachRate)) {
                 // if it overlap then random until not overlap
-                console.log("overlap try again!")
+                // console.log("overlap try again!")
                 return generateRandomRange(min, max, eachRate, amount);
             }
         }
     }
 
     // display position array that not overlap : 1-0, 2-3, 4-5, 6-7
-    console.log('ready for use!')
+    // console.log('ready for use!')
     for (let i = 0; i < arr.length; i += 2) {
-        console.log(`arr[${i}] - arr[${i + 1}] = ${arr[i]} - ${arr[i + 1]}`);
+        // console.log(`arr[${i}] - arr[${i + 1}] = ${arr[i]} - ${arr[i + 1]}`);
     }
     return arr;
 }
@@ -98,12 +98,12 @@ export function checkValueInRange(value, arr) {
     for (let i = 0; i < arr.length; i += 2) {
         if (value > arr[i] && value <= arr[i + 1]) {
             // if value between arr[i] and arr[i+1] then display
-            console.log(`Result: Value ${value} is within the range of arr[${i}] - arr[${i + 1}] ${arr[i]}> ${value} <${arr[i+1]}`);
+            // console.log(`Result: Value ${value} is within the range of arr[${i}] - arr[${i + 1}] ${arr[i]}> ${value} <${arr[i+1]}`);
             return true; // this mean got special
         }
     }
     //if the given value not in any range
-    console.log(`Result: Value ${value} is not within any range.`);
+    // console.log(`Result: Value ${value} is not within any range.`);
     return false; // this mean got common
 }
 
@@ -117,4 +117,31 @@ export function getAllRandom(amount, eachRate, rateRange) {
     const value = getValue(0.01, rateRange);
     const result = checkValueInRange(value, range);
     return result
+}
+
+export function getRangersArray(result, indexJsonNormal, indexJsonSpecial, i, allRangers, gachaConfig) {
+    let rangersJson = []
+    // let specials = []
+    if (!result && !gachaConfig.rateUp) {
+        rangersJson = [...allRangers[indexJsonNormal]]; //8u-normal
+        // specials[i] = false
+    } else if (result && !gachaConfig.rateUp) {
+        rangersJson = [...allRangers[indexJsonSpecial]]; //8u-special
+        // specials[i] = true;
+    } else if (!result && gachaConfig.rateUp) {
+        rangersJson = [...allRangers[indexJsonNormal]]; //8u-normal + 8u-special
+        const specialJson = allRangers[indexJsonSpecial]; //8u
+        //add unrate-up
+        rangersJson.push(specialJson[gachaConfig.unRateUp1]);
+        if (gachaConfig.unRateUp2 >= 0) { //even
+            rangersJson.push(specialJson[gachaConfig.unRateUp2]);
+        }
+        // specials[i] = true;//?? มันมี8ปกติผสมด้วยจะ specialไม่ได้
+    } else {
+        const specialJson = allRangers[indexJsonSpecial]; //8u-special
+        rangersJson.push(specialJson[gachaConfig.rangerIndex1]);
+        rangersJson.push(specialJson[gachaConfig.rangerIndex2]);
+        // specials[i] = true;
+    }
+    return rangersJson;
 }

@@ -1,7 +1,8 @@
 import {
     getGrade,
     getAllRandom,
-    getRandomPickRanger
+    getRandomPickRanger,
+    getRangersArray
 } from "./utils.js";
 
 // let count = 0;
@@ -11,89 +12,66 @@ import {
 // let u3 = 0;
 // let u4 = 0;
 
-export default async function normalGacha(allRangers, amount, eachRateUltra, eachRateCommon, rangerIndex1, rangerIndex2, unRateUp1, unRateUp2) {
+export default async function normalGacha(allRangers, gachaConfig) {
     let rangers = [];
     let specials = [];
-    const randomStart = 0;
-    const randomEnd = 100;
+    const randomStart = 1;
+    const randomEnd = 1;
     for (let i = 0; i < 7; i++) {
         const chance = getGrade(randomStart, randomEnd);
         let rangersJson = [];
         if (chance <= 3) {
             const rateRange = 3.00;
             let result
-            if (randomStart !== randomEnd) {
-                result = getAllRandom(amount, eachRateUltra, rateRange);
-            } else { //for test
-                result = true;
-            }
-            if (!result && amount > 2) { //not special
-                rangersJson = allRangers[2] //8u normal
-                specials[i] = false
-            } else if (result && amount > 2) { // special but not rate-up
-                rangersJson = allRangers[5]; //8u
-                // specials[i] = true; //?? มันมี8ปกติผสมด้วยจะ specialไม่ได้
-            } else if (!result && amount == 2) { // special but not rate-up ??here more
-                rangersJson = allRangers[2] //8u normal
+            if (gachaConfig.month === "even" && !gachaConfig.rateUp) { //even and unrateUp only
+                rangersJson = [...allRangers[2]];
                 const specialJson = allRangers[5]; //8u
-                //add unrate-up
-                rangersJson.push(specialJson[unRateUp1]); //ใช้ได้แค่โคลาโบ
-                rangersJson.push(specialJson[unRateUp2]);
-                specials[i] = true;
-            } else { //special and rate-up
-                const specialJson = allRangers[5]; //8u
-                rangersJson.push(specialJson[rangerIndex1]);
-                rangersJson.push(specialJson[rangerIndex2]);
-                specials[i] = true;
+                rangersJson.push(specialJson[0]);
+                rangersJson.push(specialJson[1]);
+            } else {
+                if (randomStart !== randomEnd) {
+                    result = getAllRandom(gachaConfig.amountUltra, gachaConfig.eachRateUltra, rateRange);
+                } else { //for test
+                    result = true;
+                }
+                const indexJson8U = 2;
+                const indexJson8USpecial = 5;
+                rangersJson = getRangersArray(result, indexJson8U, indexJson8USpecial, i, allRangers, gachaConfig);
             }
         } else if (chance <= 8) {
-            rangersJson = allRangers[0]; //7u
+            rangersJson = [...allRangers[0]]; //7u
             specials[i] = false
         } else if (chance <= 30) {
             const rateRange = 22.00;
             let result;
-            if (randomStart !== randomEnd) {
-                result = getAllRandom(amount, eachRateCommon, rateRange);
-            } else { //for test
-                result = true;
-            }
-            if (!result && amount > 2) { //not special
-                rangersJson = allRangers[3] //8u normal
-                specials[i] = false
-            } else if (result && amount > 2) { // special but not rate-up
-                rangersJson = allRangers[4]; //8c
-                specials[i] = true;
-            } else if (!result && amount == 2) { // special but not rate-up ??here more
-                rangersJson = allRangers[4] //8c normal
-                const specialJson = allRangers[4]; //8u
-                //add unrate-up
-                rangersJson.push(specialJson[unRateUp1]); //ใช้ได้แค่โคลาโบ
-                rangersJson.push(specialJson[unRateUp2]);
-                // specials[i] = true; //?? มันมี8ปกติผสมด้วยจะ specialไม่ได้
-            } else { //special and rate-up
-                const specialJson = allRangers[4]; // 8c
-                rangersJson.push(specialJson[rangerIndex1]);
-                rangersJson.push(specialJson[rangerIndex2]);
-                specials[i] = true;
+            if (gachaConfig.month === "even" && !gachaConfig.rateUp) { //even and unrateUp only
+                rangersJson = [...allRangers[3]];
+                const specialJson = allRangers[4]; //8c
+                rangersJson.push(specialJson[0]);
+                rangersJson.push(specialJson[1]);
+                rangersJson.push(specialJson[2]);
+            } else {
+                if (randomStart !== randomEnd) {
+                    result = getAllRandom(gachaConfig.amountCommon, gachaConfig.eachRateCommon, rateRange);
+                } else { //for test
+                    result = true;
+                }
+
+                const indexJson8C = 3;
+                const indexJson8CSpecial = 4;
+                rangersJson = getRangersArray(result, indexJson8C, indexJson8CSpecial, i, allRangers, gachaConfig);
             }
         } else {
-            rangersJson = allRangers[1]; //7c
+            rangersJson = [...allRangers[1]]; //7c
             specials[i] = false
         }
         const randomIndex = getRandomPickRanger(0, rangersJson.length - 1);
         rangers[i] = rangersJson[randomIndex];
-        // let rangerDisplay = rangers[i]
-        // // console.log(rangerDisplay.Name)
+        console.log(rangersJson) //test
     }
     return [rangers, specials];
     //ไฮไลท์อันที่ special ให้เป็นหน้าที่ของ UI 
     //ทำระบบนับ ruby, สถิติ และระบบ การันตี
-    // // update totall amount
-    // document.getElementById("normal-count").innerHTML = ` ${count}, Ruby used: ${count/6 * 300}`;
-    // document.getElementById("u-ranger-1").innerHTML = u1;
-    // document.getElementById("u-ranger-2").innerHTML = u2;
-    // document.getElementById("u-ranger-3").innerHTML = u3;
-    // document.getElementById("u-ranger-4").innerHTML = u4;
     // count += 6;
     // if (count / 100 >= freeBoxCount) {
     //     freeBoxCount++;
@@ -183,28 +161,3 @@ export default async function normalGacha(allRangers, amount, eachRateUltra, eac
 //     }
 //     return true;
 // }
-
-
-
-// // Function to handle modal opening after closing it
-// // function handleModalReopen() {
-// //     // Get the modal element and modal object
-// //     const myModalElement = document.getElementById('myModal');
-// //     const modal = new bootstrap.Modal(myModalElement);
-
-// //     // Add event listener for the "Random" button
-// //     document.getElementById('randomButton').addEventListener('click', function () {
-// //         // Close the modal first
-// //         modal.hide();
-
-// //         // Immediately show the modal again after it has been hidden
-// //         myModalElement.addEventListener('hidden.bs.modal', function () {
-// //             modal.show();
-// //         }, {
-// //             once: true
-// //         }); // Use { once: true } to ensure it only runs once after modal is hidden
-// //     });
-// // }
-
-// // Call the function to initialize the modal event
-// // handleModalReopen();

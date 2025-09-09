@@ -1,17 +1,17 @@
 [
   {
-    "Name": "Radish Brown",
+    "Name": "mock up 1 normal",
     "Image": "https://gachame.github.io/images/rangers/u1534e-brown-thum.png",
     "UnitCode": "u1534e-brown"
   },
   {
-    "Name": "Farmer Sally",
-    "Image": "https://gachame.github.io/images/rangers/u1532e-sally-thum.png",
+    "Name": "mock up 2 normal",
+    "Image": "https://gachame.github.io/images/rangers/u1534e-brown-thum.png",
     "UnitCode": "u1532e-sally"
   },
   {
-    "Name": "Field Moon",
-    "Image": "https://gachame.github.io/images/rangers/u1530e-moon-thum.png",
+    "Name": "mock up 3 normal",
+    "Image": "https://gachame.github.io/images/rangers/u1534e-brown-thum.png",
     "UnitCode": "u1530e-moon"
   }
 ]
