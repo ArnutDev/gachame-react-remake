@@ -13,8 +13,8 @@ export default async function normalGacha(allRangers, gachaConfig) {
     let rangers = [];
     let specials = Array(7).fill(false);
     let specialsCountArray;
-    const randomStart = 30; //0
-    const randomEnd = 30; //100
+    const randomStart = 0; //0
+    const randomEnd = 100; //100
     for (let i = 0; i < 7; i++) {
         const chance = getGrade(randomStart, randomEnd);
         let rangersJson = [];
@@ -24,7 +24,7 @@ export default async function normalGacha(allRangers, gachaConfig) {
             if (randomStart !== randomEnd) {
                 result = getAllRandom(gachaConfig.amountUltra, gachaConfig.eachRateUltra, rateRange);
             } else { //for test
-                result = false;
+                result = true;
             }
             const indexJson8U = 2;
             const indexJson8USpecial = 5;
@@ -72,8 +72,8 @@ export default async function normalGacha(allRangers, gachaConfig) {
         [specials[i], specialsCountArray] = getSpecial(gachaConfig, rangers[i], allRangers[5], allRangers[4]);
         // console.log(rangersJson) //test
     }
-    console.log("before return specials:", specials);
-    console.log('specialsCountArray', specialsCountArray.length)
+    // console.log("before return specials:", specials);
+    // console.log('specialsCountArray', specialsCountArray.length)
     return [rangers, specials, specialsCountArray];
     //ไฮไลท์อันที่ special ให้เป็นหน้าที่ของ UI 
     //ทำระบบนับ ruby, สถิติ และระบบ การันตี

@@ -17,13 +17,14 @@ export default function RandomRangersPage() {
   const [currentCard, setCurrentCard] = useState(null);
   const data = [
     {
-      cardInfo: {          
-        title: "box1",
-        image: "https://example.com/images/ranger-red.png",
-        info: "Odd-up:"
+      cardInfo: {   
+        cardId: 1,       
+        title: "Gacha Rangers 6+1 Click!",
+        image: "/src/assets/gacha-cover-image/banner-ranger-box-A.png",
+        info: "Odds-up:\n - xxx\n - xxx\n - xxx"
       },
       gachaConfig: {
-        boxId: 1,
+        
         month: "even",
         rateUp: false,       
         amountUltra: 2,
@@ -34,7 +35,7 @@ export default function RandomRangersPage() {
         rateUp8CIndex1: -1,
         rateUp8CIndex2: -1,
         unRateUp8UIndex1:-1,
-        // boxId: 1,
+        
         // month: "odd",
         // rateUp: false,       
         // amountUltra: 4,
@@ -48,13 +49,13 @@ export default function RandomRangersPage() {
       }
     },
     {
-      cardInfo: {          
-        title: "box2",
-        image: "https://example.com/images/ranger-red.png",
-        info: "xxx"
+      cardInfo: {   
+        // boxId: 2,       
+        title: "Gacha Rangers 6+1 Click!",
+        image: "/src/assets/gacha-cover-image/banner-ranger-box-B.png",
+        info: "Odds-up:\n - xxx\n - xxx\n"
       },
       gachaConfig: {
-        boxId: 2,
         month: "even",
         rateUp: true,       
         amountUltra: 2,
@@ -66,7 +67,6 @@ export default function RandomRangersPage() {
         rateUp8CIndex1: 0,
         rateUp8CIndex2: 1,
         unRateUp8CIndex1:2,
-        // boxId: 2,
         // month: "odd",
         // rateUp: true,      
         // amountUltra: 2,
@@ -80,13 +80,13 @@ export default function RandomRangersPage() {
       }
     },
     {
-      cardInfo: {          
-        title: "box3",
-        image: "https://example.com/images/ranger-red.png",
-        info: "xxx"
+      cardInfo: {  
+        // boxId: 3,
+        title: "Gacha Rangers 6+1 Click!",
+        image: "/src/assets/gacha-cover-image/banner-ranger-box-C.png",
+        info: "Odds-up:\n - xxx\n - xxx\n"
       },
       gachaConfig: {
-        boxId: 3,
         month: "even",
         rateUp: true,       
         amountUltra: 2,
@@ -98,7 +98,6 @@ export default function RandomRangersPage() {
         rateUp8CIndex1: 0,
         rateUp8CIndex2: 2,
         unRateUp8CIndex1:1,
-        // boxId: 3,
         // month: "odd",
         // rateUp: true,     
         // amountUltra: 2,
@@ -133,11 +132,11 @@ export default function RandomRangersPage() {
 
   const handleRandom = async (gachaConfig) => {
     const [slots,specials,specialsCountArray] = await normalGacha(allRangers,gachaConfig);
-    console.log("after return specials", specials);
+    // console.log("after return specials", specials);
     setCurrentSpecials(specials);
     
     setCurrentSlots(slots);
-    setTotalRandoms(prev => prev + 1);
+    setTotalRandoms(prev => prev + 6);
     setSpecialCount(specialsCountArray);//??
 
     // setSpecialCount(prev => prev + calculateSpecial(slots));
@@ -151,10 +150,10 @@ export default function RandomRangersPage() {
     setTimeout(() => handleRandom(currentCard), 400);
   };
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <div className="d-flex flex-column" style={{ minHeight: "auto" }}>
       <div className="flex-grow-1">
         <h2 className="my-3 text-center text-light">Gacha Rangers For October</h2>
-        <div className="row flex-fill">
+        <div className="row flex-fill g-1">
           {data.map((item, idx) => (
             <div key={idx} className="col-md-4 my-3">
               <RangerCard 

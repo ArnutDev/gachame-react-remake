@@ -125,11 +125,11 @@ export function getAllRandom(amount, eachRate, rateRange) {
 }
 
 export function getSpecial(gachaConfig, rangers, Json8USpecial, Json8CSpecial) {
-    console.log('at getSpecial');
+    // console.log('at getSpecial');
     for (let i = 0; i < Json8CSpecial.length; i++) {
         if (rangers.Name === Json8CSpecial[i].Name) {
             specialsCountArray[i]++;
-            console.log('at 8c', rangers.Name)
+            // console.log('at 8c', rangers.Name)
             return [true, specialsCountArray]; // found at 8c
         }
     }
@@ -140,7 +140,7 @@ export function getSpecial(gachaConfig, rangers, Json8USpecial, Json8CSpecial) {
             } else {
                 specialsCountArray[j]++;
             }
-            console.log('at 8u', rangers.Name)
+            // console.log('at 8u', rangers.Name)
             return [true, specialsCountArray]; // found at 8u
         }
     }
@@ -197,7 +197,7 @@ export function getRangersEvenMonth(grade, result, indexJsonNormal, indexJsonSpe
             rangersJson.push(specialJson[gachaConfig.rateUp8UIndex1]);
         }
         specials[i] = true;
-        console.log('get and rate-up:', specials[i])
+        // console.log('get and rate-up:', specials[i])
     } else { // unrate-up box
         rangersJson = [...allRangers[indexJsonNormal], ...allRangers[indexJsonSpecial]];
         specials[i] = null;

@@ -1,7 +1,7 @@
 
 export default function RangerFooter({ specialCount,rangerDetails }) {
   return (
-    <footer className="mt-auto bg-dark text-center">
+    <footer className="mt-3 bg-dark text-center">
       <div className="container">
         <table className="table table-bordered table-sm my-0">
           <thead className="table-dark">
@@ -14,7 +14,7 @@ export default function RangerFooter({ specialCount,rangerDetails }) {
               {rangerDetails?.map((ranger, idx) => (
                 <td key={idx}>
                   <img
-                    className="py-2"
+                    className="py-2" 
                     src={ranger.Image}
                     alt={ranger.Name}
                     style={{ width: "60px", height: "100px" }}

@@ -16,12 +16,12 @@ export default function RandomModal({ slots,specials, totalRandoms, onClose, onR
                 return (
                   <div
                     key={idx}
-                    className="col-3 p-1"
+                    className="col-3 "
                     style={{
                       textAlign: "center",
-                      border: isSpecial ? "2px solid green" : "none",
+                      border: isSpecial ? "4px solid green" : "none",
                       borderRadius: "4px",
-                      padding: "4px",
+                      padding: "4px"
                     }}
                   >
                     <img
