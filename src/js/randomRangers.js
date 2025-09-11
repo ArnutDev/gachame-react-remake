@@ -2,41 +2,37 @@ import {
     getGrade,
     getAllRandom,
     getRandomPickRanger,
-    getRangersArray
+    getRangersOddMonth,
+    getRangersEvenMonth,
+    getSpecial
 } from "./utils.js";
 
-// let count = 0;
-// let freeBoxCount = 1;
-// let u1 = 0;
-// let u2 = 0;
-// let u3 = 0;
-// let u4 = 0;
+
 
 export default async function normalGacha(allRangers, gachaConfig) {
     let rangers = [];
     let specials = [];
-    const randomStart = 1;
-    const randomEnd = 1;
+    let specialsCountArray;
+    const randomStart = 0; //0
+    const randomEnd = 100; //100
     for (let i = 0; i < 7; i++) {
         const chance = getGrade(randomStart, randomEnd);
         let rangersJson = [];
         if (chance <= 3) {
             const rateRange = 3.00;
             let result
-            if (gachaConfig.month === "even" && !gachaConfig.rateUp) { //even and unrateUp only
-                rangersJson = [...allRangers[2]];
-                const specialJson = allRangers[5]; //8u
-                rangersJson.push(specialJson[0]);
-                rangersJson.push(specialJson[1]);
+            if (randomStart !== randomEnd) {
+                result = getAllRandom(gachaConfig.amountUltra, gachaConfig.eachRateUltra, rateRange);
+            } else { //for test
+                result = true;
+            }
+            const indexJson8U = 2;
+            const indexJson8USpecial = 5;
+            if (gachaConfig.month === "odd") {
+                rangersJson = getRangersOddMonth(result, indexJson8U, indexJson8USpecial, i, allRangers, gachaConfig);
             } else {
-                if (randomStart !== randomEnd) {
-                    result = getAllRandom(gachaConfig.amountUltra, gachaConfig.eachRateUltra, rateRange);
-                } else { //for test
-                    result = true;
-                }
-                const indexJson8U = 2;
-                const indexJson8USpecial = 5;
-                rangersJson = getRangersArray(result, indexJson8U, indexJson8USpecial, i, allRangers, gachaConfig);
+                const grade = "Ultra";
+                rangersJson = getRangersEvenMonth(grade, result, indexJson8U, indexJson8USpecial, i, allRangers, gachaConfig);
             }
         } else if (chance <= 8) {
             rangersJson = [...allRangers[0]]; //7u
@@ -44,22 +40,18 @@ export default async function normalGacha(allRangers, gachaConfig) {
         } else if (chance <= 30) {
             const rateRange = 22.00;
             let result;
-            if (gachaConfig.month === "even" && !gachaConfig.rateUp) { //even and unrateUp only
-                rangersJson = [...allRangers[3]];
-                const specialJson = allRangers[4]; //8c
-                rangersJson.push(specialJson[0]);
-                rangersJson.push(specialJson[1]);
-                rangersJson.push(specialJson[2]);
+            if (randomStart !== randomEnd) {
+                result = getAllRandom(gachaConfig.amountCommon, gachaConfig.eachRateCommon, rateRange);
+            } else { //for test
+                result = true;
+            }
+            const indexJson8C = 3;
+            const indexJson8CSpecial = 4;
+            if (gachaConfig.month === "odd") {
+                rangersJson = getRangersOddMonth(result, indexJson8C, indexJson8CSpecial, i, allRangers, gachaConfig);
             } else {
-                if (randomStart !== randomEnd) {
-                    result = getAllRandom(gachaConfig.amountCommon, gachaConfig.eachRateCommon, rateRange);
-                } else { //for test
-                    result = true;
-                }
-
-                const indexJson8C = 3;
-                const indexJson8CSpecial = 4;
-                rangersJson = getRangersArray(result, indexJson8C, indexJson8CSpecial, i, allRangers, gachaConfig);
+                const grade = "Common";
+                rangersJson = getRangersEvenMonth(grade, result, indexJson8C, indexJson8CSpecial, i, allRangers, gachaConfig);
             }
         } else {
             rangersJson = [...allRangers[1]]; //7c
@@ -67,9 +59,12 @@ export default async function normalGacha(allRangers, gachaConfig) {
         }
         const randomIndex = getRandomPickRanger(0, rangersJson.length - 1);
         rangers[i] = rangersJson[randomIndex];
-        console.log(rangersJson) //test
+        if (specials[i] === null) {
+            [specials[i], specialsCountArray] = getSpecial(gachaConfig, rangers[i], allRangers[4], allRangers[5]);
+        }
+        // console.log(rangersJson) //test
     }
-    return [rangers, specials];
+    return [rangers, specials, specialsCountArray];
     //ไฮไลท์อันที่ special ให้เป็นหน้าที่ของ UI 
     //ทำระบบนับ ruby, สถิติ และระบบ การันตี
     // count += 6;

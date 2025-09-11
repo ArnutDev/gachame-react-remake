@@ -1,3 +1,8 @@
+// let count = 0;
+// let freeBoxCount = 1;
+let specialsCountArray = [0, 0, 0, 0];
+
+
 export function getGrade(min, max) {
     const result = parseFloat((Math.random() * (max - min) + min).toFixed(2));
     // console.log('chance by getGrade', result)
@@ -104,7 +109,7 @@ export function checkValueInRange(value, arr) {
     }
     //if the given value not in any range
     // console.log(`Result: Value ${value} is not within any range.`);
-    return false; // this mean got common
+    return false; // this mean got Common
 }
 
 export function getRandomPickRanger(min, max) {
@@ -119,29 +124,81 @@ export function getAllRandom(amount, eachRate, rateRange) {
     return result
 }
 
-export function getRangersArray(result, indexJsonNormal, indexJsonSpecial, i, allRangers, gachaConfig) {
+export function getSpecial(gachaConfig, rangers, Json8USpecial, Json8CSpecial) {
+    for (let i = 0; i < Json8CSpecial.length; i++) {
+        if (rangers.Name === Json8CSpecial[i].Name) {
+            specialsCountArray[i]++;
+            return [true, specialsCountArray]; // found at 8c
+        }
+    }
+    for (let j = 0; j < Json8USpecial.length; j++) {
+        if (rangers.Name === Json8USpecial[j].Name) {
+            if (gachaConfig.month === "even" && j === 0) {
+                specialsCountArray[j + 1]++;
+            } else {
+                specialsCountArray[j]++;
+            }
+            return [true, specialsCountArray]; // found at 8u
+        }
+    }
+
+    return [false, specialsCountArray];
+}
+
+export function getRangersOddMonth(result, indexJsonNormal, indexJsonSpecial, i, allRangers, gachaConfig) {
     let rangersJson = []
-    // let specials = []
-    if (!result && !gachaConfig.rateUp) {
-        rangersJson = [...allRangers[indexJsonNormal]]; //8u-normal
-        // specials[i] = false
-    } else if (result && !gachaConfig.rateUp) {
-        rangersJson = [...allRangers[indexJsonSpecial]]; //8u-special
-        // specials[i] = true;
-    } else if (!result && gachaConfig.rateUp) {
+    let specials = []
+    if (!result && gachaConfig.rateUp) {
         rangersJson = [...allRangers[indexJsonNormal]]; //8u-normal + 8u-special
         const specialJson = allRangers[indexJsonSpecial]; //8u
         //add unrate-up
-        rangersJson.push(specialJson[gachaConfig.unRateUp1]);
-        if (gachaConfig.unRateUp2 >= 0) { //even
-            rangersJson.push(specialJson[gachaConfig.unRateUp2]);
-        }
-        // specials[i] = true;//?? มันมี8ปกติผสมด้วยจะ specialไม่ได้
-    } else {
+        rangersJson.push(specialJson[gachaConfig.unRateUpIndex1]);
+        rangersJson.push(specialJson[gachaConfig.unRateUpIndex2]);
+        specials[i] = null; // need to call func at normalGacha after this
+    } else if (result && gachaConfig.rateUp) {
         const specialJson = allRangers[indexJsonSpecial]; //8u-special
-        rangersJson.push(specialJson[gachaConfig.rangerIndex1]);
-        rangersJson.push(specialJson[gachaConfig.rangerIndex2]);
-        // specials[i] = true;
+        rangersJson.push(specialJson[gachaConfig.rateUpIndex1]);
+        rangersJson.push(specialJson[gachaConfig.rateUpIndex1]);
+        specials[i] = true;
+    } else if (!result && !gachaConfig.rateUp) {
+        rangersJson = [...allRangers[indexJsonNormal]]; //8u-normal
+        specials[i] = false
+    } else {
+        rangersJson = [...allRangers[indexJsonSpecial]]; //8u-special
+        specials[i] = true;
+    }
+    return rangersJson;
+}
+
+export function getRangersEvenMonth(grade, result, indexJsonNormal, indexJsonSpecial, i, allRangers, gachaConfig) {
+    let rangersJson = []
+    let specials = []
+    // console.log('even month')
+    if (!result && gachaConfig.rateUp) {
+        rangersJson = [...allRangers[indexJsonNormal]]; //8u-normal + 8u-special
+        const specialJson = allRangers[indexJsonSpecial]; //8u
+        //add unrate-up
+        if (grade === "Common") {
+            rangersJson.push(specialJson[gachaConfig.unRateUp8CIndex1]);
+        } else {
+            rangersJson.push(specialJson[gachaConfig.unRateUp8UIndex1]);
+        }
+        specials[i] = null; // need to call func at normalGacha after this
+        // console.log('not get and rate-up:', rangersJson)
+    } else if (result && gachaConfig.rateUp) {
+        const specialJson = allRangers[indexJsonSpecial];
+        if (grade === "Common") { //8c-special
+            rangersJson.push(specialJson[gachaConfig.rateUp8CIndex1]);
+            rangersJson.push(specialJson[gachaConfig.rateUp8CIndex2]);
+        } else { //8u-special
+            rangersJson.push(specialJson[gachaConfig.rateUp8UIndex1]);
+        }
+        specials[i] = true;
+        // console.log('get and rate-up:', rangersJson)
+    } else { // unrate-up box
+        rangersJson = [...allRangers[indexJsonNormal], ...allRangers[indexJsonSpecial]];
+        specials[i] = null;
+        // console.log('unrate-up:', rangersJson)
     }
     return rangersJson;
 }
