@@ -1,5 +1,5 @@
 export default function RandomModal({ slots,specials, totalRandoms, onClose, onRandomAgain }) {
-  // console.log(slots)
+  // console.log(specials[0],specials[1],specials[2],specials[3],specials[4],specials[5],specials[6]);
   return (
     <div className="modal d-block" tabIndex="-1" style={{ backgroundColor: "rgba(0,0,0,0.5)" }}>
       <div className="modal-dialog modal-dialog-centered modal-lg">
@@ -11,7 +11,8 @@ export default function RandomModal({ slots,specials, totalRandoms, onClose, onR
           <div className="modal-body">
             <div className="row g-2 justify-content-center text-center">
               {slots.map((slot, idx) => {
-                const isSpecial = specials[idx]; // ใช้ idx ตรวจว่า special หรือไม่
+                const isSpecial = specials[idx]; 
+                console.log("in modal",idx, slot.Name, isSpecial);
                 return (
                   <div
                     key={idx}

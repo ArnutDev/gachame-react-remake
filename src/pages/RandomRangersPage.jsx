@@ -12,7 +12,8 @@ export default function RandomRangersPage() {
   const [currentSlots, setCurrentSlots] = useState([]);
   const [currentSpecials, setCurrentSpecials] = useState([]);
   const [totalRandoms, setTotalRandoms] = useState(0);
-  const [specialCount, setSpecialCount] = useState([0,0,0,0]);//??
+  const [specialCount, setSpecialCount] = useState([0,0,0]);//even
+  // const [specialCount, setSpecialCount] = useState([0,0,0,0]);//odd
   const [currentCard, setCurrentCard] = useState(null);
   const data = [
     {
@@ -132,7 +133,9 @@ export default function RandomRangersPage() {
 
   const handleRandom = async (gachaConfig) => {
     const [slots,specials,specialsCountArray] = await normalGacha(allRangers,gachaConfig);
+    console.log("after return specials", specials);
     setCurrentSpecials(specials);
+    
     setCurrentSlots(slots);
     setTotalRandoms(prev => prev + 1);
     setSpecialCount(specialsCountArray);//??
@@ -162,6 +165,7 @@ export default function RandomRangersPage() {
             </div>
           ))}
         </div>
+      
       </div>
       {modalOpen && (
         <RandomModal
