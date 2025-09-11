@@ -1,17 +1,17 @@
 [
   {
     "Name": "mock up 1 normal",
-    "Image": "https://gachame.github.io/images/rangers/u1534e-brown-thum.png",
+    "Image": "https://gachame.github.io/images/rangers/u1515u-sally-thum.png",
     "UnitCode": "u1534e-brown"
   },
   {
     "Name": "mock up 2 normal",
-    "Image": "https://gachame.github.io/images/rangers/u1534e-brown-thum.png",
+    "Image": "https://gachame.github.io/images/rangers/u1515u-sally-thum.png",
     "UnitCode": "u1532e-sally"
   },
   {
     "Name": "mock up 3 normal",
-    "Image": "https://gachame.github.io/images/rangers/u1534e-brown-thum.png",
+    "Image": "https://gachame.github.io/images/rangers/u1513u-moon-thum.png",
     "UnitCode": "u1530e-moon"
   }
 ]

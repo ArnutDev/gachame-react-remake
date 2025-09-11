@@ -13,8 +13,8 @@ export default async function normalGacha(allRangers, gachaConfig) {
     let rangers = [];
     let specials = Array(7).fill(false);
     let specialsCountArray;
-    const randomStart = 1; //0
-    const randomEnd = 1; //100
+    const randomStart = 30; //0
+    const randomEnd = 30; //100
     for (let i = 0; i < 7; i++) {
         const chance = getGrade(randomStart, randomEnd);
         let rangersJson = [];
@@ -24,15 +24,20 @@ export default async function normalGacha(allRangers, gachaConfig) {
             if (randomStart !== randomEnd) {
                 result = getAllRandom(gachaConfig.amountUltra, gachaConfig.eachRateUltra, rateRange);
             } else { //for test
-                result = true;
+                result = false;
             }
             const indexJson8U = 2;
             const indexJson8USpecial = 5;
             if (gachaConfig.month === "odd") {
-                [rangersJson, specials] = getRangersOddMonth(result, indexJson8U, indexJson8USpecial, i, allRangers, gachaConfig);
+                const [rangers, isSpecials] = getRangersOddMonth(result, indexJson8U, indexJson8USpecial, i, allRangers, gachaConfig);
+                rangersJson = rangers;
+                specials[i] = isSpecials;
             } else {
                 const grade = "Ultra";
-                [rangersJson, specials] = getRangersEvenMonth(grade, result, indexJson8U, indexJson8USpecial, i, allRangers, gachaConfig);
+                const [rangers, isSpecials] = getRangersEvenMonth(grade, result, indexJson8U, indexJson8USpecial, i, allRangers, gachaConfig);;
+                rangersJson = rangers;
+                specials[i] = isSpecials;
+
             }
         } else if (chance <= 8) {
             rangersJson = [...allRangers[0]]; //7u
@@ -48,10 +53,15 @@ export default async function normalGacha(allRangers, gachaConfig) {
             const indexJson8C = 3;
             const indexJson8CSpecial = 4;
             if (gachaConfig.month === "odd") {
-                [rangersJson, specials] = getRangersOddMonth(result, indexJson8C, indexJson8CSpecial, i, allRangers, gachaConfig);
+                const [rangers, isSpecials] = getRangersOddMonth(result, indexJson8C, indexJson8CSpecial, i, allRangers, gachaConfig);
+                rangersJson = rangers;
+                specials[i] = isSpecials;
             } else {
                 const grade = "Common";
-                [rangersJson, specials] = getRangersEvenMonth(grade, result, indexJson8C, indexJson8CSpecial, i, allRangers, gachaConfig);
+                const [rangers, isSpecials] = getRangersEvenMonth(grade, result, indexJson8C, indexJson8CSpecial, i, allRangers, gachaConfig);
+                rangersJson = rangers;
+                specials[i] = isSpecials;
+
             }
         } else {
             rangersJson = [...allRangers[1]]; //7c
@@ -63,7 +73,7 @@ export default async function normalGacha(allRangers, gachaConfig) {
         // console.log(rangersJson) //test
     }
     console.log("before return specials:", specials);
-
+    console.log('specialsCountArray', specialsCountArray.length)
     return [rangers, specials, specialsCountArray];
     //ไฮไลท์อันที่ special ให้เป็นหน้าที่ของ UI 
     //ทำระบบนับ ruby, สถิติ และระบบ การันตี

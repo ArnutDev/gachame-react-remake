@@ -12,7 +12,7 @@ export default function RandomModal({ slots,specials, totalRandoms, onClose, onR
             <div className="row g-2 justify-content-center text-center">
               {slots.map((slot, idx) => {
                 const isSpecial = specials[idx]; 
-                console.log("in modal",idx, slot.Name, isSpecial);
+                // console.log("in modal",idx, slot.Name, isSpecial);
                 return (
                   <div
                     key={idx}

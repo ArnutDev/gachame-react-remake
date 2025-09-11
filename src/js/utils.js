@@ -1,6 +1,6 @@
 // let count = 0;
 // let freeBoxCount = 1;
-let specialsCountArray = [0, 0, 0, 0];
+let specialsCountArray = [0, 0, 0]; //change this
 
 
 export function getGrade(min, max) {

@@ -20,7 +20,7 @@ export default function RandomRangersPage() {
       cardInfo: {          
         title: "box1",
         image: "https://example.com/images/ranger-red.png",
-        info: "xxx"
+        info: "Odd-up:"
       },
       gachaConfig: {
         boxId: 1,
@@ -150,7 +150,6 @@ export default function RandomRangersPage() {
     setModalOpen(false);
     setTimeout(() => handleRandom(currentCard), 400);
   };
-
   return (
     <div className="d-flex flex-column min-vh-100">
       <div className="flex-grow-1">
@@ -176,7 +175,8 @@ export default function RandomRangersPage() {
           onRandomAgain={handleRandomAgain}
         />
       )}
-      <RangerFooter specialCount={specialCount} />
+      
+      <RangerFooter specialCount={specialCount} rangerDetails={allRangers[4] || []} />
       
  </div> );
 }
