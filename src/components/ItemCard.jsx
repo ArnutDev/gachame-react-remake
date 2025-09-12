@@ -1,4 +1,4 @@
-export default function RangerCard({ cardInfo, onRandom }) { 
+export default function ItemCard({ cardInfo, onRandom }) { 
   return (
     <div className="card text-center bg-light mx-3" style={{ minHeight: "300px" }}>
       <div className="card-img-top" style={{ height: "50%", overflow: "hidden" }}>

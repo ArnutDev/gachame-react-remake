@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
       <div className="container-fluid">
         {/* ชื่อเว็บ (ซ้าย) */}
-        <Link className="navbar-brand text-light" to="/">
+        <Link className="navbar-brand text-light ms-4" to="/">
           GachaMe
         </Link>
 
@@ -24,7 +24,7 @@ export default function Navbar() {
 
         {/* เมนู (ขวา) */}
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
+          <ul className="navbar-nav ms-auto me-3">
             <li className="nav-item">
               <Link className="nav-link active text-light" to="/">
                 Home

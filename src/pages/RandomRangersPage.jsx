@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import RangerCard from "../components/RangerCard";
+import ItemCard from "../components/ItemCard";
 import RandomModal from "../components/RandomModal";
 import RangerFooter from "../components/RangerFooter";
 import normalGacha  from "../js/randomRangers.js";
@@ -153,10 +153,10 @@ export default function RandomRangersPage() {
     <div className="d-flex flex-column" style={{ minHeight: "auto" }}>
       <div className="flex-grow-1">
         <h2 className="my-3 text-center text-light">Gacha Rangers For October</h2>
-        <div className="row flex-fill g-1">
+        <div className="row flex-fill g-1 mx-3">
           {data.map((item, idx) => (
             <div key={idx} className="col-md-4 my-3">
-              <RangerCard 
+              <ItemCard
                 cardInfo={item.cardInfo} 
                 onRandom={() => handleRandom(item.gachaConfig)} 
               />
