@@ -56,7 +56,7 @@ export default function HomePage(){
                     </Link>
                 </div>
             </div>
-            <footer className="bg-warning text-center text-muted py-3 mt-2">
+            <footer className="bg-warning text-center text-muted py-3 mt-3">
                 <div className="container">
                     <p className="mb-2" style={{ fontSize: "0.9rem" }}>
                     GachaMe is a LINE Rangers gacha simulation website created 
