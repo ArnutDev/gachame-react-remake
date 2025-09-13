@@ -14,7 +14,7 @@ export default function RandomGearsPage() {
   const [totalRandoms, setTotalRandoms] = useState(0);
   const [specialCount, setSpecialCount] = useState([0,0,0]);//even
   // const [specialCount, setSpecialCount] = useState([0,0,0,0]);//odd
-  const [currentCard, setCurrentCard] = useState(null);
+  const [currentCard, setCurrentCard] = useState(null); 
   const data = [
     {
       cardInfo: {   
