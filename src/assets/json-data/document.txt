@@ -1,7 +1,9 @@
 *Change
 
-delete all of "XXX-special.json" by UnitCode or ItemCode on Github(gachame) before anything
+maybe delete all of "XXX-special.json" by UnitCode or ItemCode on Github(gachame) before anything
 add new rangers and gears in "XXX-special.json"
+
+*dont forget to upload gacha banner to Github for faster load
 
 index.html
     -none

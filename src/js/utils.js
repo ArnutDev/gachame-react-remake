@@ -124,7 +124,19 @@ export function getAllRandom(amount, eachRate, rateRange) {
     return result
 }
 
-export function getSpecial(gachaConfig, rangers, Json8USpecial, Json8CSpecial) {
+export function getGuaranteedReward(itemJson) {
+    const randomIndex = getRandomPickRanger(0, itemJson.length - 1);
+    // console.log(randomIndex)
+    const item = itemJson[randomIndex];
+    for (let i = 0; i < itemJson.length; i++) {
+        if (item.Name === itemJson[i].Name) {
+            specialsCountArray[i]++;
+        }
+    }
+    return [item, specialsCountArray];
+}
+
+export function getSpecialRanger(gachaConfig, rangers, Json8USpecial, Json8CSpecial) {
     // console.log('at getSpecial');
     for (let i = 0; i < Json8CSpecial.length; i++) {
         if (rangers.Name === Json8CSpecial[i].Name) {
@@ -147,6 +159,7 @@ export function getSpecial(gachaConfig, rangers, Json8USpecial, Json8CSpecial) {
 
     return [false, specialsCountArray];
 }
+
 
 export function getRangersOddMonth(result, indexJsonNormal, indexJsonSpecial, i, allRangers, gachaConfig) {
     let rangersJson = []
@@ -204,4 +217,28 @@ export function getRangersEvenMonth(grade, result, indexJsonNormal, indexJsonSpe
         // console.log('unrate-up:', rangersJson)
     }
     return [rangersJson, specials];
+}
+
+export function getSpecialGear(gachaConfig, rangers, Json8USpecial, Json8CSpecial) {
+    // console.log('at getSpecial');
+    for (let i = 0; i < Json8CSpecial.length; i++) {
+        if (rangers.Name === Json8CSpecial[i].Name) {
+            specialsCountArray[i]++;
+            // console.log('at 8c', rangers.Name)
+            return [true, specialsCountArray]; // found at 8c
+        }
+    }
+    for (let j = 0; j < Json8USpecial.length; j++) {
+        if (rangers.Name === Json8USpecial[j].Name) {
+            if (gachaConfig.month === "even") {
+                specialsCountArray[j + 1]++;
+            } else {
+                specialsCountArray[j]++;
+            }
+            // console.log('at 8u', rangers.Name)
+            return [true, specialsCountArray]; // found at 8u
+        }
+    }
+
+    return [false, specialsCountArray];
 }
