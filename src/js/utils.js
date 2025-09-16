@@ -186,6 +186,34 @@ export function getRangersOddMonth(result, indexJsonNormal, indexJsonSpecial, i,
     return [rangersJson, specials];
 }
 
+export function getGearsOddMonth(result, indexJsonNormal, indexJsonSpecial, i, allGears, gachaConfig) {
+    let gearsJson = []
+    let specials = []
+    if (!result && gachaConfig.rateUp) {
+        gearsJson = [...allGears[indexJsonNormal]]; //8u-normal + 8u-special
+        const specialJson = allGears[indexJsonSpecial]; //8u
+        //add unrate-up
+        gearsJson.push(specialJson[gachaConfig.unRateUpIndex1]);
+        gearsJson.push(specialJson[gachaConfig.unRateUpIndex2]);
+        specials[i] = null; // need to call func at normalGacha after this
+    } else if (result && gachaConfig.rateUp) {
+        const specialJson = allGears[indexJsonSpecial]; //8u-special
+        gearsJson.push(specialJson[gachaConfig.rateUpIndex1]);
+        gearsJson.push(specialJson[gachaConfig.rateUpIndex1]);
+        specials[i] = true;
+    } else if (!result && !gachaConfig.rateUp) {
+        gearsJson = [...allGears[indexJsonNormal]]; //8u-normal
+        const specialJson = allGears[indexJsonSpecial]; //8u-special
+        for (let i = 0; i < 3;)
+            specials[i] = false
+    } else {
+        gearsJson = [...allGears[indexJsonSpecial]]; //8u-special
+        specials[i] = true;
+    }
+    return [gearsJson, specials];
+}
+
+
 export function getRangersEvenMonth(grade, result, indexJsonNormal, indexJsonSpecial, i, allRangers, gachaConfig) {
     let rangersJson = []
     let specials = []

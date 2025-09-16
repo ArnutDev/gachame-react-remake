@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react";
 import ItemCard from "../components/ItemCard";
 import RandomModal from "../components/RandomModal";
-import RangerFooter from "../components/RangerFooter";
+import ItemFooter from "../components/ItemFooter.jsx";
 import rangersGacha  from "../js/random.js";
 import GuaranteeModal from "../components/GuaranteeModal.jsx";
 import { getGuaranteedReward } from "../js/utils.js";
@@ -222,7 +222,7 @@ export default function RandomRangersPage() {
         />
       )}
       
-      <RangerFooter specialCount={specialCount} rangerDetails={allRangers[4] || []} />
+      <ItemFooter specialCount={specialCount} itemDetails={allRangers[4] || []} />
       
  </div> );
 }

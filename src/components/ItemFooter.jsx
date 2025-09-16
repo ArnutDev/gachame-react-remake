@@ -1,5 +1,5 @@
 
-export default function RangerFooter({ specialCount,rangerDetails }) {
+export default function ItemFooter({ specialCount,itemDetails }) {
   return (
     <footer className="mt-3 bg-dark text-center">
       <div className="container">
@@ -11,12 +11,12 @@ export default function RangerFooter({ specialCount,rangerDetails }) {
           </thead>
           <tbody>
             <tr>
-              {rangerDetails?.map((ranger, idx) => (
+              {itemDetails?.map((item, idx) => (
                 <td key={idx}>
                   <img
                     className="py-2" 
-                    src={ranger.Image}
-                    alt={ranger.Name}
+                    src={item.Image}
+                    alt={item.Name}
                     style={{ width: "60px", height: "100px" }}
                   />
                 </td>
@@ -28,9 +28,9 @@ export default function RangerFooter({ specialCount,rangerDetails }) {
               ))}
             </tr>
             <tr>
-              {rangerDetails?.map((ranger, idx) => (
+              {itemDetails?.map((item, idx) => (
                 <td key={idx} className="py-2">
-                  {ranger.Name}
+                  {item.Name}
                 </td>
               ))}
             </tr>
