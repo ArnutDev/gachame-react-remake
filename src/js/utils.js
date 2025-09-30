@@ -186,33 +186,6 @@ export function getRangersOddMonth(result, indexJsonNormal, indexJsonSpecial, i,
     return [rangersJson, specials];
 }
 
-export function getGearsOddMonth(result, indexJsonNormal, indexJsonSpecial, i, allGears, gachaConfig) {
-    let gearsJson = []
-    let specials = []
-    if (!result && gachaConfig.rateUp) {
-        gearsJson = [...allGears[indexJsonNormal]]; //8u-normal + 8u-special
-        const specialJson = allGears[indexJsonSpecial]; //8u
-        //add unrate-up
-        gearsJson.push(specialJson[gachaConfig.unRateUpIndex1]);
-        gearsJson.push(specialJson[gachaConfig.unRateUpIndex2]);
-        specials[i] = null; // need to call func at normalGacha after this
-    } else if (result && gachaConfig.rateUp) {
-        const specialJson = allGears[indexJsonSpecial]; //8u-special
-        gearsJson.push(specialJson[gachaConfig.rateUpIndex1]);
-        gearsJson.push(specialJson[gachaConfig.rateUpIndex1]);
-        specials[i] = true;
-    } else if (!result && !gachaConfig.rateUp) {
-        gearsJson = [...allGears[indexJsonNormal]]; //8u-normal
-        const specialJson = allGears[indexJsonSpecial]; //8u-special
-        for (let i = 0; i < 3;)
-            specials[i] = false
-    } else {
-        gearsJson = [...allGears[indexJsonSpecial]]; //8u-special
-        specials[i] = true;
-    }
-    return [gearsJson, specials];
-}
-
 
 export function getRangersEvenMonth(grade, result, indexJsonNormal, indexJsonSpecial, i, allRangers, gachaConfig) {
     let rangersJson = []
@@ -247,24 +220,90 @@ export function getRangersEvenMonth(grade, result, indexJsonNormal, indexJsonSpe
     return [rangersJson, specials];
 }
 
-export function getSpecialGear(gachaConfig, rangers, Json8USpecial, Json8CSpecial) {
+export function getGearsStarOddMonth(grade, result, i, allGears, allGearsSpecial, gachaConfig) {
+    let gearsJson = []
+    let specials = []
+    if (!result && gachaConfig.rateUp) {
+        gearsJson = [...allGears]; //8c-normal
+        const specialJson = [...allGearsSpecial]; //8c-special
+        //add unrate-up
+        if (grade === "8 star") {
+            console.log("f up 8 star")
+            gearsJson.push(specialJson[gachaConfig.unRateUp8StarIndex1]); //8c
+            gearsJson.push(specialJson[gachaConfig.unRateUp8StarIndex2]); //8c
+        } else {
+            console.log("f up 7 star")
+            gearsJson.push(specialJson[gachaConfig.unRateUpIndex1]); //7c
+        }
+
+        specials[i] = null; // need to call func at normalGacha after this
+    } else if (result && gachaConfig.rateUp) {
+        // console.log(allGearsSpecial)
+        const specialJson = [...allGearsSpecial]; //8c-special
+        if (grade === "8 star") {
+            console.log("t up 8 star")
+            gearsJson.push(specialJson[gachaConfig.rateUp8StarIndex1]);
+        } else {
+            console.log("t up 7 star")
+            gearsJson.push(specialJson[gachaConfig.rateUp7StarIndex1]);
+        }
+        specials[i] = true;
+    } else if (!result && !gachaConfig.rateUp) {
+        console.log("f un ", grade, " star")
+        gearsJson = [...allGears];
+        specials[i] = false
+    } else { //result and unrate-up 
+        const specialJson = [...allGearsSpecial];
+        let startIndex = 0;
+        let endIndex = 3;
+        console.log("t un ", grade, " star")
+        if (grade !== "8 star") {
+            startIndex = 3
+            endIndex = 5
+        }
+        for (let i = startIndex; i < endIndex; i++) {
+            gearsJson.push(specialJson[i]);
+        }
+        specials[i] = true;
+    }
+    return [gearsJson, specials];
+}
+
+export function getGearsEvenMonth(result, indexJsonNormal, indexJsonSpecial, i, allGears, gachaConfig) {
+    let gearsJson = []
+    let specials = []
+    if (!result && gachaConfig.rateUp) {
+        gearsJson = [...allGears[indexJsonNormal]]; //8c-normal
+        const specialJson = allGears[indexJsonSpecial]; //8c-special
+        //add unrate-up
+        gearsJson.push(specialJson[gachaConfig.unRateUpIndex1]);
+        gearsJson.push(specialJson[gachaConfig.unRateUpIndex2]);
+        specials[i] = null; // need to call func at normalGacha after this
+    } else if (result && gachaConfig.rateUp) {
+        const specialJson = allGears[indexJsonSpecial]; //8c-special
+        gearsJson.push(specialJson[gachaConfig.rateUpIndex1]);
+        specials[i] = true;
+    } else if (!result && !gachaConfig.rateUp) {
+        gearsJson = [...allGears[indexJsonNormal]]; //8c-normal
+        specials[i] = false
+    } else { //result and unrate-up 
+        gearsJson = [...allGears[indexJsonNormal]]; //8c-normal
+        const specialJson = allGears[indexJsonSpecial];
+        for (let i = 0; i < 3; i++) {
+            gearsJson.push(specialJson[i]); //8c-special
+        }
+        specials[i] = true;
+    }
+    return [gearsJson, specials];
+}
+
+export function getSpecialGear(gears, Json8cSpecial) {
     // console.log('at getSpecial');
-    for (let i = 0; i < Json8CSpecial.length; i++) {
-        if (rangers.Name === Json8CSpecial[i].Name) {
+    for (let i = 0; i < Json8cSpecial.length; i++) {
+        if (gears.Name === Json8cSpecial[i].Name) {
             specialsCountArray[i]++;
             // console.log('at 8c', rangers.Name)
             return [true, specialsCountArray]; // found at 8c
-        }
-    }
-    for (let j = 0; j < Json8USpecial.length; j++) {
-        if (rangers.Name === Json8USpecial[j].Name) {
-            if (gachaConfig.month === "even") {
-                specialsCountArray[j + 1]++;
-            } else {
-                specialsCountArray[j]++;
-            }
-            // console.log('at 8u', rangers.Name)
-            return [true, specialsCountArray]; // found at 8u
         }
     }
 

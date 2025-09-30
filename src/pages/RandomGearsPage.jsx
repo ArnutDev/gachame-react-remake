@@ -84,10 +84,11 @@ export default function RandomGearsPage() {
         eachRate8c: 0.88,
         eachRate7c: 0.88,
         eachRate6c: 0.88,
-        rateUpIndex1: 0,
-        rateUpIndex2: 1,
-        unRateUpIndex1:2,
-        unRateUpIndex2:3
+        rateUp8StarIndex1: 0,
+        unRateUp8StarIndex1:1,
+        unRateUp8StarIndex2:2,
+        rateUp7StarIndex1: 3,
+        unRateUp7StarIndex1: 4,
       }
     },
     {
@@ -111,14 +112,17 @@ export default function RandomGearsPage() {
         // unRateUp8CIndex1:1,
         month: "odd",
         rateUp: true,     
-        amountUltra: 2,
-        amountCommon: 2,
-        eachRateUltra: 0.18,
-        eachRateCommon: 1.32,
-        rateUpIndex1: 2,
-        rateUpIndex2: 3,
-        unRateUpIndex1:0,
-        unRateUpIndex2:1 
+        amount8c: 3,
+        amount7c: 2,
+        amount6c: 1,
+        eachRate8c: 0.88,
+        eachRate7c: 0.88,
+        eachRate6c: 0.88,
+        rateUp8StarIndex1: 1,
+        unRateUp8StarIndex1:0,
+        unRateUp8StarIndex2:2,
+        rateUp7StarIndex1: 4,
+        unRateUp7StarIndex1: 3, 
       }
     }
   ]
@@ -159,7 +163,6 @@ export default function RandomGearsPage() {
         setGuaranteeButtonVisible(true); 
         return newTotal - 100;           
       }
-
       return newTotal;
     });
   };

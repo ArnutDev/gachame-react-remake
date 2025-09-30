@@ -4,9 +4,10 @@ import {
     getRandomPickRanger,
     getRangersOddMonth,
     getRangersEvenMonth,
-    getGearsOddMonth,
-    getGearsEvenMonth,
-    getSpecialRanger
+    getGearsStarOddMonth,
+    // getGearsEvenMonth,
+    getSpecialRanger,
+    getSpecialGear
 } from "./utils.js";
 
 export async function rangersGacha(allRangers, gachaConfig) {
@@ -76,12 +77,12 @@ export async function rangersGacha(allRangers, gachaConfig) {
     return [rangers, specials, specialsCountArray];
 }
 
-export async function gearsGacha(allGears, gachaConfig) {
+export default async function gearsGacha(allGears, gachaConfig) {
     let gears = [];
     let specials = Array(6).fill(false);
     let specialsCountArray;
-    const randomStart = 0; //0
-    const randomEnd = 100; //100
+    const randomStart = 30; //0
+    const randomEnd = 30; //100
     for (let i = 0; i < 6; i++) {
         const chance = getGrade(randomStart, randomEnd);
         let gearsJson = [];
@@ -89,18 +90,19 @@ export async function gearsGacha(allGears, gachaConfig) {
             const rateRange = 1.00;
             let result
             if (randomStart !== randomEnd) {
-                result = getAllRandom(gachaConfig.amountUltra, gachaConfig.eachRateUltra, rateRange);
+                result = getAllRandom(gachaConfig.amount8c, gachaConfig.eachRate8c, rateRange);
             } else { //for test
                 result = true;
             }
             const indexJson8U = 2;
             const indexJson8USpecial = 5;
+            const grade = "8 star";
             if (gachaConfig.month === "odd") {
-                const [gears, isSpecials] = getGearsOddMonth(result, indexJson8U, indexJson8USpecial, i, allGears, gachaConfig);
+                const [gears, isSpecials] = getGearsStarOddMonth(grade, result, i, allGears[3], allGears[4], gachaConfig);
                 gearsJson = gears;
                 specials[i] = isSpecials;
             } else {
-                const grade = "Ultra";
+
                 const [gears, isSpecials] = getGearsEvenMonth(grade, result, indexJson8U, indexJson8USpecial, i, allGears, gachaConfig);;
                 gearsJson = gears;
                 specials[i] = isSpecials;
@@ -114,12 +116,13 @@ export async function gearsGacha(allGears, gachaConfig) {
             if (randomStart !== randomEnd) {
                 result = getAllRandom(gachaConfig.amountCommon, gachaConfig.eachRateCommon, rateRange);
             } else { //for test
-                result = true;
+                result = false;
             }
             const indexJson8C = 3;
             const indexJson8CSpecial = 4;
+            const grade = "7 star";
             if (gachaConfig.month === "odd") {
-                const [gears, isSpecials] = getGearsOddMonth(result, indexJson8C, indexJson8CSpecial, i, allGears, gachaConfig);
+                const [gears, isSpecials] = getGearsStarOddMonth(grade, result, i, allGears[2], allGears[4], gachaConfig);
                 gearsJson = gears;
                 specials[i] = isSpecials;
             } else {
@@ -127,7 +130,6 @@ export async function gearsGacha(allGears, gachaConfig) {
                 const [gears, isSpecials] = getGearsEvenMonth(grade, result, indexJson8C, indexJson8CSpecial, i, allGears, gachaConfig);
                 gearsJson = gears;
                 specials[i] = isSpecials;
-
             }
         } else {
             gearsJson = [...allGears[1]]; //7c
@@ -135,7 +137,8 @@ export async function gearsGacha(allGears, gachaConfig) {
         }
         const randomIndex = getRandomPickRanger(0, gearsJson.length - 1);
         gears[i] = gearsJson[randomIndex];
-        [specials[i], specialsCountArray] = getSpecialRanger(gachaConfig, gears[i], allGears[5], allGears[4]);
+        console.log(gears);
+        [specials[i], specialsCountArray] = getSpecialGear(gears, allGears[4]);
         // console.log(gearsJson) //test
     }
     // console.log("before return specials:", specials);
