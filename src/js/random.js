@@ -4,13 +4,13 @@ import {
     getRandomPickRanger,
     getRangersOddMonth,
     getRangersEvenMonth,
-    getGearsStarOddMonth,
+    // getGearsOddMonth,
     // getGearsEvenMonth,
     getSpecialRanger,
-    getSpecialGear
+    // getSpecialGear
 } from "./utils.js";
 
-export async function rangersGacha(allRangers, gachaConfig) {
+export default async function rangersGacha(allRangers, gachaConfig) {
     let rangers = [];
     let specials = Array(7).fill(false);
     let specialsCountArray;
@@ -77,71 +77,70 @@ export async function rangersGacha(allRangers, gachaConfig) {
     return [rangers, specials, specialsCountArray];
 }
 
-export default async function gearsGacha(allGears, gachaConfig) {
-    let gears = [];
-    let specials = Array(6).fill(false);
-    let specialsCountArray;
-    const randomStart = 30; //0
-    const randomEnd = 30; //100
-    for (let i = 0; i < 6; i++) {
-        const chance = getGrade(randomStart, randomEnd);
-        let gearsJson = [];
-        if (chance <= 1) {
-            const rateRange = 1.00;
-            let result
-            if (randomStart !== randomEnd) {
-                result = getAllRandom(gachaConfig.amount8c, gachaConfig.eachRate8c, rateRange);
-            } else { //for test
-                result = true;
-            }
-            const indexJson8U = 2;
-            const indexJson8USpecial = 5;
-            const grade = "8 star";
-            if (gachaConfig.month === "odd") {
-                const [gears, isSpecials] = getGearsStarOddMonth(grade, result, i, allGears[3], allGears[4], gachaConfig);
-                gearsJson = gears;
-                specials[i] = isSpecials;
-            } else {
-
-                const [gears, isSpecials] = getGearsEvenMonth(grade, result, indexJson8U, indexJson8USpecial, i, allGears, gachaConfig);;
-                gearsJson = gears;
-                specials[i] = isSpecials;
-            }
-        } else if (chance <= 3) {
-            gearsJson = [...allGears[0]]; //7u
-            specials[i] = false
-        } else if (chance <= 50) {
-            const rateRange = 22.00;
-            let result;
-            if (randomStart !== randomEnd) {
-                result = getAllRandom(gachaConfig.amountCommon, gachaConfig.eachRateCommon, rateRange);
-            } else { //for test
-                result = false;
-            }
-            const indexJson8C = 3;
-            const indexJson8CSpecial = 4;
-            const grade = "7 star";
-            if (gachaConfig.month === "odd") {
-                const [gears, isSpecials] = getGearsStarOddMonth(grade, result, i, allGears[2], allGears[4], gachaConfig);
-                gearsJson = gears;
-                specials[i] = isSpecials;
-            } else {
-                const grade = "Common";
-                const [gears, isSpecials] = getGearsEvenMonth(grade, result, indexJson8C, indexJson8CSpecial, i, allGears, gachaConfig);
-                gearsJson = gears;
-                specials[i] = isSpecials;
-            }
-        } else {
-            gearsJson = [...allGears[1]]; //7c
-            specials[i] = false
-        }
-        const randomIndex = getRandomPickRanger(0, gearsJson.length - 1);
-        gears[i] = gearsJson[randomIndex];
-        console.log(gears);
-        [specials[i], specialsCountArray] = getSpecialGear(gears, allGears[4]);
-        // console.log(gearsJson) //test
-    }
-    // console.log("before return specials:", specials);
-    // console.log('specialsCountArray', specialsCountArray.length)
-    return [gears, specials, specialsCountArray];
-}
+// export default async function gearsGacha(allGears, gachaConfig) {
+//     let gears = [];
+//     let specials = Array(6).fill(false);
+//     let specialsCountArray;
+//     const randomStart = 30; //0
+//     const randomEnd = 30; //100
+//     for (let i = 0; i < 6; i++) {
+//         const chance = getGrade(randomStart, randomEnd);
+//         let gearsJson = [];
+//         if (chance <= 1) {
+//             const rateRange = 1.00;
+//             let result
+//             if (randomStart !== randomEnd) {
+//                 result = getAllRandom(gachaConfig.amount8c, gachaConfig.eachRate8c, rateRange);
+//             } else { //for test
+//                 result = true;
+//             }
+//             const indexJson8U = 2;
+//             const indexJson8USpecial = 5;
+//             const grade = "8 star";
+//             if (gachaConfig.month === "odd") {
+//                 const [gears, isSpecials] = getGearsOddMonth(grade, result, i, allGears[3], allGears[4], gachaConfig);
+//                 gearsJson = gears;
+//                 specials[i] = isSpecials;
+//             } else {
+//                 const [gears, isSpecials] = getGearsEvenMonth(grade, result, indexJson8U, indexJson8USpecial, i, allGears, gachaConfig);;
+//                 gearsJson = gears;
+//                 specials[i] = isSpecials;
+//             }
+//         } else if (chance <= 3) {
+//             gearsJson = [...allGears[0]]; //7u
+//             specials[i] = false
+//         } else if (chance <= 50) {
+//             const rateRange = 22.00;
+//             let result;
+//             if (randomStart !== randomEnd) {
+//                 result = getAllRandom(gachaConfig.amountCommon, gachaConfig.eachRateCommon, rateRange);
+//             } else { //for test
+//                 result = false;
+//             }
+//             const indexJson8C = 3;
+//             const indexJson8CSpecial = 4;
+//             const grade = "7 star";
+//             if (gachaConfig.month === "odd") {
+//                 const [gears, isSpecials] = getGearsOddMonth(grade, result, i, allGears[2], allGears[4], gachaConfig);
+//                 gearsJson = gears;
+//                 specials[i] = isSpecials;
+//             } else {
+//                 const grade = "Common";
+//                 const [gears, isSpecials] = getGearsEvenMonth(grade, result, indexJson8C, indexJson8CSpecial, i, allGears, gachaConfig);
+//                 gearsJson = gears;
+//                 specials[i] = isSpecials;
+//             }
+//         } else {
+//             gearsJson = [...allGears[1]]; //7c
+//             specials[i] = false
+//         }
+//         const randomIndex = getRandomPickRanger(0, gearsJson.length - 1);
+//         gears[i] = gearsJson[randomIndex];
+//         console.log(gears);
+//         [specials[i], specialsCountArray] = getSpecialGear(gears, allGears[4]);
+//         // console.log(gearsJson) //test
+//     }
+//     // console.log("before return specials:", specials);
+//     // console.log('specialsCountArray', specialsCountArray.length)
+//     return [gears, specials, specialsCountArray];
+// }

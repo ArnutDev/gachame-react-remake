@@ -24,12 +24,12 @@ export default function RandomModal({ slots,specials,rubyCost, totalCount,totalR
                       padding: "4px"
                     }}
                   >
-                    {/* <img
+                    <img
                       src={slot.Image}
                       alt={slot.Name}
                       className="img-fluid mb-1"
                       style={{ width: "80px", height: "100px", objectFit: "scale-down" }}
-                    /> */}
+                    />
                     <p className="mb-0">{slot.Name}</p>
                   </div>
                 );

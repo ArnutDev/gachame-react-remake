@@ -10,12 +10,12 @@ export default function GuaranteeModal({ guaranteeReward, onClose  }) {
                 <div className="modal-body">
                     <div className="row g-2 justify-content-center text-center">
                         <img
-                        src="https://gachame.github.io/images/rangers/u1513u-moon-thum.png"//guaranteeReward.Image
-                            alt="mock up 3 normal"//guaranteeReward.Name
+                        src={guaranteeReward.Image}
+                            alt={guaranteeReward.Name}
                             className="img-fluid mb-1"
                             style={{ width: "80px", height: "100px", objectFit: "scale-down" }}
                         />
-                        <p className="mb-0">mock up 3 normal</p> {/* guaranteeReward.Name */}
+                        <p className="mb-0">{guaranteeReward.Name}</p> 
                     </div>
                 </div>
             </div>

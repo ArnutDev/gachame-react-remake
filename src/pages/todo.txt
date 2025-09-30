@@ -4,3 +4,5 @@ To do
 - add cover picture to Github for hotlink (faster)
 - change function name in utils.js as getSpecial //
 - add analytic
+
+- แก้ฟังชันเกียร์

@@ -17,7 +17,7 @@ export default function ItemFooter({ specialCount,itemDetails }) {
                     className="py-2" 
                     src={item.Image}
                     alt={item.Name}
-                    style={{ width: "60px", height: "100px" }}
+                    style={{ width: "55px", height: "100px" }}
                   />
                 </td>
               ))}

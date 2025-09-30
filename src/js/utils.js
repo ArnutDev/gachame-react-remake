@@ -1,6 +1,6 @@
 // let count = 0;
 // let freeBoxCount = 1;
-let specialsCountArray = [0, 0, 0]; //change this
+let specialsCountArray = [0, 0, 0, 0]; //change this
 
 
 export function getGrade(min, max) {
@@ -220,7 +220,7 @@ export function getRangersEvenMonth(grade, result, indexJsonNormal, indexJsonSpe
     return [rangersJson, specials];
 }
 
-export function getGearsStarOddMonth(grade, result, i, allGears, allGearsSpecial, gachaConfig) {
+export function getGearsOddMonth(grade, result, i, allGears, allGearsSpecial, gachaConfig) {
     let gearsJson = []
     let specials = []
     if (!result && gachaConfig.rateUp) {

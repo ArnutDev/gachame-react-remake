@@ -1,17 +1,22 @@
 [
   {
-    "Name": "mock up 1 normal",
-    "Image": "https://gachame.github.io/images/rangers/u1515u-sally-thum.png",
-    "UnitCode": "u1534e-brown"
+    "Name": "Rudo",
+    "Image": "https://gachame.github.io/images/rangers/images-currently/u1536e-ru-thum.png",
+    "UnitCode": "u1536e-ru"
   },
   {
-    "Name": "mock up 2 normal",
-    "Image": "https://gachame.github.io/images/rangers/u1515u-sally-thum.png",
-    "UnitCode": "u1532e-sally"
+    "Name": "Enjin",
+    "Image": "https://gachame.github.io/images/rangers/images-currently/u1538e-en-thum.png",
+    "UnitCode": "u1538e-en"
   },
   {
-    "Name": "mock up 3 normal",
-    "Image": "https://gachame.github.io/images/rangers/u1513u-moon-thum.png",
-    "UnitCode": "u1530e-moon"
+    "Name": "Riyo",
+    "Image": "https://gachame.github.io/images/rangers/images-currently/u1540e-ri-thum.png",
+    "UnitCode": "u1540e-ri"
+  },
+  {
+    "Name": "Zanka",
+    "Image": "https://gachame.github.io/images/rangers/images-currently/u1542e-za-thum.png",
+    "UnitCode": "u1542e-za"
   }
 ]

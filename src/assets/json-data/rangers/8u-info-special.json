@@ -1,13 +1,22 @@
 [
-
   {
-    "Name": "mock up 2 ultra",
-    "Image": "https://gachame.github.io/images/rangers/u1534e-brown-thum.png",
-    "UnitCode": "u1532e-sally"
+    "Name": "Cleaner Rudo",
+    "Image": "https://gachame.github.io/images/rangers/images-currently/u1536u-ru-thum.png",
+    "UnitCode": "u1536u-ru"
   },
   {
-    "Name": "mock up 3 ultra",
-    "Image": "https://gachame.github.io/images/rangers/u1534e-brown-thum.png",
-    "UnitCode": "u1530e-moon"
+    "Name": "Cleaner Enjin",
+    "Image": "https://gachame.github.io/images/rangers/images-currently/u1538u-en-thum.png",
+    "UnitCode": "u1538u-en"
+  },
+  {
+    "Name": "Cleaner Riyo",
+    "Image": "https://gachame.github.io/images/rangers/images-currently/u1540u-ri-thum.png",
+    "UnitCode": "u1540u-ri"
+  },
+  {
+    "Name": "Cleaner Zanka",
+    "Image": "https://gachame.github.io/images/rangers/images-currently/u1542u-za-thum.png",
+    "UnitCode": "u1542u-za"
   }
 ]
