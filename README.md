@@ -1,13 +1,16 @@
-# React + Vite
+# GachaMe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**GachaMe** is a web-based character randomization simulator for the LINE Rangers game. Its primary purpose is to entertain users who wish to enjoy the thrill of gacha pulls without needing rubies in the actual game.
 
-Currently, two official plugins are available:
+## Features
+- **Ranger Randomization**: Simulate the excitement of pulling LINE Rangers characters.
+- **Equipment Randomization**: Try your luck with in-game equipment.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Updates
+This website will be updated with new content at the beginning of each month (*if time permits >_<*). 
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# gachame-react-remake" 
+## Important Notice
+Some of the data on this website is owned by LINE Corporation. Please avoid using it for commercial purposes. If you need to credit the sources, you can use the following references:
+- [GachaMe](https://gachame.netlify.app) (My Website)
+- [Rangers Book](https://rangers.lerico.net/en/rangers-book) (Source on my website)
+- [LINE Rangers Game] (Source on my website)
