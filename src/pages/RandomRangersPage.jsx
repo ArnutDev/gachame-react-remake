@@ -5,7 +5,7 @@ import ItemFooter from "../components/ItemFooter.jsx";
 import rangersGacha  from "../js/random.js";
 import GuaranteeModal from "../components/GuaranteeModal.jsx";
 import { getGuaranteedReward } from "../js/utils.js";
-import { getGachaData,getGachaPath } from "../js/gachaData.js";
+import { getRangersGachaData,getRangersGachaPath } from "../js/gachaData.js";
 
 
 export default function RandomRangersPage() {
@@ -24,9 +24,9 @@ export default function RandomRangersPage() {
   const [gachaData, setGachaData] = useState([]);
   // console.log(rangersPaths)
   useEffect(() => {
-    const data = getGachaData();
+    const data = getRangersGachaData();
     setGachaData(data);
-    const rangersPaths = getGachaPath();
+    const rangersPaths = getRangersGachaPath();
     async function loadAllFiles() {
       const promises = rangersPaths.map(path => fetch(path).then(res => res.json()));
       const dataArray = await Promise.all(promises);
@@ -67,7 +67,7 @@ export default function RandomRangersPage() {
   };
 
   const handleGuaranteeClick = () => {
-  console.log("กดปุ่มการันตีแล้ว");
+  // console.log("กดปุ่มการันตีแล้ว");
   const [guaranteeResult,specialsCountArray] = getGuaranteedReward(allRangers[4]);
   setSpecialCount(specialsCountArray);
   setguaranteeReward(guaranteeResult);

@@ -1,9 +1,9 @@
-export function getGachaData() {
+export function getRangersGachaData() {
     return [{
             cardInfo: {
                 cardId: 1,
                 title: "Gacha Rangers 6+1 Click!",
-                image: "https://gachame.github.io/images/rangers/images-currently/banner-box-A.png",
+                image: "https://gachame.github.io/images/banner-gacha/rangers-banner-box-A.png",
                 info: "Odds-up:\n - Rudo\n - Enjin\n - Riyo\n - Zanka"
             },
             gachaConfig: {
@@ -33,7 +33,7 @@ export function getGachaData() {
             cardInfo: {
                 // boxId: 2,       
                 title: "Gacha Rangers 6+1 Click!",
-                image: "https://gachame.github.io/images/rangers/images-currently/banner-box-B.png",
+                image: "https://gachame.github.io/images/banner-gacha/rangers-banner-box-B.png",
                 info: "Odds-up:\n - Rudo\n - Enjin\n"
             },
             gachaConfig: {
@@ -64,7 +64,7 @@ export function getGachaData() {
             cardInfo: {
                 // boxId: 3,
                 title: "Gacha Rangers 6+1 Click!",
-                image: "https://gachame.github.io/images/rangers/images-currently/banner-box-C.png",
+                image: "https://gachame.github.io/images/banner-gacha/rangers-banner-box-C.png",
                 info: "Odds-up:\n - Riyo\n - Zanka\n"
             },
             gachaConfig: {
@@ -94,7 +94,7 @@ export function getGachaData() {
     ]
 }
 
-export function getGachaPath() {
+export function getRangersGachaPath() {
     return [
         '/src/assets/json-data/rangers/rate-normal/7u-info.json', //0
         '/src/assets/json-data/rangers/rate-normal/7c-info.json', //1

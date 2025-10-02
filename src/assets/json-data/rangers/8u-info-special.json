@@ -1,22 +1,22 @@
 [
   {
     "Name": "Cleaner Rudo",
-    "Image": "https://gachame.github.io/images/rangers/images-currently/u1536u-ru-thum.png",
+    "Image": "https://gachame.github.io/images/rangers/u1536u-ru-thum.png",
     "UnitCode": "u1536u-ru"
   },
   {
     "Name": "Cleaner Enjin",
-    "Image": "https://gachame.github.io/images/rangers/images-currently/u1538u-en-thum.png",
+    "Image": "https://gachame.github.io/images/rangers/u1538u-en-thum.png",
     "UnitCode": "u1538u-en"
   },
   {
     "Name": "Cleaner Riyo",
-    "Image": "https://gachame.github.io/images/rangers/images-currently/u1540u-ri-thum.png",
+    "Image": "https://gachame.github.io/images/rangers/u1540u-ri-thum.png",
     "UnitCode": "u1540u-ri"
   },
   {
     "Name": "Cleaner Zanka",
-    "Image": "https://gachame.github.io/images/rangers/images-currently/u1542u-za-thum.png",
+    "Image": "https://gachame.github.io/images/rangers/u1542u-za-thum.png",
     "UnitCode": "u1542u-za"
   }
 ]

@@ -174,7 +174,7 @@ export function getRangersOddMonth(result, indexJsonNormal, indexJsonSpecial, i,
     } else if (result && gachaConfig.rateUp) {
         const specialJson = allRangers[indexJsonSpecial]; //8u-special
         rangersJson.push(specialJson[gachaConfig.rateUpIndex1]);
-        rangersJson.push(specialJson[gachaConfig.rateUpIndex1]);
+        rangersJson.push(specialJson[gachaConfig.rateUpIndex2]);
         specials[i] = true;
     } else if (!result && !gachaConfig.rateUp) {
         rangersJson = [...allRangers[indexJsonNormal]]; //8u-normal
