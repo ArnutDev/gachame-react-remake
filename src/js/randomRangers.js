@@ -22,7 +22,7 @@ export default async function rangersGacha(allRangers, gachaConfig) {
             if (randomStart !== randomEnd) {
                 result = getAllRandom(gachaConfig.amountUltra, gachaConfig.eachRateUltra, rateRange);
             } else { //for test
-                result = true;
+                result = false;
             }
             const indexJson8U = 2;
             const indexJson8USpecial = 5;
@@ -45,7 +45,7 @@ export default async function rangersGacha(allRangers, gachaConfig) {
             if (randomStart !== randomEnd) {
                 result = getAllRandom(gachaConfig.amountCommon, gachaConfig.eachRateCommon, rateRange);
             } else { //for test
-                result = true;
+                result = false;
             }
             const indexJson8C = 3;
             const indexJson8CSpecial = 4;

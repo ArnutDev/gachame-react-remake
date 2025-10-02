@@ -239,7 +239,7 @@ export function getGearsOddMonth(grade, indexJsonNormal, indexJsonSpecial, resul
         } else { // 7 star
             gearsJson.push(specialJson[gachaConfig.unRateUp7cIndex1]);
         }
-        console.log("f up")
+        // console.log("f up")
         specials[i] = null; // need to call func at normalGacha after this
     } else if (result && gachaConfig.rateUp) {
         const specialJson = allGears[indexJsonSpecial]; //8c-special
@@ -248,12 +248,12 @@ export function getGearsOddMonth(grade, indexJsonNormal, indexJsonSpecial, resul
         } else { // 7 star
             gearsJson.push(specialJson[gachaConfig.rateUp7cIndex1]);
         }
-        console.log("t up")
+        // console.log("t up")
         specials[i] = true;
     } else if (!result && !gachaConfig.rateUp) {
         gearsJson = [...allGears[indexJsonNormal]];
         specials[i] = false
-        console.log("f un")
+        // console.log("f un")
     } else {
         const specialJson = [...allGears[indexJsonSpecial]];
         if (grade === "8 star") {

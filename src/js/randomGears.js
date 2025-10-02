@@ -72,7 +72,7 @@ export default async function gearsGacha(allGears, gachaConfig) {
             } else {
                 const gear6Star = [...allGears[4]]
                 gears[i] = gear6Star[5]; //6c special
-                console.log(gears[i])
+                // console.log(gears[i])
                 specials[i] = true
                 check6StarSpecial = true;
             }

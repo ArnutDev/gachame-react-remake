@@ -5,7 +5,7 @@ export default function RandomModal({ slots,specials,rubyCost, totalCount,guaran
       <div className="modal-dialog modal-dialog-centered modal-lg">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title">ผลสุ่ม</h5>
+            <h5 className="modal-title">Result</h5>
             <button type="button" className="btn-close" onClick={onClose}></button>
           </div>
           <div className="modal-body">
@@ -39,8 +39,8 @@ export default function RandomModal({ slots,specials,rubyCost, totalCount,guaran
           <div className="modal-footer d-flex justify-content-between align-items-center">
             <p className="mb-0">Ruby used: {totalCount*rubyCost} | Total count: {totalCount} | Guaranteed in: {totalRandoms}/{guaranteeCount}</p>
             <div>
-              <button type="button" className="btn btn-secondary me-2" onClick={onClose}>ปิด</button>
-              <button type="button" className="btn btn-primary" onClick={onRandomAgain}>สุ่มอีกครั้ง</button>
+              <button type="button" className="btn btn-secondary me-2" onClick={onClose}>Close</button>
+              <button type="button" className="btn btn-primary" onClick={onRandomAgain}>Again</button>
             </div>
           </div>
         </div>
