@@ -698,5 +698,15 @@
     "Name": "Beach Volleyball Moon",
     "Image": "https://gachame.github.io/images/rangers/u1513e-moon-thum.png",
     "UnitCode": "u1513e-moon"
+  },
+  {
+    "Name": "Farmer Sally",
+    "Image": "https://gachame.github.io/images/rangers/u1532e-sally-thum.png",
+    "UnitCode": "u1532e-sally"
+  },
+  {
+    "Name": "Field Moon",
+    "Image": "https://gachame.github.io/images/rangers/u1530e-moon-thum.png",
+    "UnitCode": "u1530e-moon"
   }
 ]

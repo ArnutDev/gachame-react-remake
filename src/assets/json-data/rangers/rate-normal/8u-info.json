@@ -648,5 +648,15 @@
     "Name": "Sand Beach Volleyball Moon",
     "Image": "https://gachame.github.io/images/rangers/u1513u-moon-thum.png",
     "UnitCode": "u1513u-moon"
+  },
+  {
+    "Name": "Skilled Farmer Sally",
+    "Image": "https://gachame.github.io/images/rangers/u1532u-sally-thum.png",
+    "UnitCode": "u1532u-sally"
+  },
+  {
+    "Name": "Green Onion Field Moon",
+    "Image": "https://gachame.github.io/images/rangers/u1530u-moon-thum.png",
+    "UnitCode": "u1530u-moon"
   }
 ]
