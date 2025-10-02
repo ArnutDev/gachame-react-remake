@@ -16,7 +16,15 @@
 
 // ตัวอย่างใน React
 export async function loadJSON(filePath) {
-    const res = await fetch(filePath);
-    const data = await res.json();
-    return data;
+    try {
+        const res = await fetch(`${process.env.PUBLIC_URL}/${filePath}`);
+        if (!res.ok) {
+            throw new Error(`Failed to load JSON: ${res.status} ${res.statusText}`);
+        }
+        const data = await res.json();
+        return data;
+    } catch (err) {
+        console.error(err);
+        return null; // หรือ return [] / {} ตามที่ต้องการ
+    }
 }
