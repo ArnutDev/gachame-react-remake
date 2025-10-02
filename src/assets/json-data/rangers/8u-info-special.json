@@ -1,12 +1,22 @@
 [
   {
-    "Name": "Skilled Farmer Sally",
-    "Image": "https://rangers.lerico.net/res/u1532u-sally/u1532u-sally-thum.png",
-    "UnitCode": "u1532u-sally"
+    "Name": "Cleaner Rudo",
+    "Image": "https://gachame.github.io/images/rangers/u1536u-ru-thum.png",
+    "UnitCode": "u1536u-ru"
   },
   {
-    "Name": "Green Onion Field Moon",
-    "Image": "https://rangers.lerico.net/res/u1530u-moon/u1530u-moon-thum.png",
-    "UnitCode": "u1530u-moon"
+    "Name": "Cleaner Enjin",
+    "Image": "https://gachame.github.io/images/rangers/u1538u-en-thum.png",
+    "UnitCode": "u1538u-en"
+  },
+  {
+    "Name": "Cleaner Riyo",
+    "Image": "https://gachame.github.io/images/rangers/u1540u-ri-thum.png",
+    "UnitCode": "u1540u-ri"
+  },
+  {
+    "Name": "Cleaner Zanka",
+    "Image": "https://gachame.github.io/images/rangers/u1542u-za-thum.png",
+    "UnitCode": "u1542u-za"
   }
 ]

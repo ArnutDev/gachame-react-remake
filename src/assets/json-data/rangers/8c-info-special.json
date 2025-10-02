@@ -1,17 +1,22 @@
 [
   {
-    "Name": "Radish Brown",
-    "Image": "https://rangers.lerico.net/res/u1534e-brown/u1534e-brown-thum.png",
-    "UnitCode": "u1534e-brown"
+    "Name": "Rudo",
+    "Image": "https://gachame.github.io/images/rangers/u1536e-ru-thum.png",
+    "UnitCode": "u1536e-ru"
   },
   {
-    "Name": "Farmer Sally",
-    "Image": "https://rangers.lerico.net/res/u1532e-sally/u1532e-sally-thum.png",
-    "UnitCode": "u1532e-sally"
+    "Name": "Enjin",
+    "Image": "https://gachame.github.io/images/rangers/u1538e-en-thum.png",
+    "UnitCode": "u1538e-en"
   },
   {
-    "Name": "Field Moon",
-    "Image": "https://rangers.lerico.net/res/u1530e-moon/u1530e-moon-thum.png",
-    "UnitCode": "u1530e-moon"
+    "Name": "Riyo",
+    "Image": "https://gachame.github.io/images/rangers/u1540e-ri-thum.png",
+    "UnitCode": "u1540e-ri"
+  },
+  {
+    "Name": "Zanka",
+    "Image": "https://gachame.github.io/images/rangers/u1542e-za-thum.png",
+    "UnitCode": "u1542e-za"
   }
 ]
