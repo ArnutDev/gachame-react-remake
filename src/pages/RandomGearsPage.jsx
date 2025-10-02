@@ -17,8 +17,8 @@ export default function RandomGearsPage() {
   const [guaranteeButtonVisible, setGuaranteeButtonVisible] = useState(false);
   const [guaranteeModelOpen,setGuaranteeModelOpen] = useState(false);
   const [guaranteeReward,setguaranteeReward] = useState(null);
-  const [specialCount, setSpecialCount] = useState([0,0,0]);//even
-  // const [specialCount, setSpecialCount] = useState([0,0,0,0]);//odd
+  // const [specialCount, setSpecialCount] = useState([0,0,0]);//even
+  const [specialCount, setSpecialCount] = useState([0,0,0,0,0,0]);//odd
   const [currentCard, setCurrentCard] = useState(null);
   
 

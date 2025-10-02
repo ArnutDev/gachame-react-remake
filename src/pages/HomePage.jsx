@@ -10,7 +10,7 @@ export default function HomePage(){
                     <div className="card text-center bg-light mx-3" style={{ width: "auto"}}>
                         <div className="card-img-top" style={{ height: "310px", overflow: "hidden" }}>
                             <img 
-                            src="src/assets/gacha-cover-image/rangers-banner.jpg" 
+                            src={"https://gachame.github.io/images/banner-gacha/rangers-banner.jpg"} 
                             alt="Rangers Gacha Banner" 
                             className="w-100" 
                             style={{ height: "100%", objectFit: "cover" }}
@@ -35,7 +35,7 @@ export default function HomePage(){
                     <div className="card text-center bg-light mx-3" style={{ width: "auto"}}>
                         <div className="card-img-top" style={{ height: "310px", overflow: "hidden" }}>
                             <img 
-                            src="src/assets/gacha-cover-image/gears-banner.jpg" 
+                            src={"https://gachame.github.io/images/banner-gacha/gears-banner.jpg"} 
                             alt="Gears Gacha Banner" 
                             className="w-100" 
                             style={{ height: "100%", objectFit: "cover" }}
