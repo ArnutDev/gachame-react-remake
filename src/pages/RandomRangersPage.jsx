@@ -2,7 +2,7 @@ import { useState,useEffect } from "react";
 import ItemCard from "../components/ItemCard";
 import RandomModal from "../components/RandomModal";
 import ItemFooter from "../components/ItemFooter.jsx";
-import rangersGacha  from "../js/random.js";
+import rangersGacha  from "../js/randomRangers.js";
 import GuaranteeModal from "../components/GuaranteeModal.jsx";
 import { getGuaranteedReward } from "../js/utils.js";
 import { getRangersGachaData,getRangersGachaPath } from "../js/gachaData.js";
@@ -22,7 +22,7 @@ export default function RandomRangersPage() {
   const [specialCount, setSpecialCount] = useState([0,0,0,0]);//odd
   const [currentCard, setCurrentCard] = useState(null);
   const [gachaData, setGachaData] = useState([]);
-  // console.log(rangersPaths)
+
   useEffect(() => {
     const data = getRangersGachaData();
     setGachaData(data);
@@ -68,7 +68,7 @@ export default function RandomRangersPage() {
 
   const handleGuaranteeClick = () => {
   // console.log("กดปุ่มการันตีแล้ว");
-  const [guaranteeResult,specialsCountArray] = getGuaranteedReward(allRangers[4]);
+  const [guaranteeResult,specialsCountArray] = getGuaranteedReward("ranger",allRangers[4]);
   setSpecialCount(specialsCountArray);
   setguaranteeReward(guaranteeResult);
   setGuaranteeModelOpen(true);
@@ -107,6 +107,7 @@ export default function RandomRangersPage() {
           slots={currentSlots}
           specials={currentSpecials}
           rubyCost={300}
+          guaranteeCount={100}
           totalCount={totalCount}
           totalRandoms={totalRandoms}
           onClose={() => setModalOpen(false)}
@@ -121,7 +122,7 @@ export default function RandomRangersPage() {
         />
       )}
       
-      <ItemFooter specialCount={specialCount} itemDetails={allRangers[4] || []} />
+      <ItemFooter specialCount={specialCount} itemDetails={allRangers[4] || []} footerMessage={"Total Received (including ultra and common)"}/>
       
  </div> );
 }

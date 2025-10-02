@@ -1,12 +1,12 @@
 
-export default function ItemFooter({ specialCount,itemDetails }) {
+export default function ItemFooter({ specialCount,itemDetails,footerMessage }) {
   return (
     <footer className="mt-3 bg-dark text-center">
       <div className="container">
         <table className="table table-bordered table-sm my-0">
           <thead className="table-dark">
             <tr>
-              <th colSpan={specialCount.length}>Total Received (Including ultra and common)</th>
+              <th colSpan={specialCount.length}>{footerMessage}</th>
             </tr>
           </thead>
           <tbody>

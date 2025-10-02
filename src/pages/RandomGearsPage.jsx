@@ -2,10 +2,10 @@ import { useState,useEffect } from "react";
 import ItemCard from "../components/ItemCard";
 import RandomModal from "../components/RandomModal";
 import ItemFooter from "../components/ItemFooter.jsx";
-import gearsGacha  from "../js/random.js";
+import gearsGacha  from "../js/randomGears.js";
 import GuaranteeModal from "../components/GuaranteeModal.jsx";
 import { getGuaranteedReward } from "../js/utils.js";
-
+import { getGearsGachaData,getGearsGachaPath } from "../js/gachaData.js";
 
 export default function RandomGearsPage() {
   const [allGears, setAllGears] = useState([]);
@@ -17,125 +17,16 @@ export default function RandomGearsPage() {
   const [guaranteeButtonVisible, setGuaranteeButtonVisible] = useState(false);
   const [guaranteeModelOpen,setGuaranteeModelOpen] = useState(false);
   const [guaranteeReward,setguaranteeReward] = useState(null);
-  // const [specialCount, setSpecialCount] = useState([0,0,0]);//even
+  // const [specialCount, setSpecialCount] = useState([0,0,0,0,0,0]);//even
   const [specialCount, setSpecialCount] = useState([0,0,0,0,0,0]);//odd
   const [currentCard, setCurrentCard] = useState(null);
-  
+  const [gachaData, setGachaData] = useState([]);
 
-  const data = [
-    {
-      cardInfo: {   
-        cardId: 1,       
-        title: "Gacha Gears 6+1 Click!",
-        image: "/src/assets/gacha-cover-image/banner-ranger-box-A.png",
-        info: "Odds-up:\n - xxx\n - xxx\n - xxx"
-      },
-      gachaConfig: {
-        
-        // month: "even",
-        // rateUp: false,       
-        // amountUltra: 2,
-        // amountCommon: 3,
-        // eachRateUltra: 0.02,
-        // eachRateCommon: 0.15,
-        // rateUp8UIndex1: -1,
-        // rateUp8CIndex1: -1,
-        // rateUp8CIndex2: -1,
-        // unRateUp8UIndex1:-1,
-        
-        month: "odd",
-        rateUp: false,       
-        amount8c: 3,
-        amount7c: 2,
-        amount6c: 1,
-        eachRate8c: 0.88,
-        eachRate7c: 0.88,
-        eachRate6c: 0.88,
-        rateUpIndex1: -1,
-        rateUpIndex2: -1,
-        unRateUpIndex1:-1,
-        unRateUpIndex2:-1
-      }
-    },
-    {
-      cardInfo: {   
-        // boxId: 2,       
-        title: "Gacha Gears 6+1 Click!",
-        image: "/src/assets/gacha-cover-image/banner-ranger-box-B.png",
-        info: "Odds-up:\n - xxx\n - xxx\n"
-      },
-      gachaConfig: {
-        // month: "even",
-        // rateUp: true,       
-        // amountUltra: 2,
-        // amountCommon: 3,
-        // eachRateUltra: 0.22,
-        // eachRateCommon: 1.50,
-        // rateUp8UIndex1: 0,
-        // unRateUp8UIndex1:1,
-        // rateUp8CIndex1: 0,
-        // rateUp8CIndex2: 1,
-        // unRateUp8CIndex1:2,
-        month: "odd",
-        rateUp: true,      
-        amount8c: 3,
-        amount7c: 2,
-        amount6c: 1,
-        eachRate8c: 0.60,
-        eachRate7c: 1.25,
-        eachRate6c: -1,
-        rateUp8cIndex1: 0,
-        unRateUp8cIndex1:1,
-        unRateUp8cIndex2:2,
-        rateUp7cIndex1: 3,
-        unRateUp7cIndex1: 4,
-      }
-    },
-    {
-      cardInfo: {  
-        // boxId: 3,
-        title: "Gacha Gears 6+1 Click!",
-        image: "/src/assets/gacha-cover-image/banner-ranger-box-C.png",
-        info: "Odds-up:\n - xxx\n - xxx\n"
-      },
-      gachaConfig: {
-        // month: "even",
-        // rateUp: true,       
-        // amountUltra: 2,
-        // amountCommon: 3,
-        // eachRateUltra: 0.22,
-        // eachRateCommon: 1.50,
-        // rateUp8UIndex1: 1,
-        // unRateUp8UIndex1:0,
-        // rateUp8CIndex1: 0,
-        // rateUp8CIndex2: 2,
-        // unRateUp8CIndex1:1,
-        month: "odd",
-        rateUp: true,     
-        amount8c: 3,
-        amount7c: 2,
-        amount6c: 1,
-        eachRate8c: 0.60,
-        eachRate7c: 1.25,
-        eachRate6c: -1,
-        rateUp8StarIndex1: 1,
-        unRateUp8StarIndex1:0,
-        unRateUp8StarIndex2:2,
-        rateUp7StarIndex1: 4,
-        unRateUp7StarIndex1: 3, 
-      }
-    }
-  ]
-  const gearsPaths = [
-    '/src/assets/json-data/gears/rate-normal/5c-info.json',//5
-    '/src/assets/json-data/gears/rate-normal/6c-info.json',//6
-    '/src/assets/json-data/gears/rate-normal/7c-info.json',//7
-    '/src/assets/json-data/gears/rate-normal/8c-info.json',//8c
-    '/src/assets/json-data/gears/gears-info-special.json'//8c special
-  ];
-  // console.log(gearsPaths)
   useEffect(() => {
+    const data = getGearsGachaData();
+    setGachaData(data);
     async function loadAllFiles() {
+      const gearsPaths = getGearsGachaPath();
       const promises = gearsPaths.map(path => fetch(path).then(res => res.json()));
       const dataArray = await Promise.all(promises);
       setAllGears(dataArray);
@@ -157,11 +48,13 @@ export default function RandomGearsPage() {
     setModalOpen(true);
     setTotalCount(prev => prev+1);
     setTotalRandoms(prev => {
-      const newTotal = prev + 6;
+      const newTotal = prev + 5;
 
-      if (newTotal >= 100) {
-        setGuaranteeButtonVisible(true); 
-        return newTotal - 100;           
+      if (newTotal >= 150) {
+        setGuaranteeButtonVisible(true);
+        return newTotal - 150;         
+      } else if(newTotal >= 90){
+        setGuaranteeButtonVisible(true);
       }
       return newTotal;
     });
@@ -174,8 +67,8 @@ export default function RandomGearsPage() {
   };
 
   const handleGuaranteeClick = () => {
-  console.log("กดปุ่มการันตีแล้ว");
-  const [guaranteeResult,specialsCountArray] = getGuaranteedReward(allGears[4]);
+  // console.log("กดปุ่มการันตีแล้ว");
+  const [guaranteeResult,specialsCountArray] = getGuaranteedReward("gear",allGears[4]);
   setSpecialCount(specialsCountArray);
   setguaranteeReward(guaranteeResult);
   setGuaranteeModelOpen(true);
@@ -198,7 +91,7 @@ export default function RandomGearsPage() {
         </div>
 
         <div className="row flex-fill g-1 mx-3">
-          {data.map((item, idx) => (
+          {gachaData.map((item, idx) => (
             <div key={idx} className="col-md-4 my-3">
               <ItemCard
                 cardInfo={item.cardInfo} 
@@ -213,7 +106,8 @@ export default function RandomGearsPage() {
         <RandomModal
           slots={currentSlots}
           specials={currentSpecials}
-          rubyCost={300}
+          rubyCost={200}
+          guaranteeCount={150}
           totalCount={totalCount}
           totalRandoms={totalRandoms}
           onClose={() => setModalOpen(false)}
@@ -228,7 +122,7 @@ export default function RandomGearsPage() {
         />
       )}
       
-      <ItemFooter specialCount={specialCount} itemDetails={allGears[4] || []} />
+      <ItemFooter specialCount={specialCount} itemDetails={allGears[4] || []} footerMessage={"Total Received"}/>
       
  </div> );
 }

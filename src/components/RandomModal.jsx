@@ -1,4 +1,4 @@
-export default function RandomModal({ slots,specials,rubyCost, totalCount,totalRandoms, onClose, onRandomAgain }) {
+export default function RandomModal({ slots,specials,rubyCost, totalCount,guaranteeCount,totalRandoms, onClose, onRandomAgain }) {
   // console.log(specials[0],specials[1],specials[2],specials[3],specials[4],specials[5],specials[6]);
   return (
     <div className="modal d-block" tabIndex="-1" style={{ backgroundColor: "rgba(0,0,0,0.5)" }}>
@@ -16,7 +16,7 @@ export default function RandomModal({ slots,specials,rubyCost, totalCount,totalR
                 return (
                   <div
                     key={idx}
-                    className="col-3 "
+                    className="col-3"
                     style={{
                       textAlign: "center",
                       border: isSpecial ? "4px solid green" : "none",
@@ -37,7 +37,7 @@ export default function RandomModal({ slots,specials,rubyCost, totalCount,totalR
             </div>
           </div>
           <div className="modal-footer d-flex justify-content-between align-items-center">
-            <p className="mb-0">Ruby used: {totalCount*rubyCost} | Total count: {totalCount} | Guaranteed in: {totalRandoms}/100</p>
+            <p className="mb-0">Ruby used: {totalCount*rubyCost} | Total count: {totalCount} | Guaranteed in: {totalRandoms}/{guaranteeCount}</p>
             <div>
               <button type="button" className="btn btn-secondary me-2" onClick={onClose}>ปิด</button>
               <button type="button" className="btn btn-primary" onClick={onRandomAgain}>สุ่มอีกครั้ง</button>
