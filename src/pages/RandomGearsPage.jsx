@@ -25,8 +25,8 @@ export default function RandomGearsPage() {
   useEffect(() => {
     const data = getGearsGachaData();
     setGachaData(data);
+    const gearsPaths = getGearsGachaPath();
     async function loadAllFiles() {
-      const gearsPaths = getGearsGachaPath();
       const promises = gearsPaths.map(path => fetch(path).then(res => res.json()));
       const dataArray = await Promise.all(promises);
       setAllGears(dataArray);

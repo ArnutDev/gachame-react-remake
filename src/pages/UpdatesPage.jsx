@@ -1,4 +1,4 @@
-import changelogData from "/src/assets/json-data/change-log.json"; // ไฟล์ JSON ของคุณ
+import changelogData from "/public/assets/json-data/change-log.json"; // ไฟล์ JSON ของคุณ
 export default function Updates(){
   const sortedChangelog = [...changelogData].sort((a, b) => {
     const [dayA, monthA, yearA] = a.date.split("-");
