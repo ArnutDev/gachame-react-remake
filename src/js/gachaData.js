@@ -96,12 +96,12 @@ export function getRangersGachaData() {
 
 export function getRangersGachaPath() {
     return [
-        '/src/assets/json-data/rangers/rate-normal/7u-info.json', //0
-        '/src/assets/json-data/rangers/rate-normal/7c-info.json', //1
-        '/src/assets/json-data/rangers/rate-normal/8u-info.json', //2
-        '/src/assets/json-data/rangers/rate-normal/8c-info.json', //3
-        '/src/assets/json-data/rangers/8c-info-special.json', //4
-        '/src/assets/json-data/rangers/8u-info-special.json' //5
+        '/assets/json-data/rangers/rate-normal/7u-info.json', //0
+        '/assets/json-data/rangers/rate-normal/7c-info.json', //1
+        '/assets/json-data/rangers/rate-normal/8u-info.json', //2
+        '/assets/json-data/rangers/rate-normal/8c-info.json', //3
+        '/assets/json-data/rangers/8c-info-special.json', //4
+        '/assets/json-data/rangers/8u-info-special.json' //5
     ];
 }
 export function getGearsGachaData() {
@@ -246,10 +246,10 @@ export function getGearsGachaData() {
 
 export function getGearsGachaPath() {
     return [
-        '/src/assets/json-data/gears/rate-normal/5c-info.json', //5
-        '/src/assets/json-data/gears/rate-normal/6c-info.json', //6
-        '/src/assets/json-data/gears/rate-normal/7c-info.json', //7
-        '/src/assets/json-data/gears/rate-normal/8c-info.json', //8c
-        '/src/assets/json-data/gears/gears-info-special.json' //all special
+        '/assets/json-data/gears/rate-normal/5c-info.json', //5
+        '/assets/json-data/gears/rate-normal/6c-info.json', //6
+        '/assets/json-data/gears/rate-normal/7c-info.json', //7
+        '/assets/json-data/gears/rate-normal/8c-info.json', //8c
+        '/assets/json-data/gears/gears-info-special.json' //all special
     ];
 }
