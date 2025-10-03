@@ -63,7 +63,7 @@ export default function RandomGearsPage() {
   const handleRandomAgain = () => {
     if (!currentCard) return;
     setModalOpen(false);
-    setTimeout(() => handleRandom(currentCard), 400);
+    setTimeout(() => handleRandom(currentCard), 500);
   };
 
   const handleGuaranteeClick = () => {
@@ -107,7 +107,7 @@ export default function RandomGearsPage() {
           slots={currentSlots}
           specials={currentSpecials}
           rubyCost={200}
-          guaranteeCount={150}
+          guaranteeCount={" [90 and 150]"}
           totalCount={totalCount}
           totalRandoms={totalRandoms}
           onClose={() => setModalOpen(false)}

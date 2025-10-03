@@ -16,87 +16,70 @@ export function getValue(min, max) {
 }
 
 export function generateRandomRange(min, max, eachRate, amount) {
-    let arr = [];
-    let countArr = 0;
+    const arr = [];
 
     function getValidRandomValue() {
-        let randomValue = (Math.random() * (max - min) + min).toFixed(2); // use toFixed(2) for 2 decimal
-        return parseFloat(randomValue);
+        return Math.round((Math.random() * (max - min) + min) * 100) / 100;
     }
 
-    //check and random value not over range
     function getValidPair() {
         let num1 = getValidRandomValue();
-        let num2 = (num1 + eachRate).toFixed(2); // use toFixed(2) for num2 2 decimal
-        num2 = parseFloat(num2);
+        let num2 = Math.round((num1 + eachRate) * 100) / 100;
 
-        // ตรวจสอบว่า num2 ไม่เกิน max และ num1 ยังไม่เกิน min
         if (num2 > max) {
-            num1 = (max - eachRate).toFixed(2); // use toFixed(2) for num1 2 decimal
-            num1 = parseFloat(num1);
+            num1 = Math.round((max - eachRate) * 100) / 100;
             num2 = max;
         }
-
-        // ตรวจสอบว่า num1 ยังอยู่ในช่วง min ถึง max
         if (num1 < min) {
-            num1 = min; // ถ้า num1 ต่ำกว่า min, ตั้งให้ num1 เป็น min
-            num2 = (num1 + eachRate).toFixed(2); // use toFixed(2) for num2 2 decimal
-            num2 = parseFloat(num2);
+            num1 = min;
+            num2 = Math.round((num1 + eachRate) * 100) / 100;
         }
-
         return [num1, num2];
     }
 
-    if (countArr < amount) {
-        // random value of arr[0], arr[1]
-        let pair1 = getValidPair();
-        arr[0] = pair1[0];
-        arr[1] = pair1[1];
-        countArr++;
-        // console.log('countArr', countArr, 'amount', amount)
-    }
-    if (countArr < amount) {
-        //  random value of arr[2], arr[3]
-        let pair2 = getValidPair();
-        arr[2] = pair2[0];
-        arr[3] = pair2[1];
-        countArr++;
-        // console.log('countArr', countArr, 'amount', amount)
-    }
-    if (countArr < amount) {
-        //  random value of arr[4], arr[5]
-        let pair3 = getValidPair();
-        arr[4] = pair3[0];
-        arr[5] = pair3[1];
-        countArr++;
-        // console.log('countArr', countArr, 'amount', amount)
-    }
-    if (countArr < amount) {
-        //  random value of arr[6], arr[7]
-        let pair4 = getValidPair();
-        arr[6] = pair4[0];
-        arr[7] = pair4[1];
-        countArr++;
-        // console.log('countArr', countArr, 'amount', amount)
-    }
-    for (let i = 0; i < arr.length; i += 2) {
-        for (let j = i + 2; j < arr.length; j += 2) {
-            //check for each range not overlap and have space not over eachRate
-            if ((arr[i] >= arr[j] && arr[i] <= arr[j + 1]) || (arr[j] >= arr[i] && arr[j] <= arr[i + 1]) || (arr[i + 1] - arr[i] > eachRate) || (arr[j + 1] - arr[j] > eachRate)) {
-                // if it overlap then random until not overlap
-                // console.log("overlap try again!")
-                return generateRandomRange(min, max, eachRate, amount);
+    let attempts = 0;
+    while (arr.length < amount * 2) {
+        if (attempts > 1000) {
+            // console.warn(
+            //     "Too many attempts, generating fallback evenly spaced ranges."
+            // );
+
+            // fallback: สร้าง pair ขนาด eachRate แบบเท่า ๆ กัน
+            arr.length = 0; // reset
+            const totalSpace = max - min;
+            const step = totalSpace / amount;
+            for (let i = 0; i < amount; i++) {
+                const start = Math.round((min + i * step) * 100) / 100;
+                const end = Math.round(Math.min(start + eachRate, max) * 100) / 100;
+                arr.push(start, end);
             }
+            break;
+        }
+
+        attempts++;
+
+        const [num1, num2] = getValidPair();
+
+        // ตรวจ overlap
+        let overlap = false;
+        for (let i = 0; i < arr.length; i += 2) {
+            const a1 = arr[i],
+                a2 = arr[i + 1];
+            if ((num1 >= a1 && num1 <= a2) || (a1 >= num1 && a1 <= num2)) {
+                overlap = true;
+                break;
+            }
+        }
+
+        if (!overlap) {
+            arr.push(num1, num2);
         }
     }
 
-    // display position array that not overlap : 1-0, 2-3, 4-5, 6-7
-    // console.log('ready for use!')
-    for (let i = 0; i < arr.length; i += 2) {
-        // console.log(`arr[${i}] - arr[${i + 1}] = ${arr[i]} - ${arr[i + 1]}`);
-    }
     return arr;
 }
+
+
 
 export function checkValueInRange(value, arr) {
     // check if the given value is in the range.
@@ -302,11 +285,11 @@ export function getGearsEvenMonth(result, indexJsonNormal, indexJsonSpecial, i, 
     return [gearsJson, specials];
 }
 
-export function getSpecialGear(gears, JsonGearsSpecial) {
+export function getSpecialGear(gear, JsonGearsSpecial) {
     // console.log('at getSpecial');
+    // console.log(gear.length)
     for (let i = 0; i < JsonGearsSpecial.length; i++) {
-        // console.log(gears.Name)
-        if (gears.Name === JsonGearsSpecial[i].Name) {
+        if (gear.Name === JsonGearsSpecial[i].Name) {
             specialsCountGearsArray[i]++;
             // console.log('at 8c', rangers.Name)
             return [true, specialsCountGearsArray]; // found at 8c
