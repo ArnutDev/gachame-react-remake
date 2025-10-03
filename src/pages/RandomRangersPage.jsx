@@ -63,7 +63,7 @@ export default function RandomRangersPage() {
   const handleRandomAgain = () => {
     if (!currentCard) return;
     setModalOpen(false);
-    setTimeout(() => handleRandom(currentCard), 400);
+    setTimeout(() => handleRandom(currentCard), 500);
   };
 
   const handleGuaranteeClick = () => {

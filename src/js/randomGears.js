@@ -71,8 +71,7 @@ export default async function gearsGacha(allGears, gachaConfig) {
                 specials[i] = false
             } else {
                 const gear6Star = [...allGears[4]]
-                gears[i] = gear6Star[5]; //6c special
-                // console.log(gears[i])
+                gears[i] = gear6Star[gear6Star.length - 1]; //6c special
                 specials[i] = true
                 check6StarSpecial = true;
             }
@@ -86,9 +85,10 @@ export default async function gearsGacha(allGears, gachaConfig) {
             const randomIndex = getRandomPickRanger(0, gearsJson.length - 1);
             gears[i] = gearsJson[randomIndex];
         }
-        // console.log(gears);
+
         [specials[i], specialsCountGearsArray] = getSpecialGear(gears[i], allGears[4]);
         // console.log(gearsJson) //test
+        check6StarSpecial = false;
     }
     // console.log("before return specials:", specials);
     // console.log('specialsCountGearsArray', specialsCountGearsArray.length)
