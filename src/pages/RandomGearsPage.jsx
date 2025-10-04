@@ -15,6 +15,8 @@ export default function RandomGearsPage() {
   const [totalRandoms, setTotalRandoms] = useState(0);
   const [totalCount, setTotalCount] = useState(0);
   const [guaranteeButtonVisible, setGuaranteeButtonVisible] = useState(false);
+  const [guarantee90, setGuarantee90] = useState(false);
+  const [guarantee150, setGuarantee150] = useState(false);
   const [guaranteeModelOpen,setGuaranteeModelOpen] = useState(false);
   const [guaranteeReward,setguaranteeReward] = useState(null);
   // const [specialCount, setSpecialCount] = useState([0,0,0,0,0,0]);//even
@@ -50,13 +52,17 @@ export default function RandomGearsPage() {
     setTotalRandoms(prev => {
       const newTotal = prev + 5;
 
-      if (newTotal >= 150) {
-        setGuaranteeButtonVisible(true);
+    if (newTotal >= 150 && !guarantee150) {
+        setGuarantee90(false);          
+        setGuaranteeButtonVisible(true); 
+        setGuarantee150(true);           
         return newTotal - 150;         
-      } else if(newTotal >= 90){
-        setGuaranteeButtonVisible(true);
-      }
-      return newTotal;
+    } else if (newTotal >= 90 && !guarantee90) {
+        setGuarantee90(true);            
+        setGuaranteeButtonVisible(true); 
+        setGuarantee150(false);          
+    }
+    return newTotal;
     });
   };
 
