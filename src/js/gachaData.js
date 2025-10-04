@@ -144,7 +144,7 @@ export function getGearsGachaData() {
                 // boxId: 2,       
                 title: "Gacha Gears 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/gears-banner-box-B.png",
-                info: "Odds-up:\n - Enjin's Coat\n - Lovely Assistaff\n"
+                info: "Odds-up:\n - Enjin's Coat\n - Lovely Assistaff\n\n\n\n"
             },
             gachaConfig: {
                 // month: "even",
@@ -178,7 +178,7 @@ export function getGearsGachaData() {
                 // boxId: 3,
                 title: "Gacha Gears 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/gears-banner-box-C.png",
-                info: "Odds-up:\n - 3R\n - The Ripper\n"
+                info: "Odds-up:\n - 3R\n - The Ripper\n\n\n\n"
             },
             gachaConfig: {
                 // month: "even",
@@ -212,7 +212,7 @@ export function getGearsGachaData() {
                 // boxId: 4,
                 title: "Gacha Gears 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/gears-banner-box-D.png",
-                info: "Odds-up:\n - Rudo's Gas Mask\n - The Ripper\n"
+                info: "Odds-up:\n - Rudo's Gas Mask\n - The Ripper\n\n\n\n"
             },
             gachaConfig: {
                 // month: "even",
