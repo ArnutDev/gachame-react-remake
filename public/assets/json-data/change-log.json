@@ -128,5 +128,12 @@
             "Added October Gears gacha",
             "Migrated to React"
         ]
+    },
+    {
+        "version": "2.0.1",
+        "date": "04-10-2025",
+        "changes": [
+            "Fixed UI"
+        ]
     }
 ]
