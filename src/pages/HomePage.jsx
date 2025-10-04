@@ -8,12 +8,11 @@ export default function HomePage(){
                 <div className="col-md-6 my-3">
                     <Link className="text-decoration-none" to="/random-rangers">
                     <div className="card text-center bg-light mx-3" style={{ width: "auto"}}>
-                        <div className="card-img-top" style={{ height: "310px", overflow: "hidden" }}>
+                        <div className="ratio ratio-16x9 bg-dark">
                             <img 
                             src={"https://gachame.github.io/images/banner-gacha/rangers-banner.jpg"} 
                             alt="Rangers Gacha Banner" 
-                            className="w-100" 
-                            style={{ height: "100%", objectFit: "cover" }}
+                            className="w-100 h-100" 
                             />
                         </div>
                         <div className="card-body d-flex flex-column justify-content-between" style={{ minHeight: "100px", padding: "0.5rem" }}>
@@ -33,12 +32,11 @@ export default function HomePage(){
                 <div className="col-md-6 my-3">
                     <Link className="text-decoration-none" to="/random-gears">
                     <div className="card text-center bg-light mx-3" style={{ width: "auto"}}>
-                        <div className="card-img-top" style={{ height: "310px", overflow: "hidden" }}>
+                        <div className="ratio ratio-16x9 bg-dark">
                             <img 
                             src={"https://gachame.github.io/images/banner-gacha/gears-banner.jpg"} 
                             alt="Gears Gacha Banner" 
-                            className="w-100" 
-                            style={{ height: "100%", objectFit: "cover" }}
+                            className="w-100 h-100" 
                             />
                         </div>
                         <div className="card-body d-flex flex-column justify-content-between" style={{ minHeight: "100px", padding: "0.5rem" }}>
