@@ -143,12 +143,5 @@
             "Added December Rangers gacha",
             "Added December Gears gacha"
         ]
-    },
-    {
-        "version": "2.1.1",
-        "date": "28-11-2025",
-        "changes": [
-            "Fixed UI and gacha data"
-        ]
     }
 ]
