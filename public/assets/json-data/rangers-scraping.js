@@ -1,9 +1,9 @@
 const targetNames = [
-    "Skilled Farmer Sally",
-    "Green Onion Field Moon"
+    "Psychiatrist Loid",
+    "Eden Student Anya",
+    "City Hall Staff Yor",
+    "Subject 8 Bond"
 ];
-//Skilled Farmer Sally
-//Green Onion Field Moon
 
 const data = [];
 

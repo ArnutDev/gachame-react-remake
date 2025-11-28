@@ -1,32 +1,32 @@
 [
   {
-    "Name": "3R",
-    "Image": "https://gachame.github.io/images/gears/eq_2510_amr_08_icon.png",
-    "ItemCode": "eq_2510_amr_08"
+    "Name": "[SPY]Loid Lapel Pin",
+    "Image": "https://rangers.lerico.net/res/gear_icon/eq_2512_acc_18_icon.png",
+    "ItemCode": "eq_2512_acc_18"
   },
   {
-    "Name": "Enjin's Coat",
-    "Image": "https://gachame.github.io/images/gears/eq_2510_amr_18_icon.png",
-    "ItemCode": "eq_2510_amr_18"
+    "Name": "[SPY]Anya Hair Accessory",
+    "Image": "https://rangers.lerico.net/res/gear_icon/eq_2512_acc_08_icon.png",
+    "ItemCode": "eq_2512_acc_08"
   },
   {
-    "Name": "Rudo's Gas Mask",
-    "Image": "https://gachame.github.io/images/gears/eq_2510_amr_28_icon.png",
-    "ItemCode": "eq_2510_amr_28"
+    "Name": "[SPY]Thorn P Hairband",
+    "Image": "https://rangers.lerico.net/res/gear_icon/eq_2512_acc_28_icon.png",
+    "ItemCode": "eq_2512_acc_28"
   },
   {
-    "Name": "The Ripper",
-    "Image": "https://gachame.github.io/images/gears/eq_2510_wpn_07_icon.png",
-    "ItemCode": "eq_2510_wpn_07"
+    "Name": "[SPY]Loid's Hat",
+    "Image": "https://rangers.lerico.net/res/gear_icon/eq_2512_amr_07_icon.png",
+    "ItemCode": "eq_2512_amr_07"
   },
   {
-    "Name": "Lovely Assistaff",
-    "Image": "https://gachame.github.io/images/gears/eq_2510_wpn_17_icon.png",
-    "ItemCode": "eq_2510_wpn_17"
+    "Name": "[SPY]Eden Uniform",
+    "Image": "https://rangers.lerico.net/res/gear_icon/eq_2512_amr_17_icon.png",
+    "ItemCode": "eq_2512_amr_17"
   },
   {
-    "Name": "Gris's Charm",
-    "Image": "https://gachame.github.io/images/gears/eq_2510_acc_06_icon.png",
-    "ItemCode": "eq_2510_acc_06"
+    "Name": "[SPY]Thorn P Weapons",
+    "Image": "https://rangers.lerico.net/res/gear_icon/eq_2512_wpn_06_icon.png",
+    "ItemCode": "eq_2512_wpn_06"
   }
 ]

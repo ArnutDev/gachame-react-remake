@@ -4,7 +4,7 @@ export function getRangersGachaData() {
                 cardId: 1,
                 title: "Gacha Rangers 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/rangers-banner-box-A.png",
-                info: "Odds-up:\n - Rudo\n - Enjin\n - Riyo\n - Zanka"
+                info: "Odds-up:\n - Loid\n - Anya\n - Yor\n - Bond"
             },
             gachaConfig: {
                 // month: "even",
@@ -34,7 +34,7 @@ export function getRangersGachaData() {
                 // boxId: 2,       
                 title: "Gacha Rangers 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/rangers-banner-box-B.png",
-                info: "Odds-up:\n - Rudo\n - Enjin\n"
+                info: "Odds-up:\n - Loid\n - Yor\n"
             },
             gachaConfig: {
                 // month: "even",
@@ -55,8 +55,8 @@ export function getRangersGachaData() {
                 eachRateUltra: 0.18,
                 eachRateCommon: 1.32,
                 rateUpIndex1: 0,
-                rateUpIndex2: 1,
-                unRateUpIndex1: 2,
+                rateUpIndex2: 2,
+                unRateUpIndex1: 1,
                 unRateUpIndex2: 3
             }
         },
@@ -65,7 +65,7 @@ export function getRangersGachaData() {
                 // boxId: 3,
                 title: "Gacha Rangers 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/rangers-banner-box-C.png",
-                info: "Odds-up:\n - Riyo\n - Zanka\n"
+                info: "Odds-up:\n - Anya\n - Bond\n"
             },
             gachaConfig: {
                 // month: "even",
@@ -85,10 +85,10 @@ export function getRangersGachaData() {
                 amountCommon: 2,
                 eachRateUltra: 0.18,
                 eachRateCommon: 1.32,
-                rateUpIndex1: 2,
+                rateUpIndex1: 1,
                 rateUpIndex2: 3,
                 unRateUpIndex1: 0,
-                unRateUpIndex2: 1
+                unRateUpIndex2: 2
             }
         }
     ]
@@ -110,7 +110,7 @@ export function getGearsGachaData() {
                 cardId: 1,
                 title: "Gacha Gears 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/gears-banner-box-A.png",
-                info: "Odds-up:\n - 3R\n - Enjin's Coat\n - Rudo's Gas Mask\n - The Ripper\n - Lovely Assistaff\n - Gris's Charm"
+                info: "Odds-up:\n - Loid Lapel Pin\n - Anya Hair Accessory\n - Thorn P Hairband\n - Loid's Hat\n - Eden Uniform\n - Thorn P Weapons"
             },
             gachaConfig: {
 
@@ -144,7 +144,7 @@ export function getGearsGachaData() {
                 // boxId: 2,       
                 title: "Gacha Gears 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/gears-banner-box-B.png",
-                info: "Odds-up:\n - Enjin's Coat\n - Lovely Assistaff\n\n\n\n"
+                info: "Odds-up:\n - Loid Lapel Pin\n - Loid's Hat\n\n\n\n"
             },
             gachaConfig: {
                 // month: "even",
@@ -166,11 +166,11 @@ export function getGearsGachaData() {
                 eachRate8c: 0.60,
                 eachRate7c: 1.25,
                 eachRate6c: -1,
-                rateUp8cIndex1: 1,
-                unRateUp8cIndex1: 0,
+                rateUp8cIndex1: 0,
+                unRateUp8cIndex1: 1,
                 unRateUp8cIndex2: 2,
-                rateUp7cIndex1: 4,
-                unRateUp7cIndex1: 3,
+                rateUp7cIndex1: 3,
+                unRateUp7cIndex1: 4,
             }
         },
         {
@@ -178,7 +178,7 @@ export function getGearsGachaData() {
                 // boxId: 3,
                 title: "Gacha Gears 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/gears-banner-box-C.png",
-                info: "Odds-up:\n - 3R\n - The Ripper\n\n\n\n"
+                info: "Odds-up:\n - Anya Hair Accessory\n - Loid's Hat\n\n\n\n"
             },
             gachaConfig: {
                 // month: "even",
@@ -200,8 +200,8 @@ export function getGearsGachaData() {
                 eachRate8c: 0.60,
                 eachRate7c: 1.25,
                 eachRate6c: -1,
-                rateUp8cIndex1: 0,
-                unRateUp8cIndex1: 1,
+                rateUp8cIndex1: 1,
+                unRateUp8cIndex1: 0,
                 unRateUp8cIndex2: 2,
                 rateUp7cIndex1: 3,
                 unRateUp7cIndex1: 4,
@@ -212,7 +212,7 @@ export function getGearsGachaData() {
                 // boxId: 4,
                 title: "Gacha Gears 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/gears-banner-box-D.png",
-                info: "Odds-up:\n - Rudo's Gas Mask\n - The Ripper\n\n\n\n"
+                info: "Odds-up:\n - Thorn P Hairband\n - Loid's Hat\n\n\n\n"
             },
             gachaConfig: {
                 // month: "even",
