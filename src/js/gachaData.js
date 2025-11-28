@@ -34,7 +34,7 @@ export function getRangersGachaData() {
                 // boxId: 2,       
                 title: "Gacha Rangers 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/rangers-banner-box-B.png",
-                info: "Odds-up:\n - Loid\n - Yor\n"
+                info: "Odds-up:\n - Anya\n - Yor\n"
             },
             gachaConfig: {
                 // month: "even",
@@ -54,9 +54,9 @@ export function getRangersGachaData() {
                 amountCommon: 2,
                 eachRateUltra: 0.18,
                 eachRateCommon: 1.32,
-                rateUpIndex1: 0,
+                rateUpIndex1: 1,
                 rateUpIndex2: 2,
-                unRateUpIndex1: 1,
+                unRateUpIndex1: 0,
                 unRateUpIndex2: 3
             }
         },
@@ -65,7 +65,7 @@ export function getRangersGachaData() {
                 // boxId: 3,
                 title: "Gacha Rangers 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/rangers-banner-box-C.png",
-                info: "Odds-up:\n - Anya\n - Bond\n"
+                info: "Odds-up:\n - Loid\n - Bond\n"
             },
             gachaConfig: {
                 // month: "even",
@@ -85,9 +85,9 @@ export function getRangersGachaData() {
                 amountCommon: 2,
                 eachRateUltra: 0.18,
                 eachRateCommon: 1.32,
-                rateUpIndex1: 1,
+                rateUpIndex1: 0,
                 rateUpIndex2: 3,
-                unRateUpIndex1: 0,
+                unRateUpIndex1: 1,
                 unRateUpIndex2: 2
             }
         }
