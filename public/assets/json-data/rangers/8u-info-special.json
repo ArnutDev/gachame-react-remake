@@ -1,22 +1,22 @@
 [
   {
-    "Name": "Cleaner Rudo",
-    "Image": "https://gachame.github.io/images/rangers/u1536u-ru-thum.png",
-    "UnitCode": "u1536u-ru"
+    "Name": "Psychiatrist Loid",
+    "Image": "https://gachame.github.io/images/rangers/u1551u-lf-thum.png",
+    "UnitCode": "u1551u-lf"
   },
   {
-    "Name": "Cleaner Enjin",
-    "Image": "https://gachame.github.io/images/rangers/u1538u-en-thum.png",
-    "UnitCode": "u1538u-en"
+    "Name": "Eden Student Anya",
+    "Image": "https://gachame.github.io/images/rangers/u1555u-af-thum.png",
+    "UnitCode": "u1555u-af"
   },
   {
-    "Name": "Cleaner Riyo",
-    "Image": "https://gachame.github.io/images/rangers/u1540u-ri-thum.png",
-    "UnitCode": "u1540u-ri"
+    "Name": "City Hall Staff Yor",
+    "Image": "https://gachame.github.io/images/rangers/u1553u-yf-thum.png",
+    "UnitCode": "u1553u-yf"
   },
   {
-    "Name": "Cleaner Zanka",
-    "Image": "https://gachame.github.io/images/rangers/u1542u-za-thum.png",
-    "UnitCode": "u1542u-za"
+    "Name": "Subject 8 Bond",
+    "Image": "https://gachame.github.io/images/rangers/u1557u-bf-thum.png",
+    "UnitCode": "u1557u-bf"
   }
 ]

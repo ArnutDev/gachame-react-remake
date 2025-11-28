@@ -658,5 +658,15 @@
     "Name": "Green Onion Field Moon",
     "Image": "https://gachame.github.io/images/rangers/u1530u-moon-thum.png",
     "UnitCode": "u1530u-moon"
+  },
+  {
+    "Name": "Pure White Ghost Cony",
+    "Image": "https://gachame.github.io/images/rangers/u1547u-cony-thum.png",
+    "UnitCode": "u1547u-cony"
+  },
+  {
+    "Name": "Blue Oni Brown",
+    "Image": "https://gachame.github.io/images/rangers/u1545u-brown-thum.png",
+    "UnitCode": "u1545u-brown"
   }
 ]

@@ -1,14 +1,10 @@
 const targetNames = [
-    "Moonlight Guard Gloves",
-    "Moonlit Dagger",
-    "Moonlight Shining Shield",
-    "Moonlight Shining Belt",
-    "Moonlight Shining Axe",
-    "Moonbrella",
-    "Magic Moon Wand",
-    "Moon Shield",
-    "Moon Necklace",
-    "Moon Dumplings"
+    "Loid Lapel Pin",
+    "Anya Hair Accessory",
+    "Thorn P Hairband",
+    "Loid's Hat",
+    "Eden Uniform",
+    "Thorn P Weapons"
 ];
 /**/
 function searchAndStoreData(queries) {

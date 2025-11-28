@@ -708,5 +708,15 @@
     "Name": "Field Moon",
     "Image": "https://gachame.github.io/images/rangers/u1530e-moon-thum.png",
     "UnitCode": "u1530e-moon"
+  },
+  {
+    "Name": "Poor Ghost Cony",
+    "Image": "https://gachame.github.io/images/rangers/u1547e-cony-thum.png",
+    "UnitCode": "u1547e-cony"
+  },
+  {
+    "Name": "One-Horned Oni Brown",
+    "Image": "https://gachame.github.io/images/rangers/u1545e-brown-thum.png",
+    "UnitCode": "u1545e-brown"
   }
 ]

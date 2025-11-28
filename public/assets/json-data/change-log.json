@@ -135,5 +135,13 @@
         "changes": [
             "Fixed UI"
         ]
+    },
+    {
+        "version": "2.1.0",
+        "date": "28-11-2025",
+        "changes": [
+            "Added December Rangers gacha",
+            "Added December Gears gacha"
+        ]
     }
 ]
