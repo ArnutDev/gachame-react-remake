@@ -144,7 +144,7 @@ export function getGearsGachaData() {
                 // boxId: 2,       
                 title: "Gacha Gears 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/gears-banner-box-B.png",
-                info: "Odds-up:\n - Bident\n - Loid's Hat\n\n\n\n"
+                info: "Odds-up:\n - Bident\n - Qin Shi's Eyemask\n\n\n\n"
             },
             gachaConfig: {
                 // month: "even",
@@ -212,7 +212,7 @@ export function getGearsGachaData() {
                 // boxId: 4,
                 title: "Gacha Gears 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/gears-banner-box-D.png",
-                info: "Odds-up:\n - Moonlight of Artemis\n - Loid's Hat\n\n\n\n"
+                info: "Odds-up:\n - Moonlight of Artemis\n - Qin Shi's Eyemask\n\n\n\n"
             },
             gachaConfig: {
                 // month: "even",
