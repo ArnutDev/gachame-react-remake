@@ -1,80 +1,8 @@
-*Change
-
-maybe delete all of "XXX-special.json" by UnitCode or ItemCode on Github(gachame) before anything
-add new rangers and gears in "XXX-special.json"
-
-*dont forget to upload gacha banner to Github for faster load
-
-index.html
-    -none
-
-rangers-rand.html
-    -topic 
-        "Gacha Rangers for"
-    -info in card 
-        "Odds UP:"
-        *line <br> should be equality in every card
-    -footer
-        "img src"
-        *odd month has 4 column of rangers
-        *even month has 3 column of rangers
-
-gears-rand.html
-    -topic 
-        "Gacha Gears for"
-    -info in card 
-        "img src"
-        "Odds UP:"
-        *line <br> should be equality in every card
-    -footer
-        "img src"
-        *odd month has 6 column of gears
-        *even column depend on situation
-
-src
-    /rangers
-        rate-normal.js
-            -after add new data in json-data folder uncomment loop console.log 
-            for check if it push success Done!
-
-        rate-up(N)
-            -after add new data in json-data folder uncomment loop console.log 
-            for check if it push success Done!
-    /gears
-        rate-normal.js
-            -after add new data in json-data folder uncomment loop console.log 
-            for check if it push success Done!
-        
-        rate-up(N)
-            -after add new data in json-data folder uncomment loop console.log 
-            for check if it push success Done!
-
-assets
-    /cover
-        (updates new cover depend on that month)
-        file name use form "g/r-normal" and "g/r-rate(N)"
-        *g for gear and r for ranger
-
-    /json-data
-        /rangers
-            -just scraping new data and put it on 8u-info-special.json
-            and 8c-info-special.json for seperate use
-                /rate-normal
-                    -add new data rangers in 8c-info.json and 8u-info.json (except dark/light) Done!
-        /gears
-            -just scraping new data and put it on gears-info-special.json for seperate use
-                /rate-normal
-                    -add new data rangers in gears-info-special.json Done!
-            
-    change-log.json
-        update chagnelog everytime it change
-
-*** check UI responsive horizontal on phone
-
 routine every update
-1.update json (normal and collabro rangers | gears too)
-2.download and upload to Github (normal and collabro rangers | gears too)
-3.update new banner and upload to github (rangers and gears)
-4.update card detail
-5.change month at rangers and gears page
-6.update changelog
+1.เอาข้อมูลเรนเจอร์-เกียร์จาก line rangers notice มาใส่สคริป python แล้วรันฟังชันพร้อมกัน 
+เพื่ออัปเดต json
+2.เอาภาพที่ได้จากโฟลเดอร์ python ไปอัปขึ้น github
+3.ทำ banner ใหม่
+4.อัปเดตข้อมูลใน card
+5.เปลี่ยนเดือนในหน้า gacha ทั้ง rangers และ gears
+6.อัปเดตข้อมูลใน changelog
