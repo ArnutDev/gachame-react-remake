@@ -69,4 +69,12 @@ assets
     change-log.json
         update chagnelog everytime it change
 
-*** check UI responsive horizontal on phone 
+*** check UI responsive horizontal on phone
+
+routine every update
+1.update json (normal and collabro rangers | gears too)
+2.download and upload to Github (normal and collabro rangers | gears too)
+3.update new banner and upload to github (rangers and gears)
+4.update card detail
+5.change month at rangers and gears page
+6.update changelog

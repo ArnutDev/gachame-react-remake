@@ -1,22 +1,21 @@
-[
-  {
-    "Name": "Psychiatrist Loid",
-    "Image": "https://gachame.github.io/images/rangers/u1551u-lf-thum.png",
-    "UnitCode": "u1551u-lf"
+[{
+    "Name": "First Emperor Qin Shi",
+    "Image": "https://gachame.github.io/images/rangers/u1570u-qs-thum.png",
+    "UnitCode": "u1570u-qs"
   },
   {
-    "Name": "Eden Student Anya",
-    "Image": "https://gachame.github.io/images/rangers/u1555u-af-thum.png",
-    "UnitCode": "u1555u-af"
+    "Name": "Underworld King Hades",
+    "Image": "https://gachame.github.io/images/rangers/u1572u-hd-thum.png",
+    "UnitCode": "u1572u-hd"
   },
   {
-    "Name": "City Hall Staff Yor",
-    "Image": "https://gachame.github.io/images/rangers/u1553u-yf-thum.png",
-    "UnitCode": "u1553u-yf"
+    "Name": "Lone Sorcerer Tesla",
+    "Image": "https://gachame.github.io/images/rangers/u1574u-nt-thum.png",
+    "UnitCode": "u1574u-nt"
   },
   {
-    "Name": "Subject 8 Bond",
-    "Image": "https://gachame.github.io/images/rangers/u1557u-bf-thum.png",
-    "UnitCode": "u1557u-bf"
+    "Name": "Sun God Apollo",
+    "Image": "https://gachame.github.io/images/rangers/u1576u-ap-thum.png",
+    "UnitCode": "u1576u-ap"
   }
 ]

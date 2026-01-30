@@ -1,5 +1,4 @@
-[
-    {
+[{
         "version": "1.0.0 First release",
         "date": "22-12-2024",
         "changes": [
@@ -142,6 +141,14 @@
         "changes": [
             "Added December Rangers gacha",
             "Added December Gears gacha"
+        ]
+    },
+    {
+        "version": "2.2.0",
+        "date": "30-01-2026",
+        "changes": [
+            "Added February Rangers gacha",
+            "Added February Gears gacha"
         ]
     }
 ]

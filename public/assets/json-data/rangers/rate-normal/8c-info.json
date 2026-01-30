@@ -1,5 +1,4 @@
-[
-  {
+[{
     "Name": "8 Star Super Leonard",
     "Image": "https://gachame.github.io/images/rangers/srry im lazy to find this image-thum.png",
     "UnitCode": "srry im lazy to find this image"
@@ -718,5 +717,15 @@
     "Name": "One-Horned Oni Brown",
     "Image": "https://gachame.github.io/images/rangers/u1545e-brown-thum.png",
     "UnitCode": "u1545e-brown"
+  },
+  {
+    "Name": "Sleepyhead Moon",
+    "Image": "https://gachame.github.io/images/rangers/u1564e-moon-thum.png",
+    "UnitCode": "u1564e-moon"
+  },
+  {
+    "Name": "Candle Sally",
+    "Image": "https://gachame.github.io/images/rangers/u1566e-sally-thum.png",
+    "UnitCode": "u1566e-sally"
   }
 ]

@@ -1,32 +1,31 @@
-[
-  {
-    "Name": "[SPY]Loid Lapel Pin",
-    "Image": "https://rangers.lerico.net/res/gear_icon/eq_2512_acc_18_icon.png",
-    "ItemCode": "eq_2512_acc_18"
+[{
+    "Name": "Bident",
+    "Image": "https://gachame.github.io/images/gears/eq_2602_wpn_08_icon.png",
+    "ItemCode": "eq_2602_wpn_08"
   },
   {
-    "Name": "[SPY]Anya Hair Accessory",
-    "Image": "https://rangers.lerico.net/res/gear_icon/eq_2512_acc_08_icon.png",
-    "ItemCode": "eq_2512_acc_08"
+    "Name": "Staff of Beelzebub",
+    "Image": "https://gachame.github.io/images/gears/eq_2602_wpn_18_icon.png",
+    "ItemCode": "eq_2602_wpn_18"
   },
   {
-    "Name": "[SPY]Thorn P Hairband",
-    "Image": "https://rangers.lerico.net/res/gear_icon/eq_2512_acc_28_icon.png",
-    "ItemCode": "eq_2512_acc_28"
+    "Name": "Moonlight of Artemis",
+    "Image": "https://gachame.github.io/images/gears/eq_2602_wpn_28_icon.png",
+    "ItemCode": "eq_2602_wpn_28"
   },
   {
-    "Name": "[SPY]Loid's Hat",
-    "Image": "https://rangers.lerico.net/res/gear_icon/eq_2512_amr_07_icon.png",
-    "ItemCode": "eq_2512_amr_07"
+    "Name": "Qin Shi's Eyemask",
+    "Image": "https://gachame.github.io/images/gears/eq_2602_acc_17_icon.png",
+    "ItemCode": "eq_2602_acc_17"
   },
   {
-    "Name": "[SPY]Eden Uniform",
-    "Image": "https://rangers.lerico.net/res/gear_icon/eq_2512_amr_17_icon.png",
-    "ItemCode": "eq_2512_amr_17"
+    "Name": "Tesla Coil",
+    "Image": "https://gachame.github.io/images/gears/eq_2602_acc_07_icon.png",
+    "ItemCode": "eq_2602_acc_07"
   },
   {
-    "Name": "[SPY]Thorn P Weapons",
-    "Image": "https://rangers.lerico.net/res/gear_icon/eq_2512_wpn_06_icon.png",
-    "ItemCode": "eq_2512_wpn_06"
+    "Name": "Hades' Clothes",
+    "Image": "https://gachame.github.io/images/gears/eq_2602_amr_06_icon.png",
+    "ItemCode": "eq_2602_amr_06"
   }
 ]

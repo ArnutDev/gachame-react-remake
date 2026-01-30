@@ -1,8 +1,10 @@
 const targetNames = [
-    "Psychiatrist Loid",
-    "Eden Student Anya",
-    "City Hall Staff Yor",
-    "Subject 8 Bond"
+    "First Emperor Qin Shi",
+    "Underworld King Hades",
+    "Lone Sorcerer Tesla",
+    "Sun God Apollo",
+    "Soft & Fluffy Sleepyhead Moon",
+    "Dimly Lit Candle Sally"
 ];
 
 const data = [];

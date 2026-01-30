@@ -1,11 +1,11 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import ItemCard from "../components/ItemCard";
 import RandomModal from "../components/RandomModal";
 import ItemFooter from "../components/ItemFooter.jsx";
-import gearsGacha  from "../js/randomGears.js";
+import gearsGacha from "../js/randomGears.js";
 import GuaranteeModal from "../components/GuaranteeModal.jsx";
 import { getGuaranteedReward } from "../js/utils.js";
-import { getGearsGachaData,getGearsGachaPath } from "../js/gachaData.js";
+import { getGearsGachaData, getGearsGachaPath } from "../js/gachaData.js";
 
 export default function RandomGearsPage() {
   const [allGears, setAllGears] = useState([]);
@@ -17,10 +17,10 @@ export default function RandomGearsPage() {
   const [guaranteeButtonVisible, setGuaranteeButtonVisible] = useState(false);
   const [guarantee90, setGuarantee90] = useState(false);
   const [guarantee150, setGuarantee150] = useState(false);
-  const [guaranteeModelOpen,setGuaranteeModelOpen] = useState(false);
-  const [guaranteeReward,setguaranteeReward] = useState(null);
+  const [guaranteeModelOpen, setGuaranteeModelOpen] = useState(false);
+  const [guaranteeReward, setguaranteeReward] = useState(null);
   // const [specialCount, setSpecialCount] = useState([0,0,0,0,0,0]);//even
-  const [specialCount, setSpecialCount] = useState([0,0,0,0,0,0]);//odd
+  const [specialCount, setSpecialCount] = useState([0, 0, 0, 0, 0, 0]); //odd
   const [currentCard, setCurrentCard] = useState(null);
   const [gachaData, setGachaData] = useState([]);
 
@@ -29,7 +29,9 @@ export default function RandomGearsPage() {
     setGachaData(data);
     const gearsPaths = getGearsGachaPath();
     async function loadAllFiles() {
-      const promises = gearsPaths.map(path => fetch(path).then(res => res.json()));
+      const promises = gearsPaths.map((path) =>
+        fetch(path).then((res) => res.json()),
+      );
       const dataArray = await Promise.all(promises);
       setAllGears(dataArray);
     }
@@ -38,31 +40,34 @@ export default function RandomGearsPage() {
   }, []);
 
   const handleRandom = async (gachaConfig) => {
-    const [slots,specials,specialsCountArray] = await gearsGacha(allGears,gachaConfig);
+    const [slots, specials, specialsCountArray] = await gearsGacha(
+      allGears,
+      gachaConfig,
+    );
     // console.log("after return specials", specials);
     setCurrentSpecials(specials);
-    
+
     setCurrentSlots(slots);
     setSpecialCount(specialsCountArray);
 
     // setSpecialCount(prev => prev + calculateSpecial(slots));
     setCurrentCard(gachaConfig);
     setModalOpen(true);
-    setTotalCount(prev => prev+1);
-    setTotalRandoms(prev => {
+    setTotalCount((prev) => prev + 1);
+    setTotalRandoms((prev) => {
       const newTotal = prev + 5;
 
-    if (newTotal >= 150 && !guarantee150) {
-        setGuarantee90(false);          
-        setGuaranteeButtonVisible(true); 
-        setGuarantee150(true);           
-        return newTotal - 150;         
-    } else if (newTotal >= 90 && !guarantee90) {
-        setGuarantee90(true);            
-        setGuaranteeButtonVisible(true); 
-        setGuarantee150(false);          
-    }
-    return newTotal;
+      if (newTotal >= 150 && !guarantee150) {
+        setGuarantee90(false);
+        setGuaranteeButtonVisible(true);
+        setGuarantee150(true);
+        return newTotal - 150;
+      } else if (newTotal >= 90 && !guarantee90) {
+        setGuarantee90(true);
+        setGuaranteeButtonVisible(true);
+        setGuarantee150(false);
+      }
+      return newTotal;
     });
   };
 
@@ -73,21 +78,27 @@ export default function RandomGearsPage() {
   };
 
   const handleGuaranteeClick = () => {
-  // console.log("กดปุ่มการันตีแล้ว");
-  const [guaranteeResult,specialsCountArray] = getGuaranteedReward("gear",allGears[4]);
-  setSpecialCount(specialsCountArray);
-  setguaranteeReward(guaranteeResult);
-  setGuaranteeModelOpen(true);
-  setGuaranteeButtonVisible(false); // ซ่อนปุ่มหลังกด
-};
+    // console.log("กดปุ่มการันตีแล้ว");
+    const [guaranteeResult, specialsCountArray] = getGuaranteedReward(
+      "gear",
+      allGears[4],
+    );
+    setSpecialCount(specialsCountArray);
+    setguaranteeReward(guaranteeResult);
+    setGuaranteeModelOpen(true);
+    setGuaranteeButtonVisible(false); // ซ่อนปุ่มหลังกด
+  };
   return (
     <div className="d-flex flex-column" style={{ minHeight: "auto" }}>
       <div className="flex-grow-1">
-        <h2 className="my-3 text-center text-light">Gacha Gears For December</h2>
+        <h2 className="my-3 text-center text-light">
+          Gacha Gears For February
+        </h2>
         <div className="my-3 text-warning text-center">
           <p>
-            Notice: You will receive a guaranteed box here every 90 and 150 gacha pulls.
-            Please open immediately to receive it. (Random only — no selection available)
+            Notice: You will receive a guaranteed box here every 90 and 150
+            gacha pulls. Please open immediately to receive it. (Random only —
+            no selection available)
           </p>
           {guaranteeButtonVisible && (
             <button className="btn btn-success" onClick={handleGuaranteeClick}>
@@ -100,13 +111,12 @@ export default function RandomGearsPage() {
           {gachaData.map((item, idx) => (
             <div key={idx} className="col-md-4 my-3">
               <ItemCard
-                cardInfo={item.cardInfo} 
-                onRandom={() => handleRandom(item.gachaConfig)} 
+                cardInfo={item.cardInfo}
+                onRandom={() => handleRandom(item.gachaConfig)}
               />
             </div>
           ))}
         </div>
-      
       </div>
       {modalOpen && (
         <RandomModal
@@ -127,8 +137,12 @@ export default function RandomGearsPage() {
           onClose={() => setGuaranteeModelOpen(false)}
         />
       )}
-      
-      <ItemFooter specialCount={specialCount} itemDetails={allGears[4] || []} footerMessage={"Total Received"}/>
-      
- </div> );
+
+      <ItemFooter
+        specialCount={specialCount}
+        itemDetails={allGears[4] || []}
+        footerMessage={"Total Received"}
+      />
+    </div>
+  );
 }

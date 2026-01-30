@@ -1,10 +1,10 @@
 const targetNames = [
-    "Loid Lapel Pin",
-    "Anya Hair Accessory",
-    "Thorn P Hairband",
-    "Loid's Hat",
-    "Eden Uniform",
-    "Thorn P Weapons"
+    "Bident",
+    "Staff of Beelzebub",
+    "Moonlight of Artemis",
+    "Qin Shi's Eyemask",
+    "Tesla Coil",
+    "Hades'Clothes"
 ];
 /**/
 function searchAndStoreData(queries) {
