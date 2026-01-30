@@ -1,12 +1,11 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import ItemCard from "../components/ItemCard";
 import RandomModal from "../components/RandomModal";
 import ItemFooter from "../components/ItemFooter.jsx";
-import rangersGacha  from "../js/randomRangers.js";
+import rangersGacha from "../js/randomRangers.js";
 import GuaranteeModal from "../components/GuaranteeModal.jsx";
 import { getGuaranteedReward } from "../js/utils.js";
-import { getRangersGachaData,getRangersGachaPath } from "../js/gachaData.js";
-
+import { getRangersGachaData, getRangersGachaPath } from "../js/gachaData.js";
 
 export default function RandomRangersPage() {
   const [allRangers, setAllRangers] = useState([]);
@@ -16,10 +15,10 @@ export default function RandomRangersPage() {
   const [totalRandoms, setTotalRandoms] = useState(0);
   const [totalCount, setTotalCount] = useState(0);
   const [guaranteeButtonVisible, setGuaranteeButtonVisible] = useState(false);
-  const [guaranteeModelOpen,setGuaranteeModelOpen] = useState(false);
-  const [guaranteeReward,setguaranteeReward] = useState(null);
+  const [guaranteeModelOpen, setGuaranteeModelOpen] = useState(false);
+  const [guaranteeReward, setguaranteeReward] = useState(null);
   // const [specialCount, setSpecialCount] = useState([0,0,0]);//even
-  const [specialCount, setSpecialCount] = useState([0,0,0,0]);//odd
+  const [specialCount, setSpecialCount] = useState([0, 0, 0, 0]); //odd
   const [currentCard, setCurrentCard] = useState(null);
   const [gachaData, setGachaData] = useState([]);
 
@@ -28,7 +27,9 @@ export default function RandomRangersPage() {
     setGachaData(data);
     const rangersPaths = getRangersGachaPath();
     async function loadAllFiles() {
-      const promises = rangersPaths.map(path => fetch(path).then(res => res.json()));
+      const promises = rangersPaths.map((path) =>
+        fetch(path).then((res) => res.json()),
+      );
       const dataArray = await Promise.all(promises);
       setAllRangers(dataArray);
     }
@@ -37,23 +38,26 @@ export default function RandomRangersPage() {
   }, []);
 
   const handleRandom = async (gachaConfig) => {
-    const [slots,specials,specialsCountArray] = await rangersGacha(allRangers,gachaConfig);
+    const [slots, specials, specialsCountArray] = await rangersGacha(
+      allRangers,
+      gachaConfig,
+    );
     // console.log("after return specials", specials);
     setCurrentSpecials(specials);
-    
+
     setCurrentSlots(slots);
     setSpecialCount(specialsCountArray);
 
     // setSpecialCount(prev => prev + calculateSpecial(slots));
     setCurrentCard(gachaConfig);
     setModalOpen(true);
-    setTotalCount(prev => prev+1);
-    setTotalRandoms(prev => {
+    setTotalCount((prev) => prev + 1);
+    setTotalRandoms((prev) => {
       const newTotal = prev + 6;
 
       if (newTotal >= 100) {
-        setGuaranteeButtonVisible(true); 
-        return newTotal - 100;           
+        setGuaranteeButtonVisible(true);
+        return newTotal - 100;
       }
 
       return newTotal;
@@ -67,21 +71,27 @@ export default function RandomRangersPage() {
   };
 
   const handleGuaranteeClick = () => {
-  // console.log("กดปุ่มการันตีแล้ว");
-  const [guaranteeResult,specialsCountArray] = getGuaranteedReward("ranger",allRangers[4]);
-  setSpecialCount(specialsCountArray);
-  setguaranteeReward(guaranteeResult);
-  setGuaranteeModelOpen(true);
-  setGuaranteeButtonVisible(false); // ซ่อนปุ่มหลังกด
-};
+    // console.log("กดปุ่มการันตีแล้ว");
+    const [guaranteeResult, specialsCountArray] = getGuaranteedReward(
+      "ranger",
+      allRangers[4],
+    );
+    setSpecialCount(specialsCountArray);
+    setguaranteeReward(guaranteeResult);
+    setGuaranteeModelOpen(true);
+    setGuaranteeButtonVisible(false); // ซ่อนปุ่มหลังกด
+  };
   return (
     <div className="d-flex flex-column" style={{ minHeight: "auto" }}>
       <div className="flex-grow-1">
-        <h2 className="my-3 text-center text-light">Gacha Rangers For December</h2>
+        <h2 className="my-3 text-center text-light">
+          Gacha Rangers For February
+        </h2>
         <div className="my-3 text-warning text-center">
           <p>
-            Notice: You will receive a guaranteed box here every 100 gacha pulls.
-            Please open immediately to receive it. (Random only — no selection available)
+            Notice: You will receive a guaranteed box here every 100 gacha
+            pulls. Please open immediately to receive it. (Random only — no
+            selection available)
           </p>
           {guaranteeButtonVisible && (
             <button className="btn btn-success" onClick={handleGuaranteeClick}>
@@ -94,13 +104,12 @@ export default function RandomRangersPage() {
           {gachaData.map((item, idx) => (
             <div key={idx} className="col-md-4 my-3">
               <ItemCard
-                cardInfo={item.cardInfo} 
-                onRandom={() => handleRandom(item.gachaConfig)} 
+                cardInfo={item.cardInfo}
+                onRandom={() => handleRandom(item.gachaConfig)}
               />
             </div>
           ))}
         </div>
-      
       </div>
       {modalOpen && (
         <RandomModal
@@ -121,8 +130,12 @@ export default function RandomRangersPage() {
           onClose={() => setGuaranteeModelOpen(false)}
         />
       )}
-      
-      <ItemFooter specialCount={specialCount} itemDetails={allRangers[4] || []} footerMessage={"Total Received (including ultra and common)"}/>
-      
- </div> );
+
+      <ItemFooter
+        specialCount={specialCount}
+        itemDetails={allRangers[4] || []}
+        footerMessage={"Total Received (including ultra and common)"}
+      />
+    </div>
+  );
 }

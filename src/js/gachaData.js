@@ -4,7 +4,7 @@ export function getRangersGachaData() {
                 cardId: 1,
                 title: "Gacha Rangers 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/rangers-banner-box-A.png",
-                info: "Odds-up:\n - Loid\n - Anya\n - Yor\n - Bond"
+                info: "Odds-up:\n - Qin Shi\n - Hades\n - Tesla\n - Apollo"
             },
             gachaConfig: {
                 // month: "even",
@@ -34,7 +34,7 @@ export function getRangersGachaData() {
                 // boxId: 2,       
                 title: "Gacha Rangers 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/rangers-banner-box-B.png",
-                info: "Odds-up:\n - Anya\n - Yor\n"
+                info: "Odds-up:\n - Qin Shi\n - Hades\n"
             },
             gachaConfig: {
                 // month: "even",
@@ -65,7 +65,7 @@ export function getRangersGachaData() {
                 // boxId: 3,
                 title: "Gacha Rangers 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/rangers-banner-box-C.png",
-                info: "Odds-up:\n - Loid\n - Bond\n"
+                info: "Odds-up:\n - Tesla\n - Apollo\n"
             },
             gachaConfig: {
                 // month: "even",
@@ -110,7 +110,7 @@ export function getGearsGachaData() {
                 cardId: 1,
                 title: "Gacha Gears 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/gears-banner-box-A.png",
-                info: "Odds-up:\n - Loid Lapel Pin\n - Anya Hair Accessory\n - Thorn P Hairband\n - Loid's Hat\n - Eden Uniform\n - Thorn P Weapons"
+                info: "Odds-up:\n - Bident\n - Staff of Beelzebub\n - Moonlight of Artemis\n - Qin Shi's Eyemask\n - Tesla Coil\n - Hades' Clothes"
             },
             gachaConfig: {
 
@@ -144,7 +144,7 @@ export function getGearsGachaData() {
                 // boxId: 2,       
                 title: "Gacha Gears 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/gears-banner-box-B.png",
-                info: "Odds-up:\n - Loid Lapel Pin\n - Loid's Hat\n\n\n\n"
+                info: "Odds-up:\n - Bident\n - Loid's Hat\n\n\n\n"
             },
             gachaConfig: {
                 // month: "even",
@@ -178,7 +178,7 @@ export function getGearsGachaData() {
                 // boxId: 3,
                 title: "Gacha Gears 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/gears-banner-box-C.png",
-                info: "Odds-up:\n - Anya Hair Accessory\n - Loid's Hat\n\n\n\n"
+                info: "Odds-up:\n - Staff of Beelzebub\n - Qin Shi's Eyemask\n\n\n\n"
             },
             gachaConfig: {
                 // month: "even",
@@ -212,7 +212,7 @@ export function getGearsGachaData() {
                 // boxId: 4,
                 title: "Gacha Gears 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/gears-banner-box-D.png",
-                info: "Odds-up:\n - Thorn P Hairband\n - Loid's Hat\n\n\n\n"
+                info: "Odds-up:\n - Moonlight of Artemis\n - Loid's Hat\n\n\n\n"
             },
             gachaConfig: {
                 // month: "even",
