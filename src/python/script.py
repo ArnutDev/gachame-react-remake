@@ -206,10 +206,10 @@ ranger_special_data = """
 
 #---- เปิดใช้ฟังชันพร้อมกัน -----
 # 1. จัดการ Gear (Overwrite Special)
-scrape_gear_data("https://rangers.lerico.net/en/equipments-book", gear_data)
+# scrape_gear_data("https://rangers.lerico.net/en/equipments-book", gear_data)
 
 # 2. จัดการ Ranger (Append Normal) (ต้องแยก ultra ไปใส่ในไฟล์มันเอง)
-update_ranger_database("https://rangers.lerico.net/en/rangers-book", ranger_append_data)
+# update_ranger_database("https://rangers.lerico.net/en/rangers-book", ranger_append_data)
 
 # 3. จัดการ Ranger (Overwrite Special)
-scrape_ranger_data("https://rangers.lerico.net/en/rangers-book", ranger_special_data)
+# scrape_ranger_data("https://rangers.lerico.net/en/rangers-book", ranger_special_data)
