@@ -208,7 +208,7 @@ ranger_special_data = """
 # 1. จัดการ Gear (Overwrite Special)
 scrape_gear_data("https://rangers.lerico.net/en/equipments-book", gear_data)
 
-# 2. จัดการ Ranger (Append Normal)
+# 2. จัดการ Ranger (Append Normal) (ต้องแยก ultra ไปใส่ในไฟล์มันเอง)
 update_ranger_database("https://rangers.lerico.net/en/rangers-book", ranger_append_data)
 
 # 3. จัดการ Ranger (Overwrite Special)

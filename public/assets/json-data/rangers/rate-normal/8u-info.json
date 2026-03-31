@@ -677,5 +677,10 @@
     "Name": "Dimly Lit Candle Sally",
     "Image": "https://gachame.github.io/images/rangers/u1566u-sally-thum.png",
     "UnitCode": "u1566u-sally"
-  }
+  },
+  {
+    "Name": "Iron Wall Prodigy Cony",
+    "Image": "https://gachame.github.io/images/rangers/u1581u-cony-thum.png",
+    "UnitCode": "u1581u-cony"
+  },
 ]
