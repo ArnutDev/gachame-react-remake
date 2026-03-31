@@ -84,9 +84,7 @@ export default function RandomRangersPage() {
   return (
     <div className="d-flex flex-column" style={{ minHeight: "auto" }}>
       <div className="flex-grow-1">
-        <h2 className="my-3 text-center text-light">
-          Gacha Rangers For February
-        </h2>
+        <h2 className="my-3 text-center text-light">Gacha Rangers For April</h2>
         <div className="my-3 text-warning text-center">
           <p>
             Notice: You will receive a guaranteed box here every 100 gacha

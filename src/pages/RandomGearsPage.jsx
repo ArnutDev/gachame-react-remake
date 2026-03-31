@@ -91,9 +91,7 @@ export default function RandomGearsPage() {
   return (
     <div className="d-flex flex-column" style={{ minHeight: "auto" }}>
       <div className="flex-grow-1">
-        <h2 className="my-3 text-center text-light">
-          Gacha Gears For February
-        </h2>
+        <h2 className="my-3 text-center text-light">Gacha Gears For April</h2>
         <div className="my-3 text-warning text-center">
           <p>
             Notice: You will receive a guaranteed box here every 90 and 150

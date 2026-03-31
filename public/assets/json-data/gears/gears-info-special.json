@@ -1,31 +1,31 @@
 [{
-    "Name": "Bident",
-    "Image": "https://gachame.github.io/images/gears/eq_2602_wpn_08_icon.png",
-    "ItemCode": "eq_2602_wpn_08"
+    "Name": "Renri's Earrings",
+    "Image": "https://gachame.github.io/images/gears/eq_2604_amr_28_icon.png",
+    "ItemCode": "eq_2604_amr_28"
   },
   {
-    "Name": "Staff of Beelzebub",
-    "Image": "https://gachame.github.io/images/gears/eq_2602_wpn_18_icon.png",
-    "ItemCode": "eq_2602_wpn_18"
+    "Name": "Naruhiko's Headphones",
+    "Image": "https://gachame.github.io/images/gears/eq_2604_amr_18_icon.png",
+    "ItemCode": "eq_2604_amr_18"
   },
   {
-    "Name": "Moonlight of Artemis",
-    "Image": "https://gachame.github.io/images/gears/eq_2602_wpn_28_icon.png",
-    "ItemCode": "eq_2602_wpn_28"
+    "Name": "Miden Yukata",
+    "Image": "https://gachame.github.io/images/gears/eq_2604_amr_08_icon.png",
+    "ItemCode": "eq_2604_amr_08"
   },
   {
-    "Name": "Qin Shi's Eyemask",
-    "Image": "https://gachame.github.io/images/gears/eq_2602_acc_17_icon.png",
-    "ItemCode": "eq_2602_acc_17"
+    "Name": "Soji's Smartphone",
+    "Image": "https://gachame.github.io/images/gears/eq_2604_wpn_07_icon.png",
+    "ItemCode": "eq_2604_wpn_07"
   },
   {
-    "Name": "Tesla Coil",
-    "Image": "https://gachame.github.io/images/gears/eq_2602_acc_07_icon.png",
-    "ItemCode": "eq_2602_acc_07"
+    "Name": "Banhammer",
+    "Image": "https://gachame.github.io/images/gears/eq_2604_wpn_17_icon.png",
+    "ItemCode": "eq_2604_wpn_17"
   },
   {
-    "Name": "Hades' Clothes",
-    "Image": "https://gachame.github.io/images/gears/eq_2602_amr_06_icon.png",
-    "ItemCode": "eq_2602_amr_06"
+    "Name": "Denmi-chan",
+    "Image": "https://gachame.github.io/images/gears/eq_2604_acc_06_icon.png",
+    "ItemCode": "eq_2604_acc_06"
   }
 ]
