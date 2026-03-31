@@ -54,9 +54,9 @@ export function getRangersGachaData() {
                 amountCommon: 2,
                 eachRateUltra: 0.18,
                 eachRateCommon: 1.32,
-                rateUpIndex1: 1,
-                rateUpIndex2: 2,
-                unRateUpIndex1: 0,
+                rateUpIndex1: 0,
+                rateUpIndex2: 1,
+                unRateUpIndex1: 2,
                 unRateUpIndex2: 3
             }
         },
@@ -85,10 +85,10 @@ export function getRangersGachaData() {
                 amountCommon: 2,
                 eachRateUltra: 0.18,
                 eachRateCommon: 1.32,
-                rateUpIndex1: 0,
+                rateUpIndex1: 2,
                 rateUpIndex2: 3,
-                unRateUpIndex1: 1,
-                unRateUpIndex2: 2
+                unRateUpIndex1: 0,
+                unRateUpIndex2: 1
             }
         }
     ]
