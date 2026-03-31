@@ -1,4 +1,5 @@
-[{
+[
+  {
     "Name": "8 Star Super Leonard",
     "Image": "https://gachame.github.io/images/rangers/srry im lazy to find this image-thum.png",
     "UnitCode": "srry im lazy to find this image"
@@ -727,5 +728,25 @@
     "Name": "Candle Sally",
     "Image": "https://gachame.github.io/images/rangers/u1566e-sally-thum.png",
     "UnitCode": "u1566e-sally"
+  },
+  {
+    "Name": "Best Disciple Cony",
+    "Image": "https://gachame.github.io/images/rangers/u1581e-cony-thum.png",
+    "UnitCode": "u1581e-cony"
+  },
+  {
+    "Name": "Iron Wall Prodigy Cony",
+    "Image": "https://gachame.github.io/images/rangers/u1581u-cony-thum.png",
+    "UnitCode": "u1581u-cony"
+  },
+  {
+    "Name": "Taekwondo Sally",
+    "Image": "https://gachame.github.io/images/rangers/u1579e-sally-thum.png",
+    "UnitCode": "u1579e-sally"
+  },
+  {
+    "Name": "Blue Taeguk Sally",
+    "Image": "https://gachame.github.io/images/rangers/u1579u-sally-thum.png",
+    "UnitCode": "u1579u-sally"
   }
 ]

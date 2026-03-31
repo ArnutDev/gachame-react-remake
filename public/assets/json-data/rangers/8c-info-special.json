@@ -1,21 +1,22 @@
-[{
-    "Name": "Qin Shi",
-    "Image": "https://gachame.github.io/images/rangers/u1570e-qs-thum.png",
-    "UnitCode": "u1570e-qs"
+[
+  {
+    "Name": "Soji",
+    "Image": "https://gachame.github.io/images/rangers/u1587e-es-thum.png",
+    "UnitCode": "u1587e-es"
   },
   {
-    "Name": "Hades",
-    "Image": "https://gachame.github.io/images/rangers/u1572e-hd-thum.png",
-    "UnitCode": "u1572e-hd"
+    "Name": "Kukuru",
+    "Image": "https://gachame.github.io/images/rangers/u1589e-kk-thum.png",
+    "UnitCode": "u1589e-kk"
   },
   {
-    "Name": "Tesla",
-    "Image": "https://gachame.github.io/images/rangers/u1574e-nt-thum.png",
-    "UnitCode": "u1574e-nt"
+    "Name": "Renri",
+    "Image": "https://gachame.github.io/images/rangers/u1591e-hr-thum.png",
+    "UnitCode": "u1591e-hr"
   },
   {
-    "Name": "Apollo",
-    "Image": "https://gachame.github.io/images/rangers/u1576e-ap-thum.png",
-    "UnitCode": "u1576e-ap"
+    "Name": "Naruhiko",
+    "Image": "https://gachame.github.io/images/rangers/u1593e-en-thum.png",
+    "UnitCode": "u1593e-en"
   }
 ]

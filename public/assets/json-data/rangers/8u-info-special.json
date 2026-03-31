@@ -1,21 +1,22 @@
-[{
-    "Name": "First Emperor Qin Shi",
-    "Image": "https://gachame.github.io/images/rangers/u1570u-qs-thum.png",
-    "UnitCode": "u1570u-qs"
+[
+  {
+    "Name": "Akari's Brother Soji",
+    "Image": "https://gachame.github.io/images/rangers/u1587u-es-thum.png",
+    "UnitCode": "u1587u-es"
   },
   {
-    "Name": "Underworld King Hades",
-    "Image": "https://gachame.github.io/images/rangers/u1572u-hd-thum.png",
-    "UnitCode": "u1572u-hd"
+    "Name": "Serious Kukuru",
+    "Image": "https://gachame.github.io/images/rangers/u1589u-kk-thum.png",
+    "UnitCode": "u1589u-kk"
   },
   {
-    "Name": "Lone Sorcerer Tesla",
-    "Image": "https://gachame.github.io/images/rangers/u1574u-nt-thum.png",
-    "UnitCode": "u1574u-nt"
+    "Name": "Sharp-Tongued Renri",
+    "Image": "https://gachame.github.io/images/rangers/u1591u-hr-thum.png",
+    "UnitCode": "u1591u-hr"
   },
   {
-    "Name": "Sun God Apollo",
-    "Image": "https://gachame.github.io/images/rangers/u1576u-ap-thum.png",
-    "UnitCode": "u1576u-ap"
+    "Name": "Easily-Scared Naruhiko",
+    "Image": "https://gachame.github.io/images/rangers/u1593u-en-thum.png",
+    "UnitCode": "u1593u-en"
   }
 ]
