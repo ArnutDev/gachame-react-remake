@@ -32,9 +32,9 @@ def download_image(url, folder_path, file_name):
 
 # --- 1. ฟังก์ชัน Ranger (Scrape & Overwrite Special JSON) ---
 def scrape_ranger_data(target_url, raw_text_block):
-    path_8star = r"D:\Arnut\Github\gachame-react-remake\public\assets\json-data\rangers\8c-info-special.json"
-    path_8star_ultimate = r"D:\Arnut\Github\gachame-react-remake\public\assets\json-data\rangers\8u-info-special.json"
-    image_folder = r"D:\Arnut\Github\gachame-react-remake\src\python\images_for_github\rangers"
+    path_8star = r"D:\Arnut\Coding_projects\gachame-react-remake\public\assets\json-data\rangers\8c-info-special.json"
+    path_8star_ultimate = r"D:\Arnut\Coding_projects\gachame-react-remake\public\assets\json-data\rangers\8u-info-special.json"
+    image_folder = r"D:\Arnut\Coding_projects\gachame-react-remake\src\python\images_for_github\rangers"
 
     lines = raw_text_block.strip().split('\n')
     results_8c, results_8u = [], []
@@ -79,8 +79,8 @@ def scrape_ranger_data(target_url, raw_text_block):
 
 # --- 2. ฟังก์ชัน Gear (Scrape & Overwrite Special JSON) ---
 def scrape_gear_data(target_url, raw_text_block):
-    target_full_path = r"D:\Arnut\Github\gachame-react-remake\public\assets\json-data\gears\gears-info-special.json"
-    image_folder = r"D:\Arnut\Github\gachame-react-remake\src\python\images_for_github\gears"
+    target_full_path = r"D:\Arnut\Coding_projects\gachame-react-remake\public\assets\json-data\gears\gears-info-special.json"
+    image_folder = r"D:\Arnut\Coding_projects\gachame-react-remake\src\python\images_for_github\gears"
 
     lines = raw_text_block.strip().split('\n')
     keywords = [line.split("]")[-1].strip() for line in lines if "]" in line]
@@ -122,8 +122,8 @@ def scrape_gear_data(target_url, raw_text_block):
 
 # --- 3. ฟังก์ชัน Ranger (Append to Normal Database) ---
 def update_ranger_database(target_url, raw_text_block):
-    base_path = r"D:\Arnut\Github\gachame-react-remake\public\assets\json-data\rangers\rate-normal"
-    image_folder = r"D:\Arnut\Github\gachame-react-remake\src\python\images_for_github\rangers"
+    base_path = r"D:\Arnut\Coding_projects\gachame-react-remake\public\assets\json-data\rangers\rate-normal"
+    image_folder = r"D:\Arnut\Coding_projects\gachame-react-remake\src\python\images_for_github\rangers"
 
     lines = raw_text_block.strip().split('\n')
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
@@ -176,32 +176,32 @@ def update_ranger_database(target_url, raw_text_block):
 # --- EXECUTION ---
 #เกียร์โคลาโบ copy จาก linerangers notice มาทั้งก้อนได้เลย
 gear_data = """
-8-Star Armor [DA]Miden Yukata
-8-Star Armor [DA]Naruhiko's Headphones
-8-Star Armor [DA]Renri's Earrings
-7-Star Weapon [DA]Soji's Smartphone
-7-Star Weapon [DA]Banhammer
-6-Star Accessory [DA]Denmi-chan
+8-Star Accessory [WB] Suo's Earrings
+8-Star Accessory [WB] Nirei's Notes
+8-Star Accessory [WB] Kaji's Headphones
+7-Star Armor [WB] Bofurin Jacket
+7-Star Armor [WB] Kaji's Hoodie
+6-Star Weapon [WB] Bofurin Flag
 """
 
 #เรนเจอร์ปกติเดือนที่แล้ว copy จาก line rangers notice มาทั้งก้อนได้เลย
 ranger_append_data = """
-Best Disciple Cony
-Iron Wall Prodigy Cony
-Taekwondo Sally
-Blue Taeguk Sally
+8-Star Starter Moon
+8-Star Mechanic Clark
+8-Star Ultimate Evolved Seasoned Starter Moon
+8-Star Ultimate Evolved Maintenance Genius Clark
 """
 
 #เรนเจอร์โคลาโบ copy จาก line rangers notice มาทั้งก้อนได้เลย
 ranger_special_data = """
-8-Star Soji
-8-Star Kukuru
-8-Star Renri
-8-Star Naruhiko
-8-Star Ultimate Evolved Akari's Brother Soji
-8-Star Ultimate Evolved Serious Kukuru
-8-Star Ultimate Evolved Sharp-Tongued Renri
-8-Star Ultimate Evolved Easily-Scared Naruhiko
+8-Star Haruka
+8-Star Hajime
+8-Star Hayato
+8-Star Ren Kaji
+8-Star Ultimate Evolved Class 1-1 Prez. Haruka
+8-Star Ultimate Evolved Bofurin Leader Hajime
+8-Star Ultimate Evolved Class 1-1 V.P. Hayato
+8-Star Ultimate Evolved Tamon Y2 Leader Ren Kaji
 """
 
 #---- เปิดใช้ฟังชันพร้อมกัน -----
