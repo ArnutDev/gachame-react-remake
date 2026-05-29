@@ -4,7 +4,7 @@ export function getRangersGachaData() {
                 cardId: 1,
                 title: "Gacha Rangers 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/rangers-banner-box-A.png",
-                info: "Odds-up:\n - Soji\n - Kukuru\n - Renri\n - Naruhiko"
+                info: "Odds-up:\n - Haruka\n - Hajime\n - Hayato\n - Ren Kaji"
             },
             gachaConfig: {
                 // month: "even",
@@ -34,7 +34,7 @@ export function getRangersGachaData() {
                 // boxId: 2,       
                 title: "Gacha Rangers 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/rangers-banner-box-B.png",
-                info: "Odds-up:\n - Soji\n - Kukuru\n"
+                info: "Odds-up:\n - Haruka\n - Hajime\n"
             },
             gachaConfig: {
                 // month: "even",
@@ -65,7 +65,7 @@ export function getRangersGachaData() {
                 // boxId: 3,
                 title: "Gacha Rangers 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/rangers-banner-box-C.png",
-                info: "Odds-up:\n - Renri\n - Naruhiko\n"
+                info: "Odds-up:\n - Hayato\n - Ren Kaji\n"
             },
             gachaConfig: {
                 // month: "even",
@@ -110,7 +110,7 @@ export function getGearsGachaData() {
                 cardId: 1,
                 title: "Gacha Gears 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/gears-banner-box-A.png",
-                info: "Odds-up:\n - Naruhiko's Headphones\n - Renri's Earrings\n - Miden Yukata\n - Soji's Smartphone\n - Banhammer\n - Denmi-chan"
+                info: "Odds-up:\n - Suo's Earrings\n - Nirei's Notes\n - Kaji's Headphones\n - Bofurin Jacket\n - Kaji's Hoodie\n - Bofurin Flag"
             },
             gachaConfig: {
 
@@ -144,7 +144,7 @@ export function getGearsGachaData() {
                 // boxId: 2,       
                 title: "Gacha Gears 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/gears-banner-box-B.png",
-                info: "Odds-up:\n - Renri's Earrings\n - Soji's Smartphone\n\n\n\n"
+                info: "Odds-up:\n - Suo's Earrings\n - Kaji's Hoodie\n\n\n\n"
             },
             gachaConfig: {
                 // month: "even",
@@ -169,8 +169,8 @@ export function getGearsGachaData() {
                 rateUp8cIndex1: 0,
                 unRateUp8cIndex1: 1,
                 unRateUp8cIndex2: 2,
-                rateUp7cIndex1: 3,
-                unRateUp7cIndex1: 4,
+                rateUp7cIndex1: 4,
+                unRateUp7cIndex1: 3,
             }
         },
         {
@@ -178,7 +178,7 @@ export function getGearsGachaData() {
                 // boxId: 3,
                 title: "Gacha Gears 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/gears-banner-box-C.png",
-                info: "Odds-up:\n - Naruhiko's Headphones\n - Soji's Smartphone\n\n\n\n"
+                info: "Odds-up:\n - Nirei's Notes\n - Kaji's Hoodie\n\n\n\n"
             },
             gachaConfig: {
                 // month: "even",
@@ -203,8 +203,8 @@ export function getGearsGachaData() {
                 rateUp8cIndex1: 1,
                 unRateUp8cIndex1: 0,
                 unRateUp8cIndex2: 2,
-                rateUp7cIndex1: 3,
-                unRateUp7cIndex1: 4,
+                rateUp7cIndex1: 4,
+                unRateUp7cIndex1: 3,
             }
         },
         {
@@ -212,7 +212,7 @@ export function getGearsGachaData() {
                 // boxId: 4,
                 title: "Gacha Gears 6+1 Click!",
                 image: "https://gachame.github.io/images/banner-gacha/gears-banner-box-D.png",
-                info: "Odds-up:\n - Miden Yukata\n - Soji's Smartphone\n\n\n\n"
+                info: "Odds-up:\n - Kaji's Headphones\n - Kaji's Hoodie\n\n\n\n"
             },
             gachaConfig: {
                 // month: "even",
@@ -237,8 +237,8 @@ export function getGearsGachaData() {
                 rateUp8cIndex1: 2,
                 unRateUp8cIndex1: 0,
                 unRateUp8cIndex2: 1,
-                rateUp7cIndex1: 3,
-                unRateUp7cIndex1: 4,
+                rateUp7cIndex1: 4,
+                unRateUp7cIndex1: 3,
             }
         }
     ]
