@@ -39,7 +39,7 @@ export default async function gearsGacha(allGears, gachaConfig) {
                 // specials[i] = isSpecials;
             }
         } else if (chance <= 3) {
-            const rateRange = 22.00; //7c
+            const rateRange = 2.00; //7c
             let result;
             if (randomStart !== randomEnd) {
                 result = getAllRandom(gachaConfig.amount7c, gachaConfig.eachRate7c, rateRange);
@@ -59,7 +59,7 @@ export default async function gearsGacha(allGears, gachaConfig) {
                 // specials[i] = isSpecials;
             }
         } else if (chance <= 50) {
-            const rateRange = 22.00; //7c
+            const rateRange = 47.00; //6c
             let result;
             if (randomStart !== randomEnd) {
                 result = getAllRandom(gachaConfig.amount6c, gachaConfig.eachRate6c, rateRange);
