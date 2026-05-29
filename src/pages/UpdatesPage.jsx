@@ -5,9 +5,11 @@ export default function Updates(){
     const [dayB, monthB, yearB] = b.date.split("-");
     const dateA = new Date(`${yearA}-${monthA}-${dayA}`);
     const dateB = new Date(`${yearB}-${monthB}-${dayB}`);
-    return dateB - dateA;
-  });
-
+    if (dateB - dateA !== 0) {
+      return dateB - dateA;
+    }
+    return b.version.localeCompare(a.version, undefined, { numeric: true, sensitivity: 'base' });
+  });  
   return (
     
     <div className="container my-3">
