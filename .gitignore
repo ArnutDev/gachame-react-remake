@@ -29,6 +29,7 @@ venv/
 
 python/images_for_github/rangers/
 python/images_for_github/gears/
+images_for_github/
 
 __pycache__/
 *.py[cod]

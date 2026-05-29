@@ -1,31 +1,32 @@
-[{
-    "Name": "Renri's Earrings",
-    "Image": "https://gachame.github.io/images/gears/eq_2604_amr_28_icon.png",
-    "ItemCode": "eq_2604_amr_28"
+[
+  {
+    "Name": "Suo's Earrings",
+    "Image": "https://gachame.github.io/images/gears/eq_2606_acc_08_icon.png",
+    "ItemCode": "eq_2606_acc_08"
   },
   {
-    "Name": "Naruhiko's Headphones",
-    "Image": "https://gachame.github.io/images/gears/eq_2604_amr_18_icon.png",
-    "ItemCode": "eq_2604_amr_18"
+    "Name": "Nirei's Notes",
+    "Image": "https://gachame.github.io/images/gears/eq_2606_acc_18_icon.png",
+    "ItemCode": "eq_2606_acc_18"
   },
   {
-    "Name": "Miden Yukata",
-    "Image": "https://gachame.github.io/images/gears/eq_2604_amr_08_icon.png",
-    "ItemCode": "eq_2604_amr_08"
+    "Name": "Kaji's Headphones",
+    "Image": "https://gachame.github.io/images/gears/eq_2606_acc_28_icon.png",
+    "ItemCode": "eq_2606_acc_28"
   },
   {
-    "Name": "Soji's Smartphone",
-    "Image": "https://gachame.github.io/images/gears/eq_2604_wpn_07_icon.png",
-    "ItemCode": "eq_2604_wpn_07"
+    "Name": "Bofurin Jacket",
+    "Image": "https://gachame.github.io/images/gears/eq_2606_amr_07_icon.png",
+    "ItemCode": "eq_2606_amr_07"
   },
   {
-    "Name": "Banhammer",
-    "Image": "https://gachame.github.io/images/gears/eq_2604_wpn_17_icon.png",
-    "ItemCode": "eq_2604_wpn_17"
+    "Name": "Kaji's Hoodie",
+    "Image": "https://gachame.github.io/images/gears/eq_2606_amr_17_icon.png",
+    "ItemCode": "eq_2606_amr_17"
   },
   {
-    "Name": "Denmi-chan",
-    "Image": "https://gachame.github.io/images/gears/eq_2604_acc_06_icon.png",
-    "ItemCode": "eq_2604_acc_06"
+    "Name": "Bofurin Flag",
+    "Image": "https://gachame.github.io/images/gears/eq_2606_wpn_06_icon.png",
+    "ItemCode": "eq_2606_wpn_06"
   }
 ]

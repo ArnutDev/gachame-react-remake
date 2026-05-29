@@ -683,4 +683,19 @@
     "Image": "https://gachame.github.io/images/rangers/u1581u-cony-thum.png",
     "UnitCode": "u1581u-cony"
   },
+  {
+    "Name": "Blue Taeguk Sally",
+    "Image": "https://gachame.github.io/images/rangers/u1579u-sally-thum.png",
+    "UnitCode": "u1579u-sally"
+  },
+  {
+    "Name": "Seasoned Starter Moon",
+    "Image": "https://gachame.github.io/images/rangers/u1596u-moon-thum.png",
+    "UnitCode": "u1596u-moon"
+  },
+  {
+    "Name": "Maintenance Genius Clark",
+    "Image": "https://gachame.github.io/images/rangers/u1598u-clark-thum.png",
+    "UnitCode": "u1598u-clark"
+  }
 ]

@@ -158,5 +158,13 @@
             "Added April Rangers gacha",
             "Added April Gears gacha"
         ]
+    },
+    {
+        "version": "2.4.0",
+        "date": "29-05-2026",
+        "changes": [
+            "Added June Rangers gacha",
+            "Added June Gears gacha"
+        ]
     }
 ]
